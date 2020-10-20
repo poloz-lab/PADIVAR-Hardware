@@ -24,8 +24,10 @@ public:
     /*!
      * \brief constructor
      * \param port : network port for listening connections
+     * \param accept_from : source address accepted from the socket.
+     * default is INADDR_ANY
      */
-    ServerSocket(unsigned int port);
+    ServerSocket(unsigned int port, in_addr_t accept_from);
 private:
     int socket_fd_; /*< file descriptor for the socket */
     struct sockaddr_in server_address_; /*< structure for ip, stores accepted addresses, port */
@@ -44,6 +46,7 @@ namespace ExceptionSocketServerTypes
     {
         NoError, /*!< no error */
         Creation, /*!< error while creating the socket */
+        Binding /*!< error while binding the socket to the port */
     };
 }
 typedef ExceptionSocketServerTypes::ExceptionSocketServerType ExceptionSocketServerType;

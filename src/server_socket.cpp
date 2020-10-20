@@ -9,13 +9,23 @@
  * \date 20/10/2020
  */
 
-ServerSocket::ServerSocket(unsigned int port)
+ServerSocket::ServerSocket(unsigned int port, in_addr_t accept_from = INADDR_ANY)
 {
     // creation of the socket
     socket_fd_ = socket(AF_INET, SOCK_STREAM, 0); // create a IPv4 for TCP connection
     if (socket_fd_ == -1) // if the creation failed
     {
         throw ExceptionSocketServer(ExceptionSocketServerTypes::Creation, errno);
+    }
+
+    // binding the socket to the port
+    server_address_.sin_addr.s_addr = htonl(accept_from); // accepting from any address
+    server_address_.sin_family = AF_INET;
+    server_address_.sin_family = htons(port);
+    if (bind(socket_fd_, (struct sockaddr *) &server_address_, sizeof(server_address_)) == -1)
+    {
+        // if an error occured while binding
+        throw ExceptionSocketServer(ExceptionSocketServerTypes::Binding, errno);
     }
 }
 
@@ -34,6 +44,9 @@ const char *ExceptionSocketServer::what() const throw()
             break;
         case ExceptionSocketServerTypes::Creation:
             reason = "can't create the socket";
+            break;
+        case ExceptionSocketServerTypes::Binding:
+            reason = "can't bind the socket to the port";
             break;
     }
     std::string detailed_reason = reason + " errno: " + std::to_string(errno_);
