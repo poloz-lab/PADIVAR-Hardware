@@ -9,7 +9,7 @@
  * \date 20/10/2020
  */
 
-ServerSocket::ServerSocket(unsigned int port, in_addr_t accept_from = INADDR_ANY)
+ServerSocket::ServerSocket(unsigned int port, int max_connection_pending = 10,in_addr_t accept_from = INADDR_ANY)
 {
     // creation of the socket
     socket_fd_ = socket(AF_INET, SOCK_STREAM, 0); // create a IPv4 for TCP connection
@@ -26,6 +26,12 @@ ServerSocket::ServerSocket(unsigned int port, in_addr_t accept_from = INADDR_ANY
     {
         // if an error occured while binding
         throw ExceptionSocketServer(ExceptionSocketServerTypes::Binding, errno);
+    }
+
+    // listening
+    if (listen(socket_fd_, max_connection_pending) == -1)
+    {
+        throw ExceptionSocketServer(ExceptionSocketServerTypes::Listening, errno);
     }
 }
 
@@ -48,6 +54,8 @@ const char *ExceptionSocketServer::what() const throw()
         case ExceptionSocketServerTypes::Binding:
             reason = "can't bind the socket to the port";
             break;
+        case ExceptionSocketServerTypes::Listening:
+            reason = "the socket can't listen";
     }
     std::string detailed_reason = reason + " errno: " + std::to_string(errno_);
     return detailed_reason.c_str();
