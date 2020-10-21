@@ -21,6 +21,50 @@ ClientSocket::~ClientSocket()
     close(socket_fd_);
 }
 
+std::string ClientSocket::readString()
+{
+    char c = '\0';
+    std::string s = "";
+    // reading the socket one by one character until \0 is sent
+    do
+    {
+        // reading
+        if(read(socket_fd_, &c, sizeof(char)) == -1)
+        {
+            throw ExceptionSocketClient(ExceptionSocketClientTypes::Reading, errno);
+        }
+        // if c is not \0
+        if (c != '\0')
+        {
+            // concatenate the character to the string
+            s += c;
+        }
+    }while (c != '\0');
+    // return the whole string at the end
+    return s;
+}
+
+ExceptionSocketClient::ExceptionSocketClient(ExceptionSocketClientType type, int errno_c = 0) throw()
+    :type_(type),errno_(errno_c)
+{
+}
+
+const char *ExceptionSocketClient::what() const throw()
+{
+    std::string reason;
+    switch(type_)
+    {
+        case ExceptionSocketClientTypes::NoError:
+            reason = "no error";
+            break;
+        case ExceptionSocketClientTypes::Reading:
+            reason = "can't read through the client socket";
+            break;
+    }
+    std::string detailed_reason = reason + " errno: " + std::to_string(errno_);
+    return detailed_reason.c_str();
+}
+
 ServerSocket::ServerSocket(unsigned int port, int max_connection_pending = 10,in_addr_t accept_from = INADDR_ANY)
 {
     // creation of the socket

@@ -13,6 +13,7 @@
 #include <arpa/inet.h>
 #include <cerrno>
 #include <exception>
+#include <string>
 
 /*!
  * \class ClientSocket
@@ -39,11 +40,58 @@ public:
      * close the socket
      */
     ~ClientSocket();
+
+    /*!
+     * \brief read data from the socket
+     * \return string readed
+     */
+    std::string readString();
 private:
     ClientSocket(); // forbid access to default constructor
     int socket_fd_; /*!< client socket file descriptor */
     struct sockaddr_in client_address_; /*!< structure for ip, port */
     socklen_t client_address_size_; /*!< size of the structure sockaddr_in */
+};
+
+/*!
+ * \namespace ExceptionSocketClientTypes
+ */
+namespace ExceptionSocketClientTypes
+{
+    /*!
+     * \enum ExceptionSocketClientType
+     * \brief type of error that could be encountered with the client socket
+     */
+    enum ExceptionSocketClientType
+    {
+        NoError, /*!< no error */
+        Reading /*!< error while reading through the socket */
+    };
+}
+typedef ExceptionSocketClientTypes::ExceptionSocketClientType ExceptionSocketClientType;
+
+/*!
+ * \class ExceptionSocketClient
+ * \brief class for handling errors from the client socket
+ */
+class ExceptionSocketClient: public std::exception
+{
+public:
+    /*!
+     * \brief constructor
+     * \param type : type of the error
+     * \param errno_c : error number (errno) from C lib
+     */
+    ExceptionSocketClient(ExceptionSocketClientType type, int errno_c) throw();
+
+    /*!
+     * \brief give the reason of the exception
+     * \return string to give the reason of the exception
+     */
+    virtual const char* what() const throw();
+private:
+    ExceptionSocketClientType type_;
+    int errno_;
 };
 
 /*!
