@@ -1,5 +1,6 @@
 #include "server_socket.h"
 #include <string>
+#include <unistd.h>
 
 /*!
  * \file server_socket.c
@@ -35,6 +36,12 @@ ServerSocket::ServerSocket(unsigned int port, int max_connection_pending = 10,in
     }
 }
 
+ServerSocket::~ServerSocket()
+{
+    // closing the socket
+    close(socket_fd_);
+}
+
 ExceptionSocketServer::ExceptionSocketServer(ExceptionSocketServerType type, int errno_c = 0) throw()
     :type_(type),errno_(errno_c)
 {
@@ -56,6 +63,8 @@ const char *ExceptionSocketServer::what() const throw()
             break;
         case ExceptionSocketServerTypes::Listening:
             reason = "the socket can't listen";
+        case ExceptionSocketServerTypes::Closing:
+            reason = "can't close the socket";
     }
     std::string detailed_reason = reason + " errno: " + std::to_string(errno_);
     return detailed_reason.c_str();

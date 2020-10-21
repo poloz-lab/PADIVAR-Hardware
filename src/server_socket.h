@@ -30,6 +30,11 @@ public:
      * default is INADDR_ANY
      */
     ServerSocket(unsigned int port, int max_connection_pending, in_addr_t accept_from);
+
+    /*!
+     * \brief destructor
+     */
+    ~ServerSocket();
 private:
     int socket_fd_; /*< file descriptor for the socket */
     struct sockaddr_in server_address_; /*< structure for ip, stores accepted addresses, port */
@@ -49,7 +54,8 @@ namespace ExceptionSocketServerTypes
         NoError, /*!< no error */
         Creation, /*!< error while creating the socket */
         Binding, /*!< error while binding the socket to the port */
-        Listening /*< error While trying to listening */
+        Listening, /*< error While trying to listening */
+        Closing /*< error while closing the socket */
     };
 }
 typedef ExceptionSocketServerTypes::ExceptionSocketServerType ExceptionSocketServerType;
