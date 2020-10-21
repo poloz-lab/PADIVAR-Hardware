@@ -88,7 +88,7 @@ ServerSocket::ServerSocket(unsigned int port, int max_connection_pending = 10,in
     // binding the socket to the port
     server_address_.sin_addr.s_addr = htonl(accept_from); // accepting from any address
     server_address_.sin_family = AF_INET;
-    server_address_.sin_family = htons(port);
+    server_address_.sin_port = htons(port);
     if (bind(socket_fd_, (struct sockaddr *) &server_address_, sizeof(server_address_)) == -1)
     {
         // if an error occured while binding
