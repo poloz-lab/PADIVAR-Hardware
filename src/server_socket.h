@@ -15,6 +15,38 @@
 #include <exception>
 
 /*!
+ * \class ClientSocket
+ * \brief class for the connection with the client
+ *
+ * this class has to be instantiated when the server socket accept a connection
+ * and a new socket file descriptor is created. This class also contains the
+ * information about the client, and some methods to communicate with him.
+ */
+class ClientSocket
+{
+public:
+    /*!
+     * \brief constructor
+     * \param socket_fd : file descriptor of the client socket
+     * \param client_address : structure sockaddr_in about the client connexion
+     * \param client_address_size : size of the structure sockaddr_in
+     */
+    ClientSocket(int socket_fd, sockaddr_in client_address, socklen_t client_address_size);
+    
+    /*!
+     * \brief destructor
+     *
+     * close the socket
+     */
+    ~ClientSocket();
+private:
+    ClientSocket(); // forbid access to default constructor
+    int socket_fd_; /*!< client socket file descriptor */
+    struct sockaddr_in client_address_; /*!< structure for ip, port */
+    socklen_t client_address_size_; /*!< size of the structure sockaddr_in */
+};
+
+/*!
  * \class ServerSocket
  * \brief class for the server socket
  */

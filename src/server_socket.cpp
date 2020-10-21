@@ -10,6 +10,17 @@
  * \date 20/10/2020
  */
 
+ClientSocket::ClientSocket(int socket_fd, sockaddr_in client_address, socklen_t client_address_size)
+    :socket_fd_(socket_fd),client_address_(client_address),client_address_size_(client_address_size)
+{
+}
+
+ClientSocket::~ClientSocket()
+{
+    // closing the socket
+    close(socket_fd_);
+}
+
 ServerSocket::ServerSocket(unsigned int port, int max_connection_pending = 10,in_addr_t accept_from = INADDR_ANY)
 {
     // creation of the socket
@@ -69,3 +80,4 @@ const char *ExceptionSocketServer::what() const throw()
     std::string detailed_reason = reason + " errno: " + std::to_string(errno_);
     return detailed_reason.c_str();
 }
+
