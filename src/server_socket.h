@@ -67,6 +67,14 @@ public:
      * \brief destructor
      */
     ~ServerSocket();
+
+    /*!
+     * \brief waiting for a connection from a client
+     *
+     * waiting for a client connection to the socket.
+     * BLOCKING FUNCTION
+     */
+    ClientSocket waitingForConnection();
 private:
     int socket_fd_; /*< file descriptor for the socket */
     struct sockaddr_in server_address_; /*< structure for ip, stores accepted addresses, port */

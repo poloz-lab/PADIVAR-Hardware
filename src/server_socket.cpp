@@ -53,6 +53,18 @@ ServerSocket::~ServerSocket()
     close(socket_fd_);
 }
 
+ClientSocket ServerSocket::waitingForConnection()
+{
+    // declaration
+    int client_fd;
+    sockaddr_in client_address = {0};
+    socklen_t client_address_size = sizeof(client_address);
+    // waiting for connection
+    client_fd = accept(socket_fd_, (struct sockaddr *) &client_address, &client_address_size);
+    // return the ClientSocket corresponding to the previous information
+    return ClientSocket(client_fd, client_address, client_address_size);
+}
+
 ExceptionSocketServer::ExceptionSocketServer(ExceptionSocketServerType type, int errno_c = 0) throw()
     :type_(type),errno_(errno_c)
 {
