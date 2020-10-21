@@ -44,6 +44,14 @@ std::string ClientSocket::readString()
     return s;
 }
 
+void ClientSocket::writeString(std::string data)
+{
+    if (write(socket_fd_, data.c_str(), sizeof(data.c_str())) == -1)
+    {
+        throw ExceptionSocketClient(ExceptionSocketClientTypes::Writing, errno);
+    }
+}
+
 ExceptionSocketClient::ExceptionSocketClient(ExceptionSocketClientType type, int errno_c = 0) throw()
     :type_(type),errno_(errno_c)
 {
@@ -59,6 +67,9 @@ const char *ExceptionSocketClient::what() const throw()
             break;
         case ExceptionSocketClientTypes::Reading:
             reason = "can't read through the client socket";
+            break;
+        case ExceptionSocketClientTypes::Writing:
+            reason = "can't write through the client socket";
             break;
     }
     std::string detailed_reason = reason + " errno: " + std::to_string(errno_);

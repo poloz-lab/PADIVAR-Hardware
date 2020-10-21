@@ -46,6 +46,12 @@ public:
      * \return string readed
      */
     std::string readString();
+
+    /*!
+     * \brief write data through the socket
+     * \param data : string that has to be sent
+     */
+    void writeString(std::string data);
 private:
     ClientSocket(); // forbid access to default constructor
     int socket_fd_; /*!< client socket file descriptor */
@@ -65,7 +71,8 @@ namespace ExceptionSocketClientTypes
     enum ExceptionSocketClientType
     {
         NoError, /*!< no error */
-        Reading /*!< error while reading through the socket */
+        Reading, /*!< error while reading through the socket */
+        Writing /*!< error while writing through the socket */
     };
 }
 typedef ExceptionSocketClientTypes::ExceptionSocketClientType ExceptionSocketClientType;
