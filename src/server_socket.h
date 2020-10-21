@@ -44,8 +44,10 @@ public:
     /*!
      * \brief read data from the socket
      * \return string readed
+     *
+     * the function reads until \n is found
      */
-    std::string readString();
+    std::string readLine();
 
     /*!
      * \brief write data through the socket

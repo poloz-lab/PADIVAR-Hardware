@@ -21,9 +21,9 @@ ClientSocket::~ClientSocket()
     close(socket_fd_);
 }
 
-std::string ClientSocket::readString()
+std::string ClientSocket::readLine()
 {
-    char c = '\0';
+    char c = '\n';
     std::string s = "";
     // reading the socket one by one character until \0 is sent
     do
@@ -34,12 +34,12 @@ std::string ClientSocket::readString()
             throw ExceptionSocketClient(ExceptionSocketClientTypes::Reading, errno);
         }
         // if c is not \0
-        if (c != '\0')
+        if (c != '\n')
         {
             // concatenate the character to the string
             s += c;
         }
-    }while (c != '\0');
+    }while (c != '\n');
     // return the whole string at the end
     return s;
 }
