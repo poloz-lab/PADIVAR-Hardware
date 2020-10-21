@@ -55,10 +55,6 @@ void ClientSocket::writeString(std::string data)
 ExceptionSocketClient::ExceptionSocketClient(ExceptionSocketClientType type, int errno_c = 0) throw()
     :type_(type),errno_(errno_c)
 {
-}
-
-const char *ExceptionSocketClient::what() const throw()
-{
     std::string reason;
     switch(type_)
     {
@@ -72,8 +68,12 @@ const char *ExceptionSocketClient::what() const throw()
             reason = "can't write through the client socket";
             break;
     }
-    std::string detailed_reason = reason + " errno: " + std::to_string(errno_);
-    return detailed_reason.c_str();
+    explaination_ = reason + " errno: " + std::to_string(errno_);
+}
+
+const char *ExceptionSocketClient::what() const throw()
+{
+    return explaination_.c_str();
 }
 
 ServerSocket::ServerSocket(unsigned int port, int max_connection_pending = 10,in_addr_t accept_from = INADDR_ANY)

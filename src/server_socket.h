@@ -99,6 +99,7 @@ public:
 private:
     ExceptionSocketClientType type_;
     int errno_;
+    std::string explaination_;
 };
 
 /*!
