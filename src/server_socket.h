@@ -177,6 +177,7 @@ public:
 private:
     ExceptionSocketServerType type_;
     int errno_;
+    std::string explaination_;
 };
 
 #endif

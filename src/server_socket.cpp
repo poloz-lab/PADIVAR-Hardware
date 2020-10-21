@@ -123,10 +123,6 @@ ClientSocket ServerSocket::waitingForConnection()
 ExceptionSocketServer::ExceptionSocketServer(ExceptionSocketServerType type, int errno_c = 0) throw()
     :type_(type),errno_(errno_c)
 {
-}
-
-const char *ExceptionSocketServer::what() const throw()
-{
     std::string reason;
     switch(type_)
     {
@@ -144,7 +140,11 @@ const char *ExceptionSocketServer::what() const throw()
         case ExceptionSocketServerTypes::Closing:
             reason = "can't close the socket";
     }
-    std::string detailed_reason = reason + " errno: " + std::to_string(errno_);
-    return detailed_reason.c_str();
+    explaination_ = reason + " errno: " + std::to_string(errno_);
+}
+
+const char *ExceptionSocketServer::what() const throw()
+{
+    return explaination_.c_str();
 }
 
