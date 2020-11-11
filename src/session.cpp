@@ -17,7 +17,7 @@ Session::Session(char* ConnectionType_, char* ConnectionPath_, sockaddr_in socke
         {
             if(ConnectionType_== "USB")
             {
-                
+               
             }
             else if(ConnectionType_=="wifi")
             {
@@ -37,12 +37,11 @@ Session::Session(char* ConnectionType_, char* ConnectionPath_, sockaddr_in socke
         {
             throw std::invalid_argument("Wrong connection type");
         }
-        /* faire un if pour verifier si le chemin rentré est valide*/
+        /*TODO if path is valid */
     }
     else
     {
-        char * Path_list = system (ls /dev | grep -E tty[^0-9S]); //juste pour USB
-        /*Todo pour tous les autres type de connection et creer une variable qui renvoie toute une liste*/
+
     }
 }
 
