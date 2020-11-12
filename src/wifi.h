@@ -1,6 +1,6 @@
 #ifndef WIFI_H
 #define WIFI_H
-#include <string>
+
 #include "interface.h"
 
 class Wifi : protected Interface

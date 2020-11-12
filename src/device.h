@@ -1,6 +1,5 @@
 #ifndef DEVICE_H
 #define DEVICE_H
-#include <string>
 #include "interface.h"
 #include "server_socket.h"
 class Device 

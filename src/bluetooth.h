@@ -1,6 +1,5 @@
 #ifndef BLUETOOTH_H
 #define BLUETOOTH_H
-#include <string>
 #include "interface.h"
 
 class Bluetooth : protected Interface
