@@ -6,9 +6,9 @@
 class Bluetooth : protected Interface
 {
 private:
-    std::string mac_address;
+    std::string mac_address_;
+    int fd_;
     Bluetooth();
-    ~Bluetooth();
 public:
     Bluetooth(std::string mac_address); 
     void send(std::string message); 

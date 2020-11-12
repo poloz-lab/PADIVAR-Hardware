@@ -5,8 +5,6 @@
 
 class Interface
 {
-protected:
-    int fd_;
 public:
     virtual void send(std::string message) = 0; 
     virtual std::string receive() = 0;

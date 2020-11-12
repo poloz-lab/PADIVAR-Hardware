@@ -6,9 +6,9 @@
 class Usb : protected Interface
 {
 private:
-    std::string path;
+    std::string path_;
+    int fd_;
     Usb();
-    ~Usb();
 public:
     Usb(std::string path); 
     void send(std::string message); 

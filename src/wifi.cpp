@@ -2,17 +2,18 @@
 
 Wifi::Wifi()
 {
-    this->port = -1;
-    this->ip_address = "\0";
 }
 
-Wifi::Wifi(std::string p_ip_address, int p_port)
+Wifi::Wifi(std::string ip_address, int port)
 {
-    this->ip_address = p_ip_address;
-    this->port = p_port;
 }
 
-Wifi::~Wifi()
+void Wifi::send(std::string message)
 {
 
+}
+
+std::string Wifi::receive()
+{
+    
 }
