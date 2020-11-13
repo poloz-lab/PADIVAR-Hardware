@@ -2,7 +2,7 @@
 #define ELM327_h
 #include "device.h"
 
-class Elm327
+class Elm327 : public Device
 {
 private:
     Elm327();

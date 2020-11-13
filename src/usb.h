@@ -2,7 +2,7 @@
 #define USB_H
 #include "interface.h"
 
-class Usb : protected Interface
+class Usb : public Interface
 {
 private:
     std::string path_;

@@ -3,7 +3,7 @@
 
 #include "interface.h"
 
-class Wifi : protected Interface
+class Wifi : public Interface
 {
 private:
     std::string ip_address_;

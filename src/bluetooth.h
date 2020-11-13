@@ -2,7 +2,7 @@
 #define BLUETOOTH_H
 #include "interface.h"
 
-class Bluetooth : protected Interface
+class Bluetooth : public Interface
 {
 private:
     std::string mac_address_;
