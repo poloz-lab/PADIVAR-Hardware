@@ -37,6 +37,7 @@ knowledge of the CeCILL license and that you accept its terms.
 */
 
 #include <iostream>
+#include "server_socket.h"
 
 int main(int argc, char** argv)
 {
