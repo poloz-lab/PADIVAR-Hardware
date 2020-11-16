@@ -36,9 +36,19 @@ The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 
-#include <iostream>
+    #include "device.h"
+    
+    /*Pid getPidList()
+    {
 
-int main(int argc, char** argv)
-{
-    return EXIT_SUCCESS;
-}
+    }
+
+    string sendPid(Pid pid)
+    {
+
+    }
+
+    Pid diagnostic(ClientSocket client_socket)
+    {
+
+    }*/

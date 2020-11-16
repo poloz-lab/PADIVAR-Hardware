@@ -36,9 +36,24 @@ The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 
-#include <iostream>
+#include "usb.h"
 
-int main(int argc, char** argv)
+Usb::Usb()
 {
-    return EXIT_SUCCESS;
+ 
+}
+
+Usb::Usb(std::string path)
+{
+    
+}
+
+void Usb::send(std::string message)
+{
+
+}
+
+std::string Usb::receive()
+{
+    
 }

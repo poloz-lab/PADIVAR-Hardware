@@ -36,9 +36,24 @@ The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 
-#include <iostream>
+#include "elm327.h"
 
-int main(int argc, char** argv)
+Elm327::Elm327()
 {
-    return EXIT_SUCCESS;
+   
+}
+
+Elm327::Elm327(Interface* communication_medium)
+{
+    
+}
+
+void Elm327::initialization()
+{
+
+}
+
+std::string Elm327::sendOBD(std::string obd_code)
+{
+    
 }

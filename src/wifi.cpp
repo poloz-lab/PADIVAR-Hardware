@@ -36,9 +36,22 @@ The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 
-#include <iostream>
+#include "wifi.h"
 
-int main(int argc, char** argv)
+Wifi::Wifi()
 {
-    return EXIT_SUCCESS;
+}
+
+Wifi::Wifi(std::string ip_address, int port)
+{
+}
+
+void Wifi::send(std::string message)
+{
+
+}
+
+std::string Wifi::receive()
+{
+    
 }

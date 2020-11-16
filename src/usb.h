@@ -36,9 +36,20 @@ The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 
-#include <iostream>
+#ifndef USB_H
+#define USB_H
+#include "interface.h"
 
-int main(int argc, char** argv)
+class Usb : public Interface
 {
-    return EXIT_SUCCESS;
-}
+private:
+    std::string path_;
+    int fd_;
+    Usb();
+public:
+    Usb(std::string path); 
+    void send(std::string message); 
+    std::string receive();
+};
+
+#endif
