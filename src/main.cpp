@@ -71,6 +71,13 @@ int main(int argc, char** argv)
         {0}
     };
 
+    /* exit with an error if no option is specified */
+    if (argc < 2)
+    {
+        usage(argv[0]);
+        return EXIT_FAILURE;
+    }
+
     /* loop to process every option in command line */
     while ((option = getopt_long(argc, argv, "h", long_options, 0)) != -1)
     {
