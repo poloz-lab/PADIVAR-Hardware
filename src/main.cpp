@@ -65,5 +65,29 @@ void longHelp()
 
 int main(int argc, char** argv)
 {
+    int option;
+    struct option long_options[] = { // struct to tell what to do for long options
+        {"help", no_argument, NULL, 1000},
+        {0}
+    };
+
+    /* loop to process every option in command line */
+    while ((option = getopt_long(argc, argv, "h", long_options, 0)) != -1)
+    {
+        switch(option)
+        {
+            case 'h':
+                shortHelp();
+                break;
+            case 1000:
+                longHelp();
+                break;
+            case '?':
+                usage(argv[0]);
+                break;
+            default:
+                break;
+        }
+    }
     return EXIT_SUCCESS;
 }
