@@ -49,6 +49,12 @@ void usage(const char *argv0)
     std::cerr << "bad usage, further information: " + std::string(base) + " --help" <<std::endl;
 }
 
+void shortHelp()
+{
+    std::cout << "PADIVAR Hardware vehicle diagnostic tool" <<std::endl;
+    std::cout << "-h print this help message" << std::endl;
+}
+
 int main(int argc, char** argv)
 {
     return EXIT_SUCCESS;
