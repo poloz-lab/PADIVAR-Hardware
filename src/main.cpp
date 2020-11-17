@@ -39,6 +39,15 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <iostream>
 #include "server_socket.h"
 #include <getopt.h>
+#include <cstring>
+#include <string>
+
+void usage(const char *argv0)
+{
+    const char *base = std::strrchr(argv0, '/');
+    base = base ? base + 1 : argv0;
+    std::cerr << "bad usage, further information: " + std::string(base) + " --help" <<std::endl;
+}
 
 int main(int argc, char** argv)
 {
