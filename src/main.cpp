@@ -95,9 +95,11 @@ int main(int argc, char** argv)
         {
             case 'h':
                 shortHelp();
+                return EXIT_SUCCESS;
                 break;
             case 1000:
                 longHelp();
+                return EXIT_SUCCESS;
                 break;
             case 'p':
                 port = (unsigned int) std::atoi(optarg);
