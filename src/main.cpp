@@ -68,9 +68,11 @@ int main(int argc, char** argv)
 {
     int option;
     unsigned int port;
+    int max_connection_pending = 10;
     struct option long_options[] = { // struct to tell what to do for long options
         {"help", no_argument, NULL, 1000},
         {"port", required_argument, NULL, 'p'},
+        {"max-connection-pending", required_argument, NULL, 1001},
         {0}
     };
 
@@ -94,6 +96,9 @@ int main(int argc, char** argv)
                 break;
             case 'p':
                 port = (unsigned int) std::atoi(optarg);
+                break;
+            case 1001:
+                max_connection_pending = std::atoi(optarg);
                 break;
             case '?':
                 usage(argv[0]);
