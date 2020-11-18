@@ -55,6 +55,7 @@ void shortHelp()
     std::cout << "PADIVAR Hardware vehicle diagnostic tool" <<std::endl;
     std::cout << "-h print this help message" << std::endl;
     std::cout << "--help print long help" << std::endl;
+    std::cout << "-p --port NUM port for the server" << std::endl;
 }
 
 void longHelp()
@@ -62,6 +63,7 @@ void longHelp()
     std::cout << "PADIVAR Hardware vehicle diagnostic tool" <<std::endl;
     std::cout << "-h print short help" << std::endl;
     std::cout << "--help print this help message" << std::endl;
+    std::cout << "-p --port NUM port for the server to listen" << std::endl;
 }
 
 int main(int argc, char** argv)
