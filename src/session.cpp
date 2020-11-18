@@ -1,48 +1,50 @@
+/*
+Copyright or © or Copr. PST PADIVAR Hardware (2020)
+contributors:
+QuentinC <quclement@et.esiea.fr>
+Nulan <novais@et.esiea.fr>
+Mathilde <mroyer@et.esiea.fr>
+Poloz <polozfr@laposte.net>
+MathysG <gageot@et.esiea.fr>
+
+This software is a computer program whose purpose is to diagnose a vehicle.
+
+This software is governed by the CeCILL license under French law and
+abiding by the rules of distribution of free software.  You can  use, 
+modify and/ or redistribute the software under the terms of the CeCILL
+license as circulated by CEA, CNRS and INRIA at the following URL
+"http://www.cecill.info". 
+
+As a counterpart to the access to the source code and  rights to copy,
+modify and redistribute granted by the license, users are provided only
+with a limited warranty  and the software's author,  the holder of the
+economic rights,  and the successive licensors  have only  limited
+liability. 
+
+In this respect, the user's attention is drawn to the risks associated
+with loading,  using,  modifying and/or developing or reproducing the
+software by the user in light of its specific status of free software,
+that may mean  that it is complicated to manipulate,  and  that  also
+therefore means  that it is reserved for developers  and  experienced
+professionals having in-depth computer knowledge. Users are therefore
+encouraged to load and test the software's suitability as regards their
+requirements in conditions enabling the security of their systems and/or 
+data to be ensured and,  more generally, to use and operate it in the 
+same conditions as regards security. 
+
+The fact that you are presently reading this means that you have had
+knowledge of the CeCILL license and that you accept its terms.
+*/
 #include "session.h"
 
-
-
-Session::Session(char* ConnectionType_, char* ConnectionPath_, sockaddr_in socket_client_)
+Session::Session()
 {
-    this->socket_client_ = socket_client_;
+    
+}
 
-    if(ConnectionType_ != "all")
-    {
-        this->ConnectionType_ = ConnectionType_;
-        if(ConnectionPath_ == "USB" || ConnectionPath_ == "wifi" || ConnectionPath_ == "bluetooth")
-        {
-            this->ConnectionType_ = ConnectionType_;
-        }
-        else if (ConnectionPath_ == "all")
-        {
-            if(ConnectionType_== "USB")
-            {
-               
-            }
-            else if(ConnectionType_=="wifi")
-            {
+Session::Session(ClientSocket client_)
+{
 
-            }
-            else if(ConnectionType_=="bluetooth")
-            {
-
-            }
-            else
-            {
-                throw std::invalid_argument("Wrong connection type");
-            }
-            
-        }
-        else
-        {
-            throw std::invalid_argument("Wrong connection type");
-        }
-        /*TODO if path is valid */
-    }
-    else
-    {
-
-    }
 }
 
 Session::~Session()
@@ -50,22 +52,7 @@ Session::~Session()
 
 }
 
-char* Session::GetConnectionType()
-{
-    return this->ConnectionType_;
-}
-
-char* Session::GetConnectionPath()
-{
-    return this->ConnectionPath_;
-}
-
-sockaddr_in Session::Getsocket_client()
-{
-    return this->socket_client_;
-}
-
-void Session::API_redicretion()
+void Session::interpreter()
 {
 
 }
