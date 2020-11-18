@@ -56,6 +56,7 @@ void shortHelp()
     std::cout << "-h print this help message" << std::endl;
     std::cout << "--help print long help" << std::endl;
     std::cout << "-p --port NUM port for the server" << std::endl;
+    std::cout << "--max-connection-pending NUM" << std::endl;
 }
 
 void longHelp()
@@ -64,6 +65,7 @@ void longHelp()
     std::cout << "-h print short help" << std::endl;
     std::cout << "--help print this help message" << std::endl;
     std::cout << "-p --port NUM port for the server to listen" << std::endl;
+    std::cout << "--max-connection-pending NUM specify the number of connection that can wait before being accepted" << std::endl;
 }
 
 int main(int argc, char** argv)
