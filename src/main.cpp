@@ -108,6 +108,7 @@ int main(int argc, char** argv)
                 break;
             case '?':
                 usage(argv[0]);
+                return EXIT_FAILURE;
                 break;
             default:
                 break;
