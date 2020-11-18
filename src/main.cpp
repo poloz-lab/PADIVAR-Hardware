@@ -41,6 +41,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <getopt.h>
 #include <cstring>
 #include <string>
+#include <cstdlib>
 
 void usage(const char *argv0)
 {
@@ -66,8 +67,10 @@ void longHelp()
 int main(int argc, char** argv)
 {
     int option;
+    unsigned int port;
     struct option long_options[] = { // struct to tell what to do for long options
         {"help", no_argument, NULL, 1000},
+        {"port", required_argument, NULL, 'p'},
         {0}
     };
 
@@ -79,7 +82,7 @@ int main(int argc, char** argv)
     }
 
     /* loop to process every option in command line */
-    while ((option = getopt_long(argc, argv, "h", long_options, 0)) != -1)
+    while ((option = getopt_long(argc, argv, "hp:", long_options, 0)) != -1)
     {
         switch(option)
         {
@@ -88,6 +91,9 @@ int main(int argc, char** argv)
                 break;
             case 1000:
                 longHelp();
+                break;
+            case 'p':
+                port = (unsigned int) std::atoi(optarg);
                 break;
             case '?':
                 usage(argv[0]);
