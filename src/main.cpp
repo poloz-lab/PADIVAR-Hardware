@@ -55,7 +55,7 @@ void shortHelp()
     std::cout << "PADIVAR Hardware vehicle diagnostic tool" <<std::endl;
     std::cout << "-h print this help message" << std::endl;
     std::cout << "--help print long help" << std::endl;
-    std::cout << "-p --port NUM port for the server" << std::endl;
+    std::cout << "-p --port NUM port for the server NECESSARY" << std::endl;
     std::cout << "--max-connection-pending NUM" << std::endl;
 }
 
@@ -64,7 +64,7 @@ void longHelp()
     std::cout << "PADIVAR Hardware vehicle diagnostic tool" <<std::endl;
     std::cout << "-h print short help" << std::endl;
     std::cout << "--help print this help message" << std::endl;
-    std::cout << "-p --port NUM port for the server to listen" << std::endl;
+    std::cout << "-p --port NUM port for the server to listen NECESSARY" << std::endl;
     std::cout << "--max-connection-pending NUM specify the number of connection that can wait before being accepted" << std::endl;
 }
 
@@ -73,6 +73,7 @@ int main(int argc, char** argv)
     int option;
     unsigned int port;
     int max_connection_pending = 10;
+    bool port_filled = false;
     struct option long_options[] = { // struct to tell what to do for long options
         {"help", no_argument, NULL, 1000},
         {"port", required_argument, NULL, 'p'},
@@ -100,6 +101,7 @@ int main(int argc, char** argv)
                 break;
             case 'p':
                 port = (unsigned int) std::atoi(optarg);
+                port_filled = true;
                 break;
             case 1001:
                 max_connection_pending = std::atoi(optarg);
@@ -111,5 +113,14 @@ int main(int argc, char** argv)
                 break;
         }
     }
+    
+    /* test if the port has been filled, it is necessary */
+    if (!port_filled)
+    {
+        std::cerr << "port must be specified" << std::endl;
+        usage(argv[0]);
+        return EXIT_FAILURE;
+    }
+
     return EXIT_SUCCESS;
 }
