@@ -125,5 +125,17 @@ int main(int argc, char** argv)
         return EXIT_FAILURE;
     }
 
+    /* initialize the server socket */
+    ServerSocket * server = NULL;
+    try
+    {
+        server = new ServerSocket(port, max_connection_pending, INADDR_ANY);
+    }
+    catch (ExceptionSocketServer const& e)
+    {
+        std::cerr << e.what() << std::endl;
+        return EXIT_FAILURE;
+    }
+    
     return EXIT_SUCCESS;
 }
