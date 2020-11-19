@@ -37,19 +37,55 @@ knowledge of the CeCILL license and that you accept its terms.
 */
 #include "session.h"
 
+
+
 Session::Session()
 {
     
 }
 
-Session::Session(ClientSocket client_)
+Session::Session(ClientSocket* client_)
 {
+    this->client_= client_;
+    std::string type_device = (*this->client_).readLine();
 
+    if(type_device == "elm327")
+    {
+        std::string type_interface = (*this->client_).readLine();
+        
+        if(type_interface == "usb")
+        {
+            std::string path = (*this->client_).readLine();
+            connected_device_ = new Elm327(new Usb(path));
+            
+        }
+        else if(type_interface == "wifi")
+        {
+            std::string ip_address = (*this->client_).readLine();
+            std::string port = (*this->client_).readLine();
+            connected_device_ = new Elm327(new Wifi(ip_address, std::stoi(port)));
+        }
+        else if(type_interface == "bluetooth")
+        {
+            std::string mac_adress = (*this->client_).readLine();
+            connected_device_ = new Elm327(new Bluetooth(mac_adress));
+        }
+        else
+        {
+            throw std::exception();
+        }
+        
+    }
+    else
+    {
+        throw std::exception();
+    }
 }
 
 Session::~Session()
 {
-
+    delete(connected_device_);
+    delete(client_);
 }
 
 void Session::interpreter()

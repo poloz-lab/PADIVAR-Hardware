@@ -37,9 +37,13 @@ knowledge of the CeCILL license and that you accept its terms.
 */
 #ifndef SESSION_H
 #define SESSION_H
-
 #include "device.h"
 #include "server_socket.h"
+
+#include "elm327.h"
+#include "usb.h"
+#include "wifi.h"
+#include "bluetooth.h"
 
 class Session
 {
@@ -48,7 +52,7 @@ private:
 	ClientSocket* client_;
 	Session();
 public:
-	Session(ClientSocket client_);
+	Session(ClientSocket* client_);
 	~Session();
 	void interpreter();
 };
