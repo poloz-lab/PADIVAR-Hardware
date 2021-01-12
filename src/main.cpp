@@ -42,6 +42,9 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <cstring>
 #include <string>
 #include <cstdlib>
+#include "session.h"
+
+bool g_quit = false;
 
 void usage(const char *argv0)
 {
@@ -135,6 +138,19 @@ int main(int argc, char** argv)
     {
         std::cerr << e.what() << std::endl;
         return EXIT_FAILURE;
+    }
+
+    /* accept client and create session */
+    while (!g_quit)
+    {
+        ClientSocket client = server->waitingForConnection();
+        Session *session = new Session(&client);
+        /* intepret requests from client */
+        while (!g_quit && ! session->interpreter())
+        {
+        }
+        delete session;
+        session = nullptr;
     }
     
     return EXIT_SUCCESS;
