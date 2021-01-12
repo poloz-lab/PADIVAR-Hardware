@@ -46,28 +46,28 @@ Session::Session()
 
 Session::Session(ClientSocket* client)
 {
-    this->client_ = client;
-    std::string type_device = (*this->client_).readLine();
+    client_ = client;
+    std::string type_device = client_->readLine();
 
     if(type_device == "elm327")
     {
-        std::string type_interface = (*this->client_).readLine();
+        std::string type_interface = client_->readLine();
         
         if(type_interface == "usb")
         {
-            std::string path = (*this->client_).readLine();
+            std::string path = client_->readLine();
             connected_device_ = new Elm327(new Usb(path));
             
         }
         else if(type_interface == "wifi")
         {
-            std::string ip_address = (*this->client_).readLine();
-            std::string port = (*this->client_).readLine();
+            std::string ip_address = client_->readLine();
+            std::string port = client_->readLine();
             connected_device_ = new Elm327(new Wifi(ip_address, std::stoi(port)));
         }
         else if(type_interface == "bluetooth")
         {
-            std::string mac_adress = (*this->client_).readLine();
+            std::string mac_adress = client_->readLine();
             connected_device_ = new Elm327(new Bluetooth(mac_adress));
         }
         else
