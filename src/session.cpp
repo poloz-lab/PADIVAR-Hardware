@@ -86,8 +86,6 @@ Session::Session(ClientSocket* client)
 
 Session::~Session()
 {
-    delete(connected_device_);
-    delete(client_);
 }
 
 void Session::interpreter()
