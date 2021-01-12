@@ -35,21 +35,29 @@ same conditions as regards security.
 The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
-
-#ifndef DEVICE_H
-#define DEVICE_H
-#include "interface.h"
+#ifndef SESSION_H
+#define SESSION_H
+#include "device.h"
 #include "server_socket.h"
-class Device 
+
+#include "elm327.h"
+#include "usb.h"
+#include "wifi.h"
+#include "bluetooth.h"
+
+#include <string>
+
+class Session
 {
-protected:
-    Interface* communication_medium;
+private:
+	Device* connected_device_;
+	ClientSocket* client_;
+	Session();
 public:
-    virtual void initialization()=0;
-    virtual std::string sendOBD(std::string obd_code)=0;
-    //Pid getPidList();
-    //std::string sendPid(Pid pid);
-    //Pid diagnostic(ClientSocket client_socket);
+	Session(ClientSocket* client);
+	~Session();
+	void interpreter();
+    std::string toString();
 };
 
 #endif
