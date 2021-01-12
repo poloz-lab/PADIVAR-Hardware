@@ -52,7 +52,7 @@ private:
 	ClientSocket* client_;
 	Session();
 public:
-	Session(ClientSocket* client_);
+	Session(ClientSocket* client);
 	~Session();
 	void interpreter();
 };

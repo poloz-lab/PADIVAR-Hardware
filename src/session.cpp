@@ -44,9 +44,9 @@ Session::Session()
     
 }
 
-Session::Session(ClientSocket* client_)
+Session::Session(ClientSocket* client)
 {
-    this->client_= client_;
+    this->client_ = client;
     std::string type_device = (*this->client_).readLine();
 
     if(type_device == "elm327")
