@@ -46,6 +46,19 @@ knowledge of the CeCILL license and that you accept its terms.
 
 bool g_quit = false;
 
+namespace Options
+{
+    enum Option
+    {
+        ShortHelp = 'h',
+        LongHelp,
+        Port = 'p',
+        MaxConnectionPending
+    };
+}
+
+typedef Options::Option Option;
+
 void usage(const char *argv0)
 {
     const char *base = std::strrchr(argv0, '/');
@@ -78,9 +91,9 @@ int main(int argc, char** argv)
     int max_connection_pending = 10;
     bool port_filled = false;
     struct option long_options[] = { // struct to tell what to do for long options
-        {"help", no_argument, NULL, 1000},
-        {"port", required_argument, NULL, 'p'},
-        {"max-connection-pending", required_argument, NULL, 1001},
+        {"help", no_argument, NULL, Options::LongHelp},
+        {"port", required_argument, NULL, Options::Port},
+        {"max-connection-pending", required_argument, NULL, Options::MaxConnectionPending},
         {0}
     };
 
@@ -96,19 +109,19 @@ int main(int argc, char** argv)
     {
         switch(option)
         {
-            case 'h':
+            case Options::ShortHelp:
                 shortHelp();
                 return EXIT_SUCCESS;
                 break;
-            case 1000:
+            case Options::LongHelp:
                 longHelp();
                 return EXIT_SUCCESS;
                 break;
-            case 'p':
+            case Options::Port:
                 port = (unsigned int) std::atoi(optarg);
                 port_filled = true;
                 break;
-            case 1001:
+            case Options::MaxConnectionPending:
                 max_connection_pending = std::atoi(optarg);
                 break;
             case '?':
