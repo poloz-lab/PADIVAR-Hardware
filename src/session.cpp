@@ -36,6 +36,8 @@ The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 #include "session.h"
+#include <string>
+#include <typeinfo>
 
 
 
@@ -91,4 +93,20 @@ Session::~Session()
 void Session::interpreter()
 {
 
+}
+
+std::string Session::toString()
+{
+    std::string s = "";
+    s += "session";
+    if (connected_device_)
+    {
+        s += " with device ";
+        s += typeid(connected_device_).name();
+    }
+    else
+    {
+        s += "with no device";
+    }
+    return s;
 }

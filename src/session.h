@@ -45,6 +45,8 @@ knowledge of the CeCILL license and that you accept its terms.
 #include "wifi.h"
 #include "bluetooth.h"
 
+#include <string>
+
 class Session
 {
 private:
@@ -55,6 +57,7 @@ public:
 	Session(ClientSocket* client);
 	~Session();
 	void interpreter();
+    std::string toString();
 };
 
 #endif
