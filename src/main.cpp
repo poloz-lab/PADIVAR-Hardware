@@ -37,8 +37,134 @@ knowledge of the CeCILL license and that you accept its terms.
 */
 
 #include <iostream>
+#include "server_socket.h"
+#include <getopt.h>
+#include <cstring>
+#include <string>
+#include <cstdlib>
+#include "session.h"
+
+bool g_quit = false;
+
+namespace Options
+{
+    enum Option
+    {
+        ShortHelp = 'h',
+        LongHelp,
+        Port = 'p',
+        MaxConnectionPending
+    };
+}
+
+typedef Options::Option Option;
+
+void usage(const char *argv0)
+{
+    const char *base = std::strrchr(argv0, '/');
+    base = base ? base + 1 : argv0;
+    std::cerr << "bad usage, further information: " + std::string(base) + " --help" <<std::endl;
+}
+
+void shortHelp()
+{
+    std::cout << "PADIVAR Hardware vehicle diagnostic tool" <<std::endl;
+    std::cout << "-h print this help message" << std::endl;
+    std::cout << "--help print long help" << std::endl;
+    std::cout << "-p --port NUM port for the server NECESSARY" << std::endl;
+    std::cout << "--max-connection-pending NUM" << std::endl;
+}
+
+void longHelp()
+{
+    std::cout << "PADIVAR Hardware vehicle diagnostic tool" <<std::endl;
+    std::cout << "-h print short help" << std::endl;
+    std::cout << "--help print this help message" << std::endl;
+    std::cout << "-p --port NUM port for the server to listen NECESSARY" << std::endl;
+    std::cout << "--max-connection-pending NUM specify the number of connection that can wait before being accepted" << std::endl;
+}
 
 int main(int argc, char** argv)
 {
+    int option;
+    unsigned int port;
+    int max_connection_pending = 10;
+    bool port_filled = false;
+    struct option long_options[] = { // struct to tell what to do for long options
+        {"help", no_argument, NULL, Options::LongHelp},
+        {"port", required_argument, NULL, Options::Port},
+        {"max-connection-pending", required_argument, NULL, Options::MaxConnectionPending},
+        {0}
+    };
+
+    /* exit with an error if no option is specified */
+    if (argc < 2)
+    {
+        usage(argv[0]);
+        return EXIT_FAILURE;
+    }
+
+    /* loop to process every option in command line */
+    while ((option = getopt_long(argc, argv, "hp:", long_options, 0)) != -1)
+    {
+        switch(option)
+        {
+            case Options::ShortHelp:
+                shortHelp();
+                return EXIT_SUCCESS;
+                break;
+            case Options::LongHelp:
+                longHelp();
+                return EXIT_SUCCESS;
+                break;
+            case Options::Port:
+                port = (unsigned int) std::atoi(optarg);
+                port_filled = true;
+                break;
+            case Options::MaxConnectionPending:
+                max_connection_pending = std::atoi(optarg);
+                break;
+            case '?':
+                usage(argv[0]);
+                return EXIT_FAILURE;
+                break;
+            default:
+                break;
+        }
+    }
+    
+    /* test if the port has been filled, it is necessary */
+    if (!port_filled)
+    {
+        std::cerr << "port must be specified" << std::endl;
+        usage(argv[0]);
+        return EXIT_FAILURE;
+    }
+
+    /* initialize the server socket */
+    ServerSocket * server = NULL;
+    try
+    {
+        server = new ServerSocket(port, max_connection_pending, INADDR_ANY);
+    }
+    catch (ExceptionSocketServer const& e)
+    {
+        std::cerr << e.what() << std::endl;
+        return EXIT_FAILURE;
+    }
+
+    /* accept client and create session */
+    while (!g_quit)
+    {
+        ClientSocket client = server->waitingForConnection();
+        Session *session = new Session(&client);
+        /* intepret requests from client */
+        while (!g_quit && ! session->interpreter())
+        {
+        }
+        delete session;
+        session = nullptr;
+    }
+    
     return EXIT_SUCCESS;
 }

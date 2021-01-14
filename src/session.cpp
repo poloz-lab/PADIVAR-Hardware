@@ -95,7 +95,7 @@ Session::~Session()
 {
 }
 
-void Session::interpreter()
+int Session::interpreter()
 {
 
 }

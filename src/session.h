@@ -56,7 +56,7 @@ private:
 public:
 	Session(ClientSocket* client);
 	~Session();
-	void interpreter();
+	int interpreter();
     std::string toString();
 };
 
