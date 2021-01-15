@@ -36,8 +36,11 @@ The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 #include "session.h"
+#include <stdexcept>
 #include <string>
 #include <typeinfo>
+#include <exception>
+#include <iostream>
 
 
 
@@ -65,19 +68,48 @@ Session::Session(ClientSocket* client)
         if(type_interface == "usb")
         {
             path = client_->readLine();
-            connected_device_ = new Elm327(new Usb(path));
-            
+            try
+            {
+                connected_device_ = new Elm327(new Usb(path));
+                client_->writeString("initialization ok");
+            }
+            catch(std::exception const& e)
+            {
+                std::cerr << e.what() << std::endl;
+                client_->writeString("initialization failed");
+                throw std::runtime_error("can\'t initialize ELM327 via USB");
+            }
         }
         else if(type_interface == "wifi")
         {
             ip_address = client_->readLine();
             port = client_->readLine();
-            connected_device_ = new Elm327(new Wifi(ip_address, std::stoi(port)));
+            try
+            {
+                connected_device_ = new Elm327(new Wifi(ip_address, std::stoi(port)));
+                client_->writeString("initialization ok");
+            }
+            catch(std::exception const& e)
+            {
+                std::cerr << e.what() << std::endl;
+                client_->writeString("initialization failed");
+                throw std::runtime_error("can\'t initialize ELM327 via Wifi");
+            }
         }
         else if(type_interface == "bluetooth")
         {
             mac_address = client_->readLine();
-            connected_device_ = new Elm327(new Bluetooth(mac_address));
+            try
+            {
+                connected_device_ = new Elm327(new Bluetooth(mac_address));
+                client_->writeString("initialization ok");
+            }
+            catch(std::exception const& e)
+            {
+                std::cerr << e.what() << std::endl;
+                client_->writeString("initialization failed");
+                throw std::runtime_error("can\'t initialize ELM327 via Bluetooth");
+            }
         }
         else
         {
