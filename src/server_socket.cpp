@@ -130,7 +130,7 @@ ServerSocket::ServerSocket(unsigned int port, int max_connection_pending = 10,in
     if (bind(socket_fd_, (struct sockaddr *) &server_address_, sizeof(server_address_)) == -1)
     {
         // if an error occured while binding
-        throw ExceptionSocketServer(ExceptionSocketServerTypes::Binding, errno);
+        throw ExceptionSocketServer(ExceptionSocketServerTypes::Binding, errno, port);
     }
 
     // listening
