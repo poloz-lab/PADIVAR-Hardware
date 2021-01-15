@@ -181,6 +181,31 @@ ExceptionSocketServer::ExceptionSocketServer(ExceptionSocketServerType type, int
     explaination_ = reason + " errno: " + std::to_string(errno_);
 }
 
+ExceptionSocketServer::ExceptionSocketServer(ExceptionSocketServerType type, int errno_c = 0, int port = 0) throw()
+    :type_(type),errno_(errno_c)
+{
+    std::string reason;
+    switch(type_)
+    {
+        case ExceptionSocketServerTypes::NoError:
+            reason = "no error";
+            break;
+        case ExceptionSocketServerTypes::Creation:
+            reason = "can't create the socket";
+            break;
+        case ExceptionSocketServerTypes::Binding:
+            reason = "can't bind the socket to the port: " + std::to_string(port);
+            break;
+        case ExceptionSocketServerTypes::Listening:
+            reason = "the socket can't listen";
+            break;
+        case ExceptionSocketServerTypes::Closing:
+            reason = "can't close the socket";
+            break;
+    }
+    explaination_ = reason + " errno: " + std::to_string(errno_);
+}
+
 const char *ExceptionSocketServer::what() const throw()
 {
     return explaination_.c_str();
