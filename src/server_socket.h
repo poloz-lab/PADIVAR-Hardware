@@ -212,6 +212,14 @@ public:
     ExceptionSocketServer(ExceptionSocketServerType type, int errno_c) throw();
 
     /*!
+     * \brief constructor when there is an error with a port
+     * \param type : type of the error
+     * \param errno_c : error number (errno) from C lib
+     * \param port : port number
+     */
+    ExceptionSocketServer(ExceptionSocketServerType type, int errno_c, int port) throw();
+
+    /*!
      * \brief give the reason of the exception
      * \return string to give the reason of the exception
      */
