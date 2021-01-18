@@ -173,6 +173,7 @@ public:
      */
     ClientSocket waitingForConnection();
 private:
+    ServerSocket(); // forbid access to default constructor
     int socket_fd_; /*< file descriptor for the socket */
     struct sockaddr_in server_address_; /*< structure for ip, stores accepted addresses, port */
 };
