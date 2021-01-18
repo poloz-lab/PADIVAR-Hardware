@@ -175,8 +175,10 @@ ExceptionSocketServer::ExceptionSocketServer(ExceptionSocketServerType type, int
             break;
         case ExceptionSocketServerTypes::Listening:
             reason = "the socket can't listen";
+            break;
         case ExceptionSocketServerTypes::Closing:
             reason = "can't close the socket";
+            break;
     }
     explaination_ = reason + " errno: " + std::to_string(errno_);
 }
