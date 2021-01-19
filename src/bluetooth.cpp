@@ -37,6 +37,10 @@ knowledge of the CeCILL license and that you accept its terms.
 */
 
 #include "bluetooth.h"
+#include <unistd.h>
+#include <sys/socket.h>
+#include <bluetooth/bluetooth.h>
+#include <bluetooth/rfcomm.h>
 
 Bluetooth::Bluetooth()
 {
@@ -44,8 +48,8 @@ Bluetooth::Bluetooth()
 }
 
 Bluetooth::Bluetooth(std::string mac_address)
-{
-    
+{  
+
 }
 
 void Bluetooth::send(std::string message)
