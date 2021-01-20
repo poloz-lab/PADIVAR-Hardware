@@ -1140,3 +1140,11 @@ std::string Pid::getUnits()
 float Pid::getMin()
 {
 }
+
+float Pid::getMax()
+{
+}
+
+float Pid::getValue()
+{
+}
