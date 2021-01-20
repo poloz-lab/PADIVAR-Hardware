@@ -40,6 +40,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #define PID_H
 
 #include <string>
+#include <exception>
 
 namespace HexPids
 {
@@ -496,6 +497,22 @@ public:
      */
     float getValue();
 };
+
+namespace ExceptionPidTypes
+{
+    enum ExceptionPidType
+    {
+        NoError,
+        UnknownHexPid,
+        NoDataBytes,
+        NoDescription,
+        NoUnits,
+        NoMin,
+        NoMax,
+        NoValue
+    };
+}
+typedef ExceptionPidTypes::ExceptionPidType ExceptionPidType;
 
 
 #endif
