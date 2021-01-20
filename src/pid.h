@@ -471,6 +471,12 @@ public:
      * \return description of the pid
      */
     std::string getDescription();
+
+    /*!
+     * \brief Get the units associated to the value
+     * \return units
+     */
+    std::string getUnits();
 };
 
 
