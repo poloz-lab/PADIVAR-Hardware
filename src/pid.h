@@ -39,6 +39,8 @@ knowledge of the CeCILL license and that you accept its terms.
 #ifndef PID_H
 #define PID_H
 
+#include <string>
+
 namespace HexPids
 {
     enum HexPid
@@ -400,5 +402,46 @@ namespace HexPids
     };
 }
 typedef HexPids::HexPid HexPid;
+
+class Pid
+{
+private:
+    std::string pidString_; /*!< PID code (hexadecimal as string) */
+    HexPid hexPid_; /*!< PID from the HexPid enum representation */
+    std::string data_bytes_; /*!< Bytes of data associated to the PID after a measure */
+
+    /*!
+     * \brief Forbid access to default constructor
+     */
+    Pid();
+
+public:
+    /*!
+     * \brief constructor when we don't have the data bytes, only when we know which pid (as string) we have to try
+     * \param pid : pid in hexadecimal format
+     */
+    Pid(std::string pid);
+
+    /*!
+     * \brief constructor when we have the pid and the data bytes from the vehicle associated to this pid
+     * \param pid : pid in hexadecimal format (as string)
+     * \param data_bytes : data bytes associated to the pid
+     */
+    Pid(std::string pid, std::string data_bytes);
+
+    /*!
+     * \brief constructor where the pid is from the HexPid enum representation but we don't know the data_bytes associated
+     * \param pid : pid from HexPid enum
+     */
+    Pid(HexPid pid);
+
+    /*!
+     * \brief constructor where the pid is from the HexPid enum representation and we know the data_bytes associated
+     * \param pid : pid from HexPid enum
+     * \param data_bytes : data bytes associated to the pid
+     */
+    Pid(HexPid pid, std::string data_bytes);
+};
+
 
 #endif
