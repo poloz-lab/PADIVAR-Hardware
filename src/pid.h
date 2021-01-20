@@ -459,6 +459,12 @@ public:
      * \return data bytes as string
      */
     std::string getDataBytes();
+
+    /*!
+     * \brief Set the data bytes after the measure of this PID
+     * \param data_bytes : data_bytes of the measure as string
+     */
+    void setDataBytes(std::string data_bytes);
 };
 
 
