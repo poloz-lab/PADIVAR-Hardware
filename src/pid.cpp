@@ -39,6 +39,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include "pid.h"
 #include <exception>
 #include <stdexcept>
+#include <string>
 
 Pid::Pid(HexPid pid)
 {
@@ -1110,4 +1111,8 @@ Pid::Pid(HexPid pid)
         throw std::runtime_error("unknown HexPid");
         break;
     }
+}
+
+std::string Pid::getPidString()
+{
 }
