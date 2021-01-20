@@ -1148,3 +1148,42 @@ float Pid::getMax()
 float Pid::getValue()
 {
 }
+
+ExceptionPid::ExceptionPid(ExceptionPidType type) throw()
+    :type_(type)
+{
+    switch (type_)
+    {
+    case ExceptionPidType::NoError:
+        explaination_ = "no error";
+        break;
+    case ExceptionPidType::UnknownHexPid:
+        explaination_ = "unknown HexPid";
+        break;
+    case ExceptionPidType::NoDataBytes:
+        explaination_ = "no data bytes";
+        break;
+    case ExceptionPidType::NoDescription:
+        explaination_ = "no description";
+        break;
+    case ExceptionPidType::NoUnits:
+        explaination_ = "no units";
+        break;
+    case ExceptionPidType::NoMin:
+        explaination_ = "no minimum";
+        break;
+    case ExceptionPidType::NoMax:
+        explaination_ = "no maximum";
+        break;
+    case ExceptionPidType::NoValue:
+        explaination_ = "no value";
+        break;
+    default:
+        break;
+    }
+}
+
+const char* ExceptionPid::what() const throw()
+{
+    return explaination_.c_str();
+}
