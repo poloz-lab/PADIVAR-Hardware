@@ -453,6 +453,12 @@ public:
      * \return Pid in HexPid enum
      */
     HexPid getHexPid();
+
+    /*!
+     * \brief Get the data bytes of the measure of this PID
+     * \return data bytes as string
+     */
+    std::string getDataBytes();
 };
 
 
