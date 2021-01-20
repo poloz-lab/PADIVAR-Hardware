@@ -489,6 +489,12 @@ public:
      * \return maximum value
      */
     float getMax();
+
+    /*!
+     * \brief Get the value associated to the data bytes. Sometimes, a calculation may be necessary
+     * \return value associated to data_bytes
+     */
+    float getValue();
 };
 
 
