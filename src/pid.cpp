@@ -1124,3 +1124,7 @@ HexPid Pid::getHexPid()
 std::string Pid::getDataBytes()
 {
 }
+
+void Pid::setDataBytes(std::string setDataBytes)
+{
+}
