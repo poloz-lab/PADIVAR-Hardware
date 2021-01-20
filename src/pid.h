@@ -483,6 +483,12 @@ public:
      * \return minimum value
      */
     float getMin();
+
+    /*!
+     * \brief Get maximum value possible for this PID
+     * \return maximum value
+     */
+    float getMax();
 };
 
 
