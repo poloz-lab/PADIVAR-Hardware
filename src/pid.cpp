@@ -1116,3 +1116,7 @@ Pid::Pid(HexPid pid)
 std::string Pid::getPidString()
 {
 }
+
+HexPid Pid::getHexPid()
+{
+}
