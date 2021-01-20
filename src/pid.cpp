@@ -1132,3 +1132,7 @@ void Pid::setDataBytes(std::string setDataBytes)
 std::string Pid::getDescription()
 {
 }
+
+std::string Pid::getUnits()
+{
+}
