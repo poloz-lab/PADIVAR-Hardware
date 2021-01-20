@@ -514,5 +514,14 @@ namespace ExceptionPidTypes
 }
 typedef ExceptionPidTypes::ExceptionPidType ExceptionPidType;
 
+class ExceptionPid : public std::exception
+{
+public:
+    ExceptionPid(ExceptionPidType type) throw();
+    virtual const char* what() const throw();
+private:
+    ExceptionPidType type_;
+    std::string explaination_;
+};
 
 #endif
