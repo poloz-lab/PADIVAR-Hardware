@@ -1120,3 +1120,7 @@ std::string Pid::getPidString()
 HexPid Pid::getHexPid()
 {
 }
+
+std::string Pid::getDataBytes()
+{
+}
