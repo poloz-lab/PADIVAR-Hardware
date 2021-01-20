@@ -477,6 +477,12 @@ public:
      * \return units
      */
     std::string getUnits();
+
+    /*!
+     * \brief Get minimum value possible for this PID
+     * \return minimum value
+     */
+    float getMin();
 };
 
 
