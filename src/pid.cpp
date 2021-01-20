@@ -1136,3 +1136,7 @@ std::string Pid::getDescription()
 std::string Pid::getUnits()
 {
 }
+
+float Pid::getMin()
+{
+}
