@@ -465,6 +465,12 @@ public:
      * \param data_bytes : data_bytes of the measure as string
      */
     void setDataBytes(std::string data_bytes);
+
+    /*!
+     * \brief Get a description to explain what the PID is about
+     * \return description of the pid
+     */
+    std::string getDescription();
 };
 
 
