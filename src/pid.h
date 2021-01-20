@@ -447,6 +447,12 @@ public:
      * \return pid in hexadecimal (string)
      */
     std::string getPidString();
+
+    /*!
+     * \brief Get the pid with the HexPid enum representation
+     * \return Pid in HexPid enum
+     */
+    HexPid getHexPid();
 };
 
 
