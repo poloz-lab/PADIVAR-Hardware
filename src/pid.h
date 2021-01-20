@@ -441,6 +441,12 @@ public:
      * \param data_bytes : data bytes associated to the pid
      */
     Pid(HexPid pid, std::string data_bytes);
+
+    /*!
+     * \brief Get the pid in hexadecimal (string)
+     * \return pid in hexadecimal (string)
+     */
+    std::string getPidString();
 };
 
 
