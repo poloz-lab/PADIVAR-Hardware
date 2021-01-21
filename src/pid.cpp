@@ -1131,6 +1131,1074 @@ void Pid::setDataBytes(std::string setDataBytes)
 
 std::string Pid::getDescription()
 {
+    switch (hexPid_)
+    {
+    case HexPid::h0100:
+        return "PIDs supported [01 - 20]";
+        break;
+    case HexPid::h0101:
+        return "Monitor status since DTCs cleared. (Includes malfunction indicator lamp (MIL) status and number of DTCs.)";
+        break;
+    case HexPid::h0102:
+        return "Freeze DTC";
+        break;
+    case HexPid::h0103:
+        return "Fuel system status";
+        break;
+    case HexPid::h0104:
+        return "Calculated engine load	";
+        break;
+    case HexPid::h0105:
+        return "Engine coolant temperature	";
+        break;
+    case HexPid::h0106:
+        return "Short term fuel trim-Bank 1";
+        break;
+    case HexPid::h0107:
+        return "Long term fuel trim-Bank 1";
+        break;
+    case HexPid::h0108:
+        return "Short term fuel trim-Bank 2";
+        break;
+    case HexPid::h0109:
+        return "Long term fuel trim-Bank 2";
+        break;
+    case HexPid::h010A:
+        return "Fuel pressure (gauge pressure)";
+        break;
+    case HexPid::h010B:
+        return "Intake manifold absolute pressure";
+        break;
+    case HexPid::h010C:
+        return "Engine speed";
+        break;
+    case HexPid::h010D:
+        return "Vehicle speed";
+        break;
+    case HexPid::h010E:
+        return "Timing advance";
+        break;
+    case HexPid::h010F:
+        return "Intake air temperature";
+        break;
+    case HexPid::h0110:
+        return "Mass air flow sensor (MAF) air flow rate";
+        break;
+    case HexPid::h0111:
+        return "Throttle position";
+        break;
+    case HexPid::h0112:
+        return "Commanded secondary air status";
+        break;
+    case HexPid::h0113:
+        return "Oxygen sensors present (in 2 banks)";
+        break;
+    case HexPid::h0114:
+        return "Oxygen Sensor 1";
+        break;
+    case HexPid::h0115:
+        return "Oxygen Sensor 2";
+        break;
+    case HexPid::h0116:
+        return "Oxygen Sensor 3";
+        break;
+    case HexPid::h0117:
+        return "Oxygen Sensor 4";
+        break;
+    case HexPid::h0118:
+        return "Oxygen Sensor 5";
+        break;
+    case HexPid::h0119:
+        return "Oxygen Sensor 6";
+        break;
+    case HexPid::h011A:
+        return "Oxygen Sensor 7";
+        break;
+    case HexPid::h011B:
+        return "Oxygen Sensor 8";
+        break;
+    case HexPid::h011C:
+        return "OBD standards this vehicle conforms to";
+        break;
+    case HexPid::h011D:
+        return "Oxygen sensors present (in 4 banks)";
+        break;
+    case HexPid::h011E:
+        return "Auxiliary input status";
+        break;
+    case HexPid::h011F:
+        return "Run time since engine start";
+        break;
+    case HexPid::h0120:
+        return "PIDs supported [21 - 40]";
+        break;
+    case HexPid::h0121:
+        return "Distance traveled with malfunction indicator lamp (MIL) on";
+        break;
+    case HexPid::h0122:
+        return "Fuel Rail Pressure (relative to manifold vacuum)";
+        break;
+    case HexPid::h0123:
+        return "Fuel Rail Gauge Pressure (diesel, or gasoline direct injection)";
+        break;
+    case HexPid::h0124:
+        return "Oxygen Sensor 1";
+        break;
+    case HexPid::h0125:
+        return "Oxygen Sensor 2";
+        break;
+    case HexPid::h0126:
+        return "Oxygen Sensor 3";
+        break;
+    case HexPid::h0127:
+        return "Oxygen Sensor 4";
+        break;
+    case HexPid::h0128:
+        return "Oxygen Sensor 5";
+        break;
+    case HexPid::h0129:
+        return "Oxygen Sensor 6";
+        break;
+    case HexPid::h012A:
+        return "Oxygen Sensor 7";
+        break;
+    case HexPid::h012B:
+        return "Oxygen Sensor 8";
+        break;
+    case HexPid::h012C:
+        return "Commanded EGR";
+        break;
+    case HexPid::h012D:
+        return "EGR Error";
+        break;
+    case HexPid::h012E:
+        return "Commanded evaporative purge";
+        break;
+    case HexPid::h012F:
+        return "Fuel Tank Level Input";
+        break;
+    case HexPid::h0130:
+        return "Warm-ups since codes cleared";
+        break;
+    case HexPid::h0131:
+        return "Distance traveled since codes cleared";
+        break;
+    case HexPid::h0132:
+        return "Evap. System Vapor Pressure	";
+        break;
+    case HexPid::h0133:
+        return "Absolute Barometric Pressure";
+        break;
+    case HexPid::h0134:
+        return "Oxygen Sensor 1";
+        break;
+    case HexPid::h0135:
+        return "Oxygen Sensor 2";
+        break;
+    case HexPid::h0136:
+        return "Oxygen Sensor 3";
+        break;
+    case HexPid::h0137:
+        return "Oxygen Sensor 4";
+        break;
+    case HexPid::h0138:
+        return "Oxygen Sensor 5";
+        break;
+    case HexPid::h0139:
+        return "Oxygen Sensor 6";
+        break;
+    case HexPid::h013A:
+        return "Oxygen Sensor 7";
+        break;
+    case HexPid::h013B:
+        return "Oxygen Sensor 8";
+        break;
+    case HexPid::h013C:
+        return "Catalyst Temperature: Bank 1, Sensor 1";
+        break;
+    case HexPid::h013D:
+        return "Catalyst Temperature: Bank 2, Sensor 1";
+        break;
+    case HexPid::h013E:
+        return "Catalyst Temperature: Bank 1, Sensor 2";
+        break;
+    case HexPid::h013F:
+        return "Catalyst Temperature: Bank 2, Sensor 2";
+        break;
+    case HexPid::h0140:
+        return "PIDs supported [41 - 60]";
+        break;
+    case HexPid::h0141:
+        return "Monitor status this drive cycle";
+        break;
+    case HexPid::h0142:
+        return "Control module voltage";
+        break;
+    case HexPid::h0143:
+        return "Absolute load value	";
+        break;
+    case HexPid::h0144:
+        return "Commanded Air-Fuel Equivalence Ratio";
+        break;
+    case HexPid::h0145:
+        return "Relative throttle position";
+        break;
+    case HexPid::h0146:
+        return "Ambient air temperature";
+        break;
+    case HexPid::h0147:
+        return "Absolute throttle position B";
+        break;
+    case HexPid::h0148:
+        return "Absolute throttle position C";
+        break;
+    case HexPid::h0149:
+        return "Accelerator pedal position D";
+        break;
+    case HexPid::h014A:
+        return "Accelerator pedal position E";
+        break;
+    case HexPid::h014B:
+        return "Accelerator pedal position F";
+        break;
+    case HexPid::h014C:
+        return "Commanded throttle actuator";
+        break;
+    case HexPid::h014D:
+        return "Time run with MIL on";
+        break;
+    case HexPid::h014E:
+        return "Time since trouble codes cleared";
+        break;
+    case HexPid::h014F:
+        return "Maximum value for Fuel–Air equivalence ratio, oxygen sensor voltage, oxygen sensor current, and intake manifold absolute pressure";
+        break;
+    case HexPid::h0150:
+        return "Maximum value for air flow rate from mass air flow sensor";
+        break;
+    case HexPid::h0151:
+        return "Fuel Type";
+        break;
+    case HexPid::h0152:
+        return "Ethanol fuel %";
+        break;
+    case HexPid::h0153:
+        return "Absolute Evap system Vapor Pressure";
+        break;
+    case HexPid::h0154:
+        return "Evap system vapor pressure";
+        break;
+    case HexPid::h0155:
+        return "Short term secondary oxygen sensor trim , Bank 1 - Bank 3";
+        break;
+    case HexPid::h0156:
+        return "Long term secondary oxygen sensor trim, Bank 1 - Bank 3";
+        break;
+    case HexPid::h0157:
+        return "Short term secondary oxygen sensor trim , Bank 2 - Bank 4";
+        break;
+    case HexPid::h0158:
+        return "Long term secondary oxygen sensor trim , Bank 2 - Bank 4";
+        break;
+    case HexPid::h0159:
+        return "Fuel rail absolute pressure";
+        break;
+    case HexPid::h015A:
+        return "Relative accelerator pedal position";
+        break;
+    case HexPid::h015B:
+        return "Hybrid battery pack remaining life";
+        break;
+    case HexPid::h015C:
+        return "Engine oil temperature";
+        break;
+    case HexPid::h015D:
+        return "Fuel injection timing";
+        break;
+    case HexPid::h015E:
+        return "Engine fuel rate";
+        break;
+    case HexPid::h015F:
+        return "Emission requirements to which vehicle is designed";
+        break;
+    case HexPid::h0160:
+        return "PIDs supported [61 - 80]";
+        break;
+    case HexPid::h0161:
+        return "Driver's demand engine - percent torque	";
+        break;
+    case HexPid::h0162:
+        return "Actual engine - percent torque";
+        break;
+    case HexPid::h0163:
+        return "Engine reference torque";
+        break;
+    case HexPid::h0164:
+        return "Engine percent torque data";
+        break;
+    case HexPid::h0165:
+        return "Auxiliary input / output supported";
+        break;
+    case HexPid::h0166:
+        return "Mass air flow sensor";
+        break;
+    case HexPid::h0167:
+        return "Engine coolant temperature";
+        break;
+    case HexPid::h0168:
+        return "Intake air temperature sensor";
+        break;
+    case HexPid::h0169:
+        return "Commanded EGR and EGR Error";
+        break;
+    case HexPid::h016A:
+        return "Commanded Diesel intake air flow control and relative intake air flow position";
+        break;
+    case HexPid::h016B:
+        return "Exhaust gas recirculation temperature";
+        break;
+    case HexPid::h016C:
+        return "Commanded throttle actuator control and relative throttle position";
+        break;
+    case HexPid::h016D:
+        return "Fuel pressure control system";
+        break;
+    case HexPid::h016E:
+        return "Injection pressure control system";
+        break;
+    case HexPid::h016F:
+        return "Turbocharger compressor inlet pressure";
+        break;
+    case HexPid::h0170:
+        return "Boost pressure control";
+        break;
+    case HexPid::h0171:
+        return "Variable Geometry turbo (VGT) control";
+        break;
+    case HexPid::h0172:
+        return "Wastegate control";
+        break;
+    case HexPid::h0173:
+        return "Exhaust pressure";
+        break;
+    case HexPid::h0174:
+        return "Turbocharger RPM";
+        break;
+    case HexPid::h0175:
+        return "Turbocharger temperature";
+        break;
+    case HexPid::h0176:
+        return "Turbocharger temperature";
+        break;
+    case HexPid::h0177:
+        return "Charge air cooler temperature (CACT)";
+        break;
+    case HexPid::h0178:
+        return "Exhaust Gas temperature (EGT) Bank 1";
+        break;
+    case HexPid::h0179:
+        return "Exhaust Gas temperature (EGT) Bank 2";
+        break;
+    case HexPid::h017A:
+        return "Diesel particulate filter (DPF)";
+        break;
+    case HexPid::h017B:
+        return "Diesel particulate filter (DPF)";
+        break;
+    case HexPid::h017C:
+        return "Diesel Particulate filter (DPF) temperature";
+        break;
+    case HexPid::h017D:
+        return "NOx NTE (Not-To-Exceed) control area status";
+        break;
+    case HexPid::h017E:
+        return "PM NTE (Not-To-Exceed) control area status";
+        break;
+    case HexPid::h017F:
+        return "Engine run time";
+        break;
+    case HexPid::h0180:
+        return "PIDs supported [81 - A0]";
+        break;
+    case HexPid::h0181:
+        return "Engine run time for Auxiliary Emissions Control Device(AECD)";
+        break;
+    case HexPid::h0182:
+        return "Engine run time for Auxiliary Emissions Control Device(AECD)";
+        break;
+    case HexPid::h0183:
+        return "NOx sensor";
+        break;
+    case HexPid::h0184:
+        return "Manifold surface temperature";
+        break;
+    case HexPid::h0185:
+        return "NOx reagent system";
+        break;
+    case HexPid::h0186:
+        return "Particulate matter (PM) sensor";
+        break;
+    case HexPid::h0187:
+        return "Intake manifold absolute pressure";
+        break;
+    case HexPid::h0188:
+        return "SCR Induce System";
+        break;
+    case HexPid::h0189:
+        return "Run Time for AECD #11-#15";
+        break;
+    case HexPid::h018A:
+        return "Run Time for AECD #16-#20";
+        break;
+    case HexPid::h018B:
+        return "Diesel Aftertreatment";
+        break;
+    case HexPid::h018C:
+        return "O2 Sensor (Wide Range)";
+        break;
+    case HexPid::h018D:
+        return "Throttle Position G";
+        break;
+    case HexPid::h018E:
+        return "Engine Friction - Percent Torque";
+        break;
+    case HexPid::h018F:
+        return "PM Sensor Bank 1 & 2";
+        break;
+    case HexPid::h0190:
+        return "WWH-OBD Vehicle OBD System Information";
+        break;
+    case HexPid::h0191:
+        return "WWH-OBD Vehicle OBD System Information";
+        break;
+    case HexPid::h0192:
+        return "Fuel System Control";
+        break;
+    case HexPid::h0193:
+        return "WWH-OBD Vehicle OBD Counters support";
+        break;
+    case HexPid::h0194:
+        return "NOx Warning And Inducement System";
+        break;
+    case HexPid::h0195:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0196:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0197:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0198:
+        return "Exhaust Gas Temperature Sensor";
+        break;
+    case HexPid::h0199:
+        return "Exhaust Gas Temperature Sensor";
+        break;
+    case HexPid::h019A:
+        return "Hybrid/EV Vehicle System Data, Battery, Voltage";
+        break;
+    case HexPid::h019B:
+        return "Diesel Exhaust Fluid Sensor Data";
+        break;
+    case HexPid::h019C:
+        return "O2 Sensor Data";
+        break;
+    case HexPid::h019D:
+        return "Engine Fuel Rate";
+        break;
+    case HexPid::h019E:
+        return "Engine Exhaust Flow Rate";
+        break;
+    case HexPid::h019F:
+        return "Fuel System Percentage Use";
+        break;
+    case HexPid::h01A0:
+        return "PIDs supported [A1 - C0]";
+        break;
+    case HexPid::h01A1:
+        return "NOx Sensor Corrected Data";
+        break;
+    case HexPid::h01A2:
+        return "Cylinder Fuel Rate";
+        break;
+    case HexPid::h01A3:
+        return "Evap System Vapor Pressure";
+        break;
+    case HexPid::h01A4:
+        return "Transmission Actual Gear";
+        break;
+    case HexPid::h01A5:
+        return "Diesel Exhaust Fluid Dosing	";
+        break;
+    case HexPid::h01A6:
+        return "Odometer";
+        break;
+    case HexPid::h01C0:
+        return "PIDs supported [C1 - E0]";
+        break;
+    case HexPid::h01C3:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h01C4:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0200:
+        return "PIDs supported [01 - 20]";
+        break;
+    case HexPid::h0201:
+        return "Monitor status since DTCs cleared. (Includes malfunction indicator lamp (MIL) status and number of DTCs.)";
+        break;
+    case HexPid::h0202:
+        return "Freeze DTC";
+        break;
+    case HexPid::h0203:
+        return "DTC:Fuel system status";
+        break;
+    case HexPid::h0204:
+        return "DTC:Calculated engine load	";
+        break;
+    case HexPid::h0205:
+        return "DTC:Engine coolant temperature	";
+        break;
+    case HexPid::h0206:
+        return "DTC:Short term fuel trim-Bank 1";
+        break;
+    case HexPid::h0207:
+        return "DTC:Long term fuel trim-Bank 1";
+        break;
+    case HexPid::h0208:
+        return "DTC:Short term fuel trim-Bank 2";
+        break;
+    case HexPid::h0209:
+        return "DTC:Long term fuel trim-Bank 2";
+        break;
+    case HexPid::h020A:
+        return "DTC:Fuel pressure (gauge pressure)";
+        break;
+    case HexPid::h020B:
+        return "DTC:Intake manifold absolute pressure";
+        break;
+    case HexPid::h020C:
+        return "DTC:Engine speed";
+        break;
+    case HexPid::h020D:
+        return "DTC:Vehicle speed";
+        break;
+    case HexPid::h020E:
+        return "DTC:Timing advance";
+        break;
+    case HexPid::h020F:
+        return "DTC:Intake air temperature";
+        break;
+    case HexPid::h0210:
+        return "DTC:Mass air flow sensor (MAF) air flow rate";
+        break;
+    case HexPid::h0211:
+        return "DTC:Throttle position";
+        break;
+    case HexPid::h0212:
+        return "DTC:Commanded secondary air status";
+        break;
+    case HexPid::h0213:
+        return "DTC:Oxygen sensors present (in 2 banks)";
+        break;
+    case HexPid::h0214:
+        return "DTC:Oxygen Sensor 1";
+        break;
+    case HexPid::h0215:
+        return "DTC:Oxygen Sensor 2";
+        break;
+    case HexPid::h0216:
+        return "DTC:Oxygen Sensor 3";
+        break;
+    case HexPid::h0217:
+        return "DTC:Oxygen Sensor 4";
+        break;
+    case HexPid::h0218:
+        return "DTC:Oxygen Sensor 5";
+        break;
+    case HexPid::h0219:
+        return "DTC:Oxygen Sensor 6";
+        break;
+    case HexPid::h021A:
+        return "DTC:Oxygen Sensor 7";
+        break;
+    case HexPid::h021B:
+        return "DTC:Oxygen Sensor 8";
+        break;
+    case HexPid::h021C:
+        return "DTC:OBD standards this vehicle conforms to";
+        break;
+    case HexPid::h021D:
+        return "DTC:Oxygen sensors present (in 4 banks)";
+        break;
+    case HexPid::h021E:
+        return "DTC:Auxiliary input status";
+        break;
+    case HexPid::h021F:
+        return "DTC:Run time since engine start";
+        break;
+    case HexPid::h0220:
+        return "DTC:PIDs supported [21 - 40]";
+        break;
+    case HexPid::h0221:
+        return "DTC:Distance traveled with malfunction indicator lamp (MIL) on";
+        break;
+    case HexPid::h0222:
+        return "DTC:Fuel Rail Pressure (relative to manifold vacuum)";
+        break;
+    case HexPid::h0223:
+        return "DTC:Fuel Rail Gauge Pressure (diesel, or gasoline direct injection)";
+        break;
+    case HexPid::h0224:
+        return "DTC:Oxygen Sensor 1";
+        break;
+    case HexPid::h0225:
+        return "DTC:Oxygen Sensor 2";
+        break;
+    case HexPid::h0226:
+        return "DTC:Oxygen Sensor 3";
+        break;
+    case HexPid::h0227:
+        return "DTC:Oxygen Sensor 4";
+        break;
+    case HexPid::h0228:
+        return "DTC:Oxygen Sensor 5";
+        break;
+    case HexPid::h0229:
+        return "DTC:Oxygen Sensor 6";
+        break;
+    case HexPid::h022A:
+        return "DTC:Oxygen Sensor 7";
+        break;
+    case HexPid::h022B:
+        return "DTC:Oxygen Sensor 8";
+        break;
+    case HexPid::h022C:
+        return "DTC:Commanded EGR";
+        break;
+    case HexPid::h022D:
+        return "DTC:EGR Error";
+        break;
+    case HexPid::h022E:
+        return "DTC:Commanded evaporative purge";
+        break;
+    case HexPid::h022F:
+        return "DTC:Fuel Tank Level Input";
+        break;
+    case HexPid::h0230:
+        return "DTC:Warm-ups since codes cleared";
+        break;
+    case HexPid::h0231:
+        return "DTC:Distance traveled since codes cleared";
+        break;
+    case HexPid::h0232:
+        return "DTC:Evap. System Vapor Pressure	";
+        break;
+    case HexPid::h0233:
+        return "DTC:Absolute Barometric Pressure";
+        break;
+    case HexPid::h0234:
+        return "DTC:Oxygen Sensor 1";
+        break;
+    case HexPid::h0235:
+        return "DTC:Oxygen Sensor 2";
+        break;
+    case HexPid::h0236:
+        return "DTC:Oxygen Sensor 3";
+        break;
+    case HexPid::h0237:
+        return "DTC:Oxygen Sensor 4";
+        break;
+    case HexPid::h0238:
+        return "DTC:Oxygen Sensor 5";
+        break;
+    case HexPid::h0239:
+        return "DTC:Oxygen Sensor 6";
+        break;
+    case HexPid::h023A:
+        return "DTC:Oxygen Sensor 7";
+        break;
+    case HexPid::h023B:
+        return "DTC:Oxygen Sensor 8";
+        break;
+    case HexPid::h023C:
+        return "DTC:Catalyst Temperature: Bank 1, Sensor 1";
+        break;
+    case HexPid::h023D:
+        return "DTC:Catalyst Temperature: Bank 2, Sensor 1";
+        break;
+    case HexPid::h023E:
+        return "DTC:Catalyst Temperature: Bank 1, Sensor 2";
+        break;
+    case HexPid::h023F:
+        return "DTC:Catalyst Temperature: Bank 2, Sensor 2";
+        break;
+    case HexPid::h0240:
+        return "DTC:PIDs supported [41 - 60]";
+        break;
+    case HexPid::h0241:
+        return "DTC:Monitor status this drive cycle";
+        break;
+    case HexPid::h0242:
+        return "DTC:Control module voltage";
+        break;
+    case HexPid::h0243:
+        return "DTC:Absolute load value	";
+        break;
+    case HexPid::h0244:
+        return "DTC:Commanded Air-Fuel Equivalence Ratio";
+        break;
+    case HexPid::h0245:
+        return "DTC:Relative throttle position";
+        break;
+    case HexPid::h0246:
+        return "DTC:Ambient air temperature";
+        break;
+    case HexPid::h0247:
+        return "DTC:Absolute throttle position B";
+        break;
+    case HexPid::h0248:
+        return "DTC:Absolute throttle position C";
+        break;
+    case HexPid::h0249:
+        return "DTC:Accelerator pedal position D";
+        break;
+    case HexPid::h024A:
+        return "DTC:Accelerator pedal position E";
+        break;
+    case HexPid::h024B:
+        return "DTC:Accelerator pedal position F";
+        break;
+    case HexPid::h024C:
+        return "DTC:Commanded throttle actuator";
+        break;
+    case HexPid::h024D:
+        return "DTC:Time run with MIL on";
+        break;
+    case HexPid::h024E:
+        return "DTC:Time since trouble codes cleared";
+        break;
+    case HexPid::h024F:
+        return "DTC:Maximum value for Fuel–Air equivalence ratio, oxygen sensor voltage, oxygen sensor current, and intake manifold absolute pressure";
+        break;
+    case HexPid::h0250:
+        return "DTC:Maximum value for air flow rate from mass air flow sensor";
+        break;
+    case HexPid::h0251:
+        return "DTC:Fuel Type";
+        break;
+    case HexPid::h0252:
+        return "DTC:Ethanol fuel %";
+        break;
+    case HexPid::h0253:
+        return "DTC:Absolute Evap system Vapor Pressure";
+        break;
+    case HexPid::h0254:
+        return "DTC:Evap system vapor pressure";
+        break;
+    case HexPid::h0255:
+        return "DTC:Short term secondary oxygen sensor trim , Bank 1 - Bank 3";
+        break;
+    case HexPid::h0256:
+        return "DTC:Long term secondary oxygen sensor trim, Bank 1 - Bank 3";
+        break;
+    case HexPid::h0257:
+        return "DTC:Short term secondary oxygen sensor trim , Bank 2 - Bank 4";
+        break;
+    case HexPid::h0258:
+        return "DTC:Long term secondary oxygen sensor trim , Bank 2 - Bank 4";
+        break;
+    case HexPid::h0259:
+        return "DTC:Fuel rail absolute pressure";
+        break;
+    case HexPid::h025A:
+        return "DTC:Relative accelerator pedal position";
+        break;
+    case HexPid::h025B:
+        return "DTC:Hybrid battery pack remaining life";
+        break;
+    case HexPid::h025C:
+        return "DTC:Engine oil temperature";
+        break;
+    case HexPid::h025D:
+        return "DTC:Fuel injection timing";
+        break;
+    case HexPid::h025E:
+        return "DTC:Engine fuel rate";
+        break;
+    case HexPid::h025F:
+        return "DTC:Emission requirements to which vehicle is designed";
+        break;
+    case HexPid::h0260:
+        return "DTC:PIDs supported [61 - 80]";
+        break;
+    case HexPid::h0261:
+        return "DTC:Driver's demand engine - percent torque	";
+        break;
+    case HexPid::h0262:
+        return "DTC:Actual engine - percent torque";
+        break;
+    case HexPid::h0263:
+        return "DTC:Engine reference torque";
+        break;
+    case HexPid::h0264:
+        return "DTC:Engine percent torque data";
+        break;
+    case HexPid::h0265:
+        return "DTC:Auxiliary input / output supported";
+        break;
+    case HexPid::h0266:
+        return "DTC:Mass air flow sensor";
+        break;
+    case HexPid::h0267:
+        return "DTC:Engine coolant temperature";
+        break;
+    case HexPid::h0268:
+        return "DTC:Intake air temperature sensor";
+        break;
+    case HexPid::h0269:
+        return "DTC:Commanded EGR and EGR Error";
+        break;
+    case HexPid::h026A:
+        return "DTC:Commanded Diesel intake air flow control and relative intake air flow position";
+        break;
+    case HexPid::h026B:
+        return "DTC:Exhaust gas recirculation temperature";
+        break;
+    case HexPid::h026C:
+        return "DTC:Commanded throttle actuator control and relative throttle position";
+        break;
+    case HexPid::h026D:
+        return "DTC:Fuel pressure control system";
+        break;
+    case HexPid::h026E:
+        return "DTC:Injection pressure control system";
+        break;
+    case HexPid::h026F:
+        return "DTC:Turbocharger compressor inlet pressure";
+        break;
+    case HexPid::h0270:
+        return "DTC:Boost pressure control";
+        break;
+    case HexPid::h0271:
+        return "DTC:Variable Geometry turbo (VGT) control";
+        break;
+    case HexPid::h0272:
+        return "DTC:Wastegate control";
+        break;
+    case HexPid::h0273:
+        return "DTC:Exhaust pressure";
+        break;
+    case HexPid::h0274:
+        return "DTC:Turbocharger RPM";
+        break;
+    case HexPid::h0275:
+        return "DTC:Turbocharger temperature";
+        break;
+    case HexPid::h0276:
+        return "DTC:Turbocharger temperature";
+        break;
+    case HexPid::h0277:
+        return "DTC:Charge air cooler temperature (CACT)";
+        break;
+    case HexPid::h0278:
+        return "DTC:Exhaust Gas temperature (EGT) Bank 1";
+        break;
+    case HexPid::h0279:
+        return "DTC:Exhaust Gas temperature (EGT) Bank 2";
+        break;
+    case HexPid::h027A:
+        return "DTC:Diesel particulate filter (DPF)";
+        break;
+    case HexPid::h027B:
+        return "DTC:Diesel particulate filter (DPF)";
+        break;
+    case HexPid::h027C:
+        return "DTC:Diesel Particulate filter (DPF) temperature";
+        break;
+    case HexPid::h027D:
+        return "DTC:NOx NTE (Not-To-Exceed) control area status";
+        break;
+    case HexPid::h027E:
+        return "DTC:PM NTE (Not-To-Exceed) control area status";
+        break;
+    case HexPid::h027F:
+        return "DTC:Engine run time";
+        break;
+    case HexPid::h0280:
+        return "DTC:PIDs supported [81 - A0]";
+        break;
+    case HexPid::h0281:
+        return "DTC:Engine run time for Auxiliary Emissions Control Device(AECD)";
+        break;
+    case HexPid::h0282:
+        return "DTC:Engine run time for Auxiliary Emissions Control Device(AECD)";
+        break;
+    case HexPid::h0283:
+        return "DTC:NOx sensor";
+        break;
+    case HexPid::h0284:
+        return "DTC:Manifold surface temperature";
+        break;
+    case HexPid::h0285:
+        return "DTC:NOx reagent system";
+        break;
+    case HexPid::h0286:
+        return "DTC:Particulate matter (PM) sensor";
+        break;
+    case HexPid::h0287:
+        return "DTC:Intake manifold absolute pressure";
+        break;
+    case HexPid::h0288:
+        return "DTC:SCR Induce System";
+        break;
+    case HexPid::h0289:
+        return "DTC:Run Time for AECD #11-#15";
+        break;
+    case HexPid::h028A:
+        return "DTC:Run Time for AECD #16-#20";
+        break;
+    case HexPid::h028B:
+        return "DTC:Diesel Aftertreatment";
+        break;
+    case HexPid::h028C:
+        return "DTC:O2 Sensor (Wide Range)";
+        break;
+    case HexPid::h028D:
+        return "DTC:Throttle Position G";
+        break;
+    case HexPid::h028E:
+        return "DTC:Engine Friction - Percent Torque";
+        break;
+    case HexPid::h028F:
+        return "DTC:PM Sensor Bank 1 & 2";
+        break;
+    case HexPid::h0290:
+        return "DTC:WWH-OBD Vehicle OBD System Information";
+        break;
+    case HexPid::h0291:
+        return "DTC:WWH-OBD Vehicle OBD System Information";
+        break;
+    case HexPid::h0292:
+        return "DTC:Fuel System Control";
+        break;
+    case HexPid::h0293:
+        return "DTC:WWH-OBD Vehicle OBD Counters support";
+        break;
+    case HexPid::h0294:
+        return "DTC:NOx Warning And Inducement System";
+        break;
+    case HexPid::h0295:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0296:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0297:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0298:
+        return "DTC:Exhaust Gas Temperature Sensor";
+        break;
+    case HexPid::h0299:
+        return "DTC:Exhaust Gas Temperature Sensor";
+        break;
+    case HexPid::h029A:
+        return "DTC:Hybrid/EV Vehicle System Data, Battery, Voltage";
+        break;
+    case HexPid::h029B:
+        return "DTC:Diesel Exhaust Fluid Sensor Data";
+        break;
+    case HexPid::h029C:
+        return "DTC:O2 Sensor Data";
+        break;
+    case HexPid::h029D:
+        return "DTC:Engine Fuel Rate";
+        break;
+    case HexPid::h029E:
+        return "DTC:Engine Exhaust Flow Rate";
+        break;
+    case HexPid::h029F:
+        return "DTC:Fuel System Percentage Use";
+        break;
+    case HexPid::h02A0:
+        return "DTC:PIDs supported [A1 - C0]";
+        break;
+    case HexPid::h02A1:
+        return "DTC:NOx Sensor Corrected Data";
+        break;
+    case HexPid::h02A2:
+        return "DTC:Cylinder Fuel Rate";
+        break;
+    case HexPid::h02A3:
+        return "DTC:Evap System Vapor Pressure";
+        break;
+    case HexPid::h02A4:
+        return "DTC:Transmission Actual Gear";
+        break;
+    case HexPid::h02A5:
+        return "DTC:Diesel Exhaust Fluid Dosing	";
+        break;
+    case HexPid::h02A6:
+        return "DTC:Odometer";
+        break;
+    case HexPid::h02C0:
+        return "DTC:PIDs supported [C1 - E0]";
+        break;
+    case HexPid::h02C3:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h02C4:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h03:
+        return "Request trouble codes";
+        break;
+    case HexPid::h04:
+        return "Clear trouble codes / Malfunction indicator lamp (MIL) / Check engine light";
+        break;
+    case HexPid::h0900:
+        return "Service 9 supported PIDs (01 to 20)";
+        break;
+    case HexPid::h0901:
+        return "VIN Message Count in PID 02. Only for ISO 9141-2, ISO 14230-4 and SAE J1850.";
+        break;
+    case HexPid::h0902:
+        return "Vehicle Identification Number (VIN)";
+        break;
+    case HexPid::h0903:
+        return "Calibration ID message count for PID 04. Only for ISO 9141-2, ISO 14230-4 and SAE J1850.";
+        break;
+    case HexPid::h0904:
+        return "Calibration ID";
+        break;
+    case HexPid::h0905:
+        return "Calibration verification numbers (CVN) message count for PID 06. Only for ISO 9141-2, ISO 14230-4 and SAE J1850.";
+        break;
+    case HexPid::h0906:
+        return "Calibration Verification Numbers (CVN) Several CVN can be output (4 bytes each) the number of CVN and CALID must match";
+        break;
+    case HexPid::h0907:
+        return "In-use performance tracking message count for PID 08 and 0B. Only for ISO 9141-2, ISO 14230-4 and SAE J1850.";
+        break;
+    case HexPid::h0908:
+        return "In-use performance tracking for spark ignition vehicles";
+        break;
+    case HexPid::h0909:
+        return "ECU name message count for PID 0A";
+        break;
+    case HexPid::h090A:
+        return "ECU name";
+        break;
+    case HexPid::h090B:
+        return "In-use performance tracking for compression ignition vehicles";
+        break;
+    default:
+        throw std::runtime_error("unknown HexPid");
+        break;
+    }
 }
 
 std::string Pid::getUnits()
