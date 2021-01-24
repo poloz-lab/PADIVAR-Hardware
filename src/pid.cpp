@@ -1115,6 +1115,7 @@ Pid::Pid(HexPid pid)
 
 std::string Pid::getPidString()
 {
+    return pidString_;
 }
 
 HexPid Pid::getHexPid()
