@@ -179,6 +179,37 @@ ExceptionSession::ExceptionSession(ExceptionSessionType type) throw()
     explaination_ = reason;
 }
 
+ExceptionSession::ExceptionSession(ExceptionSessionType type, std::string option) throw()
+    :type_(type)
+{
+    std::string reason;
+    switch(type_)
+    {
+        case ExceptionSessionType::NoError:
+            reason = "no error";
+            break;
+        case ExceptionSessionType::UnknownDevice:
+            reason = "unknown device: " + option;
+            break;
+        case ExceptionSessionType::UnknownInterface:
+            reason = "unknown interface: " + option;
+            break;
+        case ExceptionSessionType::UsbInitializationFailed:
+            reason = "USB initialization failed: " + option;
+            break;
+        case ExceptionSessionType::WifiInitializationFailed:
+            reason = "Wifi initialization failed: " + option;
+            break;
+        case ExceptionSessionType::BluetoothInitializationFailed:
+            reason = "Bluetooth initialization failed: " + option;
+            break;
+        default:
+            reason = "Missing reason";
+            break;
+    }
+    explaination_ = reason;
+}
+
 const char *ExceptionSession::what() const throw()
 {
     return explaination_.c_str();
