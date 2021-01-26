@@ -1815,6 +1815,7 @@ Pid::Pid(std::string pid)
     }
     else
     {
+        throw ExceptionPid(ExceptionPidType::UnknownPidString, pid);
     }
     
 }
