@@ -519,6 +519,7 @@ class ExceptionPid : public std::exception
 {
 public:
     ExceptionPid(ExceptionPidType type) throw();
+    ExceptionPid(ExceptionPidType type, std::string option) throw();
     virtual const char* what() const throw();
 private:
     ExceptionPidType type_;
