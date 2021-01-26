@@ -2890,6 +2890,7 @@ Pid::Pid(HexPid pid)
         throw ExceptionPid(ExceptionPidType::UnknownHexPid);
         break;
     }
+    hexPid_ = pid;
 }
 
 std::string Pid::getPidString()
