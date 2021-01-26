@@ -2887,7 +2887,7 @@ Pid::Pid(HexPid pid)
         pidString_ = "090B";
         break;
     default:
-        throw std::runtime_error("unknown HexPid");
+        throw ExceptionPid(ExceptionPidType::UnknownHexPid);
         break;
     }
 }
