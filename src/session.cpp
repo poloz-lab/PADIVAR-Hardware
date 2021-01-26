@@ -75,9 +75,8 @@ Session::Session(ClientSocket* client)
             }
             catch(std::exception const& e)
             {
-                std::cerr << e.what() << std::endl;
                 client_->writeString("initialization failed");
-                throw std::runtime_error("can\'t initialize ELM327 via USB");
+                throw ExceptionSession(ExceptionSessionType::UsbInitializationFailed, e.what());
             }
         }
         else if(type_interface == "wifi")
@@ -91,9 +90,8 @@ Session::Session(ClientSocket* client)
             }
             catch(std::exception const& e)
             {
-                std::cerr << e.what() << std::endl;
                 client_->writeString("initialization failed");
-                throw std::runtime_error("can\'t initialize ELM327 via Wifi");
+                throw ExceptionSession(ExceptionSessionType::WifiInitializationFailed, e.what());
             }
         }
         else if(type_interface == "bluetooth")
@@ -106,20 +104,19 @@ Session::Session(ClientSocket* client)
             }
             catch(std::exception const& e)
             {
-                std::cerr << e.what() << std::endl;
                 client_->writeString("initialization failed");
-                throw std::runtime_error("can\'t initialize ELM327 via Bluetooth");
+                throw ExceptionSession(ExceptionSessionType::BluetoothInitializationFailed, e.what());
             }
         }
         else
         {
-            throw std::exception();
+            throw ExceptionSession(ExceptionSessionType::UnknownInterface, type_interface);
         }
         
     }
     else
     {
-        throw std::exception();
+        throw ExceptionSession(ExceptionSessionType::UnknownDevice, type_device);
     }
 }
 
