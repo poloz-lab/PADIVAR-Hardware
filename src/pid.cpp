@@ -41,6 +41,1784 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <stdexcept>
 #include <string>
 
+Pid::Pid(std::string pid)
+{
+    if (pid == "0100")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0100;
+    }
+    else if (pid == "0101")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0101;
+    }
+    else if (pid == "0102")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0102;
+    }
+    else if (pid == "0103")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0103;
+    }
+    else if (pid == "0104")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0104;
+    }
+    else if (pid == "0105")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0105;
+    }
+    else if (pid == "0106")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0106;
+    }
+    else if (pid == "0107")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0107;
+    }
+    else if (pid == "0108")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0108;
+    }
+    else if (pid == "0109")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0109;
+    }
+    else if (pid == "010A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h010A;
+    }
+    else if (pid == "010B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h010B;
+    }
+    else if (pid == "010C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h010C;
+    }
+    else if (pid == "010D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h010D;
+    }
+    else if (pid == "010E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h010E;
+    }
+    else if (pid == "010F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h010F;
+    }
+    else if (pid == "0110")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0110;
+    }
+    else if (pid == "0111")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0111;
+    }
+    else if (pid == "0112")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0112;
+    }
+    else if (pid == "0113")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0113;
+    }
+    else if (pid == "0114")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0114;
+    }
+    else if (pid == "0115")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0115;
+    }
+    else if (pid == "0116")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0116;
+    }
+    else if (pid == "0117")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0117;
+    }
+    else if (pid == "0118")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0118;
+    }
+    else if (pid == "0119")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0119;
+    }
+    else if (pid == "011A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h011A;
+    }
+    else if (pid == "011B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h011B;
+    }
+    else if (pid == "011C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h011C;
+    }
+    else if (pid == "011D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h011D;
+    }
+    else if (pid == "011E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h011E;
+    }
+    else if (pid == "011F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h011F;
+    }
+    else if (pid == "0120")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0120;
+    }
+    else if (pid == "0121")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0121;
+    }
+    else if (pid == "0122")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0122;
+    }
+    else if (pid == "0123")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0123;
+    }
+    else if (pid == "0124")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0124;
+    }
+    else if (pid == "0125")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0125;
+    }
+    else if (pid == "0126")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0126;
+    }
+    else if (pid == "0127")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0127;
+    }
+    else if (pid == "0128")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0128;
+    }
+    else if (pid == "0129")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0129;
+    }
+    else if (pid == "012A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h012A;
+    }
+    else if (pid == "012B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h012B;
+    }
+    else if (pid == "012C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h012C;
+    }
+    else if (pid == "012D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h012D;
+    }
+    else if (pid == "012E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h012E;
+    }
+    else if (pid == "012F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h012F;
+    }
+    else if (pid == "0130")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0130;
+    }
+    else if (pid == "0131")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0131;
+    }
+    else if (pid == "0132")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0132;
+    }
+    else if (pid == "0133")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0133;
+    }
+    else if (pid == "0134")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0134;
+    }
+    else if (pid == "0135")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0135;
+    }
+    else if (pid == "0136")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0136;
+    }
+    else if (pid == "0137")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0137;
+    }
+    else if (pid == "0138")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0138;
+    }
+    else if (pid == "0139")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0139;
+    }
+    else if (pid == "013A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h013A;
+    }
+    else if (pid == "013B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h013B;
+    }
+    else if (pid == "013C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h013C;
+    }
+    else if (pid == "013D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h013D;
+    }
+    else if (pid == "013E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h013E;
+    }
+    else if (pid == "013F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h013F;
+    }
+    else if (pid == "0140")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0140;
+    }
+    else if (pid == "0141")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0141;
+    }
+    else if (pid == "0142")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0142;
+    }
+    else if (pid == "0143")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0143;
+    }
+    else if (pid == "0144")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0144;
+    }
+    else if (pid == "0145")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0145;
+    }
+    else if (pid == "0146")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0146;
+    }
+    else if (pid == "0147")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0147;
+    }
+    else if (pid == "0148")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0148;
+    }
+    else if (pid == "0149")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0149;
+    }
+    else if (pid == "014A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h014A;
+    }
+    else if (pid == "014B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h014B;
+    }
+    else if (pid == "014C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h014C;
+    }
+    else if (pid == "014D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h014D;
+    }
+    else if (pid == "014E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h014E;
+    }
+    else if (pid == "014F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h014F;
+    }
+    else if (pid == "0150")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0150;
+    }
+    else if (pid == "0151")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0151;
+    }
+    else if (pid == "0152")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0152;
+    }
+    else if (pid == "0153")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0153;
+    }
+    else if (pid == "0154")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0154;
+    }
+    else if (pid == "0155")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0155;
+    }
+    else if (pid == "0156")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0156;
+    }
+    else if (pid == "0157")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0157;
+    }
+    else if (pid == "0158")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0158;
+    }
+    else if (pid == "0159")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0159;
+    }
+    else if (pid == "015A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h015A;
+    }
+    else if (pid == "015B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h015B;
+    }
+    else if (pid == "015C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h015C;
+    }
+    else if (pid == "015D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h015D;
+    }
+    else if (pid == "015E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h015E;
+    }
+    else if (pid == "015F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h015F;
+    }
+    else if (pid == "0160")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0160;
+    }
+    else if (pid == "0161")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0161;
+    }
+    else if (pid == "0162")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0162;
+    }
+    else if (pid == "0163")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0163;
+    }
+    else if (pid == "0164")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0164;
+    }
+    else if (pid == "0165")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0165;
+    }
+    else if (pid == "0166")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0166;
+    }
+    else if (pid == "0167")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0167;
+    }
+    else if (pid == "0168")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0168;
+    }
+    else if (pid == "0169")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0169;
+    }
+    else if (pid == "016A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h016A;
+    }
+    else if (pid == "016B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h016B;
+    }
+    else if (pid == "016C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h016C;
+    }
+    else if (pid == "016D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h016D;
+    }
+    else if (pid == "016E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h016E;
+    }
+    else if (pid == "016F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h016F;
+    }
+    else if (pid == "0170")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0170;
+    }
+    else if (pid == "0171")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0171;
+    }
+    else if (pid == "0172")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0172;
+    }
+    else if (pid == "0173")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0173;
+    }
+    else if (pid == "0174")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0174;
+    }
+    else if (pid == "0175")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0175;
+    }
+    else if (pid == "0176")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0176;
+    }
+    else if (pid == "0177")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0177;
+    }
+    else if (pid == "0178")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0178;
+    }
+    else if (pid == "0179")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0179;
+    }
+    else if (pid == "017A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h017A;
+    }
+    else if (pid == "017B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h017B;
+    }
+    else if (pid == "017C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h017C;
+    }
+    else if (pid == "017D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h017D;
+    }
+    else if (pid == "017E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h017E;
+    }
+    else if (pid == "017F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h017F;
+    }
+    else if (pid == "0180")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0180;
+    }
+    else if (pid == "0181")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0181;
+    }
+    else if (pid == "0182")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0182;
+    }
+    else if (pid == "0183")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0183;
+    }
+    else if (pid == "0184")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0184;
+    }
+    else if (pid == "0185")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0185;
+    }
+    else if (pid == "0186")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0186;
+    }
+    else if (pid == "0187")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0187;
+    }
+    else if (pid == "0188")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0188;
+    }
+    else if (pid == "0189")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0189;
+    }
+    else if (pid == "018A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h018A;
+    }
+    else if (pid == "018B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h018B;
+    }
+    else if (pid == "018C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h018C;
+    }
+    else if (pid == "018D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h018D;
+    }
+    else if (pid == "018E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h018E;
+    }
+    else if (pid == "018F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h018F;
+    }
+    else if (pid == "0190")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0190;
+    }
+    else if (pid == "0191")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0191;
+    }
+    else if (pid == "0192")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0192;
+    }
+    else if (pid == "0193")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0193;
+    }
+    else if (pid == "0194")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0194;
+    }
+    else if (pid == "0195")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0195;
+    }
+    else if (pid == "0196")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0196;
+    }
+    else if (pid == "0197")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0197;
+    }
+    else if (pid == "0198")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0198;
+    }
+    else if (pid == "0199")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0199;
+    }
+    else if (pid == "019A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h019A;
+    }
+    else if (pid == "019B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h019B;
+    }
+    else if (pid == "019C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h019C;
+    }
+    else if (pid == "019D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h019D;
+    }
+    else if (pid == "019E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h019E;
+    }
+    else if (pid == "019F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h019F;
+    }
+    else if (pid == "01A0")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h01A0;
+    }
+    else if (pid == "01A1")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h01A1;
+    }
+    else if (pid == "01A2")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h01A2;
+    }
+    else if (pid == "01A3")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h01A3;
+    }
+    else if (pid == "01A4")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h01A4;
+    }
+    else if (pid == "01A5")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h01A5;
+    }
+    else if (pid == "01A6")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h01A6;
+    }
+    else if (pid == "01C0")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h01C0;
+    }
+    else if (pid == "01C3")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h01C3;
+    }
+    else if (pid == "01C4")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h01C4;
+    }
+    else if (pid == "0200")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0200;
+    }
+    else if (pid == "0201")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0201;
+    }
+    else if (pid == "0202")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0202;
+    }
+    else if (pid == "0203")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0203;
+    }
+    else if (pid == "0204")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0204;
+    }
+    else if (pid == "0205")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0205;
+    }
+    else if (pid == "0206")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0206;
+    }
+    else if (pid == "0207")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0207;
+    }
+    else if (pid == "0208")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0208;
+    }
+    else if (pid == "0209")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0209;
+    }
+    else if (pid == "020A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h020A;
+    }
+    else if (pid == "020B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h020B;
+    }
+    else if (pid == "020C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h020C;
+    }
+    else if (pid == "020D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h020D;
+    }
+    else if (pid == "020E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h020E;
+    }
+    else if (pid == "020F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h020F;
+    }
+    else if (pid == "0210")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0210;
+    }
+    else if (pid == "0211")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0211;
+    }
+    else if (pid == "0212")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0212;
+    }
+    else if (pid == "0213")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0213;
+    }
+    else if (pid == "0214")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0214;
+    }
+    else if (pid == "0215")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0215;
+    }
+    else if (pid == "0216")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0216;
+    }
+    else if (pid == "0217")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0217;
+    }
+    else if (pid == "0218")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0218;
+    }
+    else if (pid == "0219")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0219;
+    }
+    else if (pid == "021A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h021A;
+    }
+    else if (pid == "021B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h021B;
+    }
+    else if (pid == "021C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h021C;
+    }
+    else if (pid == "021D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h021D;
+    }
+    else if (pid == "021E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h021E;
+    }
+    else if (pid == "021F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h021F;
+    }
+    else if (pid == "0220")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0220;
+    }
+    else if (pid == "0221")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0221;
+    }
+    else if (pid == "0222")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0222;
+    }
+    else if (pid == "0223")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0223;
+    }
+    else if (pid == "0224")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0224;
+    }
+    else if (pid == "0225")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0225;
+    }
+    else if (pid == "0226")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0226;
+    }
+    else if (pid == "0227")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0227;
+    }
+    else if (pid == "0228")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0228;
+    }
+    else if (pid == "0229")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0229;
+    }
+    else if (pid == "022A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h022A;
+    }
+    else if (pid == "022B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h022B;
+    }
+    else if (pid == "022C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h022C;
+    }
+    else if (pid == "022D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h022D;
+    }
+    else if (pid == "022E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h022E;
+    }
+    else if (pid == "022F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h022F;
+    }
+    else if (pid == "0230")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0230;
+    }
+    else if (pid == "0231")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0231;
+    }
+    else if (pid == "0232")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0232;
+    }
+    else if (pid == "0233")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0233;
+    }
+    else if (pid == "0234")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0234;
+    }
+    else if (pid == "0235")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0235;
+    }
+    else if (pid == "0236")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0236;
+    }
+    else if (pid == "0237")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0237;
+    }
+    else if (pid == "0238")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0238;
+    }
+    else if (pid == "0239")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0239;
+    }
+    else if (pid == "023A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h023A;
+    }
+    else if (pid == "023B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h023B;
+    }
+    else if (pid == "023C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h023C;
+    }
+    else if (pid == "023D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h023D;
+    }
+    else if (pid == "023E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h023E;
+    }
+    else if (pid == "023F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h023F;
+    }
+    else if (pid == "0240")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0240;
+    }
+    else if (pid == "0241")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0241;
+    }
+    else if (pid == "0242")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0242;
+    }
+    else if (pid == "0243")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0243;
+    }
+    else if (pid == "0244")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0244;
+    }
+    else if (pid == "0245")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0245;
+    }
+    else if (pid == "0246")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0246;
+    }
+    else if (pid == "0247")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0247;
+    }
+    else if (pid == "0248")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0248;
+    }
+    else if (pid == "0249")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0249;
+    }
+    else if (pid == "024A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h024A;
+    }
+    else if (pid == "024B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h024B;
+    }
+    else if (pid == "024C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h024C;
+    }
+    else if (pid == "024D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h024D;
+    }
+    else if (pid == "024E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h024E;
+    }
+    else if (pid == "024F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h024F;
+    }
+    else if (pid == "0250")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0250;
+    }
+    else if (pid == "0251")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0251;
+    }
+    else if (pid == "0252")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0252;
+    }
+    else if (pid == "0253")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0253;
+    }
+    else if (pid == "0254")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0254;
+    }
+    else if (pid == "0255")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0255;
+    }
+    else if (pid == "0256")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0256;
+    }
+    else if (pid == "0257")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0257;
+    }
+    else if (pid == "0258")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0258;
+    }
+    else if (pid == "0259")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0259;
+    }
+    else if (pid == "025A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h025A;
+    }
+    else if (pid == "025B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h025B;
+    }
+    else if (pid == "025C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h025C;
+    }
+    else if (pid == "025D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h025D;
+    }
+    else if (pid == "025E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h025E;
+    }
+    else if (pid == "025F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h025F;
+    }
+    else if (pid == "0260")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0260;
+    }
+    else if (pid == "0261")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0261;
+    }
+    else if (pid == "0262")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0262;
+    }
+    else if (pid == "0263")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0263;
+    }
+    else if (pid == "0264")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0264;
+    }
+    else if (pid == "0265")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0265;
+    }
+    else if (pid == "0266")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0266;
+    }
+    else if (pid == "0267")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0267;
+    }
+    else if (pid == "0268")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0268;
+    }
+    else if (pid == "0269")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0269;
+    }
+    else if (pid == "026A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h026A;
+    }
+    else if (pid == "026B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h026B;
+    }
+    else if (pid == "026C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h026C;
+    }
+    else if (pid == "026D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h026D;
+    }
+    else if (pid == "026E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h026E;
+    }
+    else if (pid == "026F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h026F;
+    }
+    else if (pid == "0270")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0270;
+    }
+    else if (pid == "0271")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0271;
+    }
+    else if (pid == "0272")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0272;
+    }
+    else if (pid == "0273")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0273;
+    }
+    else if (pid == "0274")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0274;
+    }
+    else if (pid == "0275")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0275;
+    }
+    else if (pid == "0276")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0276;
+    }
+    else if (pid == "0277")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0277;
+    }
+    else if (pid == "0278")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0278;
+    }
+    else if (pid == "0279")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0279;
+    }
+    else if (pid == "027A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h027A;
+    }
+    else if (pid == "027B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h027B;
+    }
+    else if (pid == "027C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h027C;
+    }
+    else if (pid == "027D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h027D;
+    }
+    else if (pid == "027E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h027E;
+    }
+    else if (pid == "027F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h027F;
+    }
+    else if (pid == "0280")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0280;
+    }
+    else if (pid == "0281")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0281;
+    }
+    else if (pid == "0282")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0282;
+    }
+    else if (pid == "0283")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0283;
+    }
+    else if (pid == "0284")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0284;
+    }
+    else if (pid == "0285")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0285;
+    }
+    else if (pid == "0286")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0286;
+    }
+    else if (pid == "0287")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0287;
+    }
+    else if (pid == "0288")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0288;
+    }
+    else if (pid == "0289")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0289;
+    }
+    else if (pid == "028A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h028A;
+    }
+    else if (pid == "028B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h028B;
+    }
+    else if (pid == "028C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h028C;
+    }
+    else if (pid == "028D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h028D;
+    }
+    else if (pid == "028E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h028E;
+    }
+    else if (pid == "028F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h028F;
+    }
+    else if (pid == "0290")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0290;
+    }
+    else if (pid == "0291")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0291;
+    }
+    else if (pid == "0292")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0292;
+    }
+    else if (pid == "0293")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0293;
+    }
+    else if (pid == "0294")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0294;
+    }
+    else if (pid == "0295")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0295;
+    }
+    else if (pid == "0296")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0296;
+    }
+    else if (pid == "0297")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0297;
+    }
+    else if (pid == "0298")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0298;
+    }
+    else if (pid == "0299")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0299;
+    }
+    else if (pid == "029A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h029A;
+    }
+    else if (pid == "029B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h029B;
+    }
+    else if (pid == "029C")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h029C;
+    }
+    else if (pid == "029D")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h029D;
+    }
+    else if (pid == "029E")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h029E;
+    }
+    else if (pid == "029F")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h029F;
+    }
+    else if (pid == "02A0")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h02A0;
+    }
+    else if (pid == "02A1")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h02A1;
+    }
+    else if (pid == "02A2")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h02A2;
+    }
+    else if (pid == "02A3")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h02A3;
+    }
+    else if (pid == "02A4")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h02A4;
+    }
+    else if (pid == "02A5")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h02A5;
+    }
+    else if (pid == "02A6")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h02A6;
+    }
+    else if (pid == "02C0")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h02C0;
+    }
+    else if (pid == "02C3")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h02C3;
+    }
+    else if (pid == "02C4")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h02C4;
+    }
+    else if (pid == "03")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h03;
+    }
+    else if (pid == "04")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h04;
+    }
+    else if (pid == "0900")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0900;
+    }
+    else if (pid == "0901")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0901;
+    }
+    else if (pid == "0902")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0902;
+    }
+    else if (pid == "0903")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0903;
+    }
+    else if (pid == "0904")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0904;
+    }
+    else if (pid == "0905")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0905;
+    }
+    else if (pid == "0906")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0906;
+    }
+    else if (pid == "0907")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0907;
+    }
+    else if (pid == "0908")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0908;
+    }
+    else if (pid == "0909")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h0909;
+    }
+    else if (pid == "090A")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h090A;
+    }
+    else if (pid == "090B")
+    {
+        pidString_ = pid;
+        hexPid_ = HexPid::h090B;
+    }
+    else
+    {
+    }
+    
+}
+
 Pid::Pid(HexPid pid)
 {
     switch(pid)
