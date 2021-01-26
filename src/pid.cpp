@@ -4005,6 +4005,9 @@ ExceptionPid::ExceptionPid(ExceptionPidType type) throw()
     case ExceptionPidType::NoError:
         explaination_ = "no error";
         break;
+    case ExceptionPidType::UnknownPidString:
+        explaination_ = "unknown pid in string";
+        break;
     case ExceptionPidType::UnknownHexPid:
         explaination_ = "unknown HexPid";
         break;

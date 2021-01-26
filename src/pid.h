@@ -503,6 +503,7 @@ namespace ExceptionPidTypes
     enum ExceptionPidType
     {
         NoError,
+        UnknownPidString,
         UnknownHexPid,
         NoDataBytes,
         NoDescription,
