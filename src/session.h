@@ -79,5 +79,6 @@ namespace ExceptionSessionTypes
 		BluetoothInitializationFailed /*< bluetooth initialization failed */
 	};
 }
+typedef ExceptionSessionTypes::ExceptionSessionType ExceptionSessionType;
 
 #endif
