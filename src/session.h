@@ -60,4 +60,24 @@ public:
     std::string toString();
 };
 
+/*!
+ * \namespace ExceptionSessionTypes
+ */
+namespace ExceptionSessionTypes
+{
+	/*!
+	 * \enum ExceptionSessionType
+	 * \brief type of error that could be encountered in Session
+	 */
+	enum ExceptionSessionType
+	{
+		NoError, /*< no error */
+		UnknownDevice, /*< device asked by the client is unknown */
+		UnknownInterface, /*< interface asked by the client is unknown */
+		UsbInitializationFailed, /*< usb initialization failed */
+		WifiInitializationFailed, /*< wifi initialization failed */
+		BluetoothInitializationFailed /*< bluetooth initialization failed */
+	};
+}
+
 #endif
