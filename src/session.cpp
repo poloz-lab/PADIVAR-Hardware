@@ -178,3 +178,8 @@ ExceptionSession::ExceptionSession(ExceptionSessionType type) throw()
     }
     explaination_ = reason;
 }
+
+const char *ExceptionSession::what() const throw()
+{
+    return explaination_.c_str();
+}
