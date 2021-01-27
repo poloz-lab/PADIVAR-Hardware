@@ -60,4 +60,56 @@ public:
     std::string toString();
 };
 
+/*!
+ * \namespace ExceptionSessionTypes
+ */
+namespace ExceptionSessionTypes
+{
+	/*!
+	 * \enum ExceptionSessionType
+	 * \brief type of error that could be encountered in Session
+	 */
+	enum ExceptionSessionType
+	{
+		NoError, /*< no error */
+		UnknownDevice, /*< device asked by the client is unknown */
+		UnknownInterface, /*< interface asked by the client is unknown */
+		UsbInitializationFailed, /*< usb initialization failed */
+		WifiInitializationFailed, /*< wifi initialization failed */
+		BluetoothInitializationFailed /*< bluetooth initialization failed */
+	};
+}
+typedef ExceptionSessionTypes::ExceptionSessionType ExceptionSessionType;
+
+/*!
+ * \class ExceptionSession
+ * \brief class for handling errors in session
+ */
+class ExceptionSession: public std::exception
+{
+public:
+	/*!
+	 * \brief constructor with no details
+	 * \param type : type of the error
+	 */
+	ExceptionSession(ExceptionSessionType type) throw();
+
+	/*!
+	 * \brief constructor which accept a detail
+	 * \param type : type of the error
+	 * \param option : detail of the error
+	 */
+	ExceptionSession(ExceptionSessionType type, std::string option) throw();
+
+	/*!
+	 * \brief give the reason of the exception
+	 * \return string to give the reason of the exception
+	 */
+	virtual const char* what() const throw();
+
+private:
+	ExceptionSessionType type_; /*< type of exception */
+	std::string explaination_; /*< string to explain the exception */
+};
+
 #endif
