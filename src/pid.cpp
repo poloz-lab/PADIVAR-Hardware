@@ -2205,6 +2205,1074 @@ std::string Pid::getDescription()
 
 std::string Pid::getUnits()
 {
+    switch (hexPid_)
+    {
+    case HexPid::h0100:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0101:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0102:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0103:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0104:
+        return "%";
+        break;
+    case HexPid::h0105:
+        return "Celsius degree";
+        break;
+    case HexPid::h0106:
+        return "%";
+        break;
+    case HexPid::h0107:
+        return "%";
+        break;
+    case HexPid::h0108:
+        return "%";
+        break;
+    case HexPid::h0109:
+        return "%";
+        break;
+    case HexPid::h010A:
+        return "kPa";
+        break;
+    case HexPid::h010B:
+        return "kPa";
+        break;
+    case HexPid::h010C:
+        return "rpm";
+        break;
+    case HexPid::h010D:
+        return "km/h";
+        break;
+    case HexPid::h010E:
+        return "Celsius degree before TDC";
+        break;
+    case HexPid::h010F:
+        return "Celsius degree";
+        break;
+    case HexPid::h0110:
+        return "grams/sec";
+        break;
+    case HexPid::h0111:
+        return "%";
+        break;
+    case HexPid::h0112:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0113:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0114:
+        return "Volts - %";
+        break;
+    case HexPid::h0115:
+        return "Volts - %";
+        break;
+    case HexPid::h0116:
+        return "Volts - %";
+        break;
+    case HexPid::h0117:
+        return "Volts - %";
+        break;
+    case HexPid::h0118:
+        return "Volts - %";
+        break;
+    case HexPid::h0119:
+        return "Volts - %";
+        break;
+    case HexPid::h011A:
+        return "Volts - %";
+        break;
+    case HexPid::h011B:
+        return "Volts - %";
+        break;
+    case HexPid::h011C:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h011D:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h011E:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h011F:
+        return "seconds";
+        break;
+    case HexPid::h0120:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0121:
+        return "km";
+        break;
+    case HexPid::h0122:
+        return "kPa";
+        break;
+    case HexPid::h0123:
+        return "kPa";
+        break;
+    case HexPid::h0124:
+        return "ratio - v";
+        break;
+    case HexPid::h0125:
+        return "ratio - v";
+        break;
+    case HexPid::h0126:
+        return "ratio - v";
+        break;
+    case HexPid::h0127:
+        return "ratio - v";
+        break;
+    case HexPid::h0128:
+        return "ratio - v";
+        break;
+    case HexPid::h0129:
+        return "ratio - v";
+        break;
+    case HexPid::h012A:
+        return "ratio - v";
+        break;
+    case HexPid::h012B:
+        return "ratio - v";
+        break;
+    case HexPid::h012C:
+        return "%";
+        break;
+    case HexPid::h012D:
+        return "%";
+        break;
+    case HexPid::h012E:
+        return "%";
+        break;
+    case HexPid::h012F:
+        return "%";
+        break;
+    case HexPid::h0130:
+        return "count";
+        break;
+    case HexPid::h0131:
+        return "km";
+        break;
+    case HexPid::h0132:
+        return "Pa";
+        break;
+    case HexPid::h0133:
+        return "kPa";
+        break;
+    case HexPid::h0134:
+        return "ratio - mA";
+        break;
+    case HexPid::h0135:
+        return "ratio - mA";
+        break;
+    case HexPid::h0136:
+        return "ratio - mA";
+        break;
+    case HexPid::h0137:
+        return "ratio - mA";
+        break;
+    case HexPid::h0138:
+        return "ratio - mA";
+        break;
+    case HexPid::h0139:
+        return "ratio - mA";
+        break;
+    case HexPid::h013A:
+        return "ratio - mA";
+        break;
+    case HexPid::h013B:
+        return "ratio - mA";
+        break;
+    case HexPid::h013C:
+        return "Celsius degree";
+        break;
+    case HexPid::h013D:
+        return "Celsius degree";
+        break;
+    case HexPid::h013E:
+        return "Celsius degree";
+        break;
+    case HexPid::h013F:
+        return "Celsius degree";
+        break;
+    case HexPid::h0140:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0141:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0142:
+        return "Volts";
+        break;
+    case HexPid::h0143:
+        return "%";
+        break;
+    case HexPid::h0144:
+        return "ratio";
+        break;
+    case HexPid::h0145:
+        return "Celsius degree";
+        break;
+    case HexPid::h0146:
+        return "%";
+        break;
+    case HexPid::h0147:
+        return "%";
+        break;
+    case HexPid::h0148:
+        return "%";
+        break;
+    case HexPid::h0149:
+        return "%";
+        break;
+    case HexPid::h014A:
+        return "%";
+        break;
+    case HexPid::h014B:
+        return "%";
+        break;
+    case HexPid::h014C:
+        return "%";
+        break;
+    case HexPid::h014D:
+        return "minutes";
+        break;
+    case HexPid::h014E:
+        return "minutes";
+        break;
+    case HexPid::h014F:
+        return "ratio - V - mA - kPa";
+        break;
+    case HexPid::h0150:
+        return "g/s";
+        break;
+    case HexPid::h0151:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0152:
+        return "%";
+        break;
+    case HexPid::h0153:
+        return "kPa";
+        break;
+    case HexPid::h0154:
+        return "Pa";
+        break;
+    case HexPid::h0155:
+        return "%";
+        break;
+    case HexPid::h0156:
+        return "%";
+        break;
+    case HexPid::h0157:
+        return "%";
+        break;
+    case HexPid::h0158:
+        return "%";
+        break;
+    case HexPid::h0159:
+        return "kPa";
+        break;
+    case HexPid::h015A:
+        return "%";
+        break;
+    case HexPid::h015B:
+        return "%";
+        break;
+    case HexPid::h015C:
+        return "Celsius degree";
+        break;
+    case HexPid::h015D:
+        return "degree";
+        break;
+    case HexPid::h015E:
+        return "L/h";
+        break;
+    case HexPid::h015F:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0160:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0161:
+        return "%";
+        break;
+    case HexPid::h0162:
+        return "%";
+        break;
+    case HexPid::h0163:
+        return "Nm";
+        break;
+    case HexPid::h0164:
+        return "%";
+        break;
+    case HexPid::h0165:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0166:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0167:
+        return "Celsius degree";
+        break;
+    case HexPid::h0168:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0169:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h016A:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h016B:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h016C:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h016D:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h016E:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h016F:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0170:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0171:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0172:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0173:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0174:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0175:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0176:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0177:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0178:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0179:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h017A:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h017B:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h017C:
+        return "Celsius degree";
+        break;
+    case HexPid::h017D:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h017E:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h017F:
+        return "seconds";
+        break;
+    case HexPid::h0180:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0181:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0182:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0183:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0184:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0185:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0186:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0187:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0188:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0189:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h018A:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h018B:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h018C:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h018D:
+        return "%";
+        break;
+    case HexPid::h018E:
+        return "%";
+        break;
+    case HexPid::h018F:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0190:
+        return "hours";
+        break;
+    case HexPid::h0191:
+        return "hours";
+        break;
+    case HexPid::h0192:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0193:
+        return "hours";
+        break;
+    case HexPid::h0194:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0195:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0196:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0197:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0198:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0199:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h019A:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h019B:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h019C:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h019D:
+        return "g/s";
+        break;
+    case HexPid::h019E:
+        return "kg/h";
+        break;
+    case HexPid::h019F:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h01A0:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h01A1:
+        return "ppm";
+        break;
+    case HexPid::h01A2:
+        return "mg/stroke";
+        break;
+    case HexPid::h01A3:
+        return "Pa";
+        break;
+    case HexPid::h01A4:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h01A5:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h01A6:
+        return "hm";
+        break;
+    case HexPid::h01C0:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h01C3:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h01C4:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0200:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0201:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0202:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0203:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0204:
+        return "%";
+        break;
+    case HexPid::h0205:
+        return "Celsius degree";
+        break;
+    case HexPid::h0206:
+        return "%";
+        break;
+    case HexPid::h0207:
+        return "%";
+        break;
+    case HexPid::h0208:
+        return "%";
+        break;
+    case HexPid::h0209:
+        return "%";
+        break;
+    case HexPid::h020A:
+        return "kPa";
+        break;
+    case HexPid::h020B:
+        return "kPa";
+        break;
+    case HexPid::h020C:
+        return "rpm";
+        break;
+    case HexPid::h020D:
+        return "km/h";
+        break;
+    case HexPid::h020E:
+        return "Celsius degree before TDC";
+        break;
+    case HexPid::h020F:
+        return "Celsius degree";
+        break;
+    case HexPid::h0210:
+        return "grams/sec";
+        break;
+    case HexPid::h0211:
+        return "%";
+        break;
+    case HexPid::h0212:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0213:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0214:
+        return "Volts - %";
+        break;
+    case HexPid::h0215:
+        return "Volts - %";
+        break;
+    case HexPid::h0216:
+        return "Volts - %";
+        break;
+    case HexPid::h0217:
+        return "Volts - %";
+        break;
+    case HexPid::h0218:
+        return "Volts - %";
+        break;
+    case HexPid::h0219:
+        return "Volts - %";
+        break;
+    case HexPid::h021A:
+        return "Volts - %";
+        break;
+    case HexPid::h021B:
+        return "Volts - %";
+        break;
+    case HexPid::h021C:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h021D:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h021E:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h021F:
+        return "seconds";
+        break;
+    case HexPid::h0220:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0221:
+        return "km";
+        break;
+    case HexPid::h0222:
+        return "kPa";
+        break;
+    case HexPid::h0223:
+        return "kPa";
+        break;
+    case HexPid::h0224:
+        return "ratio - v";
+        break;
+    case HexPid::h0225:
+        return "ratio - v";
+        break;
+    case HexPid::h0226:
+        return "ratio - v";
+        break;
+    case HexPid::h0227:
+        return "ratio - v";
+        break;
+    case HexPid::h0228:
+        return "ratio - v";
+        break;
+    case HexPid::h0229:
+        return "ratio - v";
+        break;
+    case HexPid::h022A:
+        return "ratio - v";
+        break;
+    case HexPid::h022B:
+        return "ratio - v";
+        break;
+    case HexPid::h022C:
+        return "%";
+        break;
+    case HexPid::h022D:
+        return "%";
+        break;
+    case HexPid::h022E:
+        return "%";
+        break;
+    case HexPid::h022F:
+        return "%";
+        break;
+    case HexPid::h0230:
+        return "count";
+        break;
+    case HexPid::h0231:
+        return "km";
+        break;
+    case HexPid::h0232:
+        return "Pa";
+        break;
+    case HexPid::h0233:
+        return "kPa";
+        break;
+    case HexPid::h0234:
+        return "ratio - mA";
+        break;
+    case HexPid::h0235:
+        return "ratio - mA";
+        break;
+    case HexPid::h0236:
+        return "ratio - mA";
+        break;
+    case HexPid::h0237:
+        return "ratio - mA";
+        break;
+    case HexPid::h0238:
+        return "ratio - mA";
+        break;
+    case HexPid::h0239:
+        return "ratio - mA";
+        break;
+    case HexPid::h023A:
+        return "ratio - mA";
+        break;
+    case HexPid::h023B:
+        return "ratio - mA";
+        break;
+    case HexPid::h023C:
+        return "Celsius degree";
+        break;
+    case HexPid::h023D:
+        return "Celsius degree";
+        break;
+    case HexPid::h023E:
+        return "Celsius degree";
+        break;
+    case HexPid::h023F:
+        return "Celsius degree";
+        break;
+    case HexPid::h0240:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0241:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0242:
+        return "Volts";
+        break;
+    case HexPid::h0243:
+        return "%";
+        break;
+    case HexPid::h0244:
+        return "ratio";
+        break;
+    case HexPid::h0245:
+        return "Celsius degree";
+        break;
+    case HexPid::h0246:
+        return "%";
+        break;
+    case HexPid::h0247:
+        return "%";
+        break;
+    case HexPid::h0248:
+        return "%";
+        break;
+    case HexPid::h0249:
+        return "%";
+        break;
+    case HexPid::h024A:
+        return "%";
+        break;
+    case HexPid::h024B:
+        return "%";
+        break;
+    case HexPid::h024C:
+        return "%";
+        break;
+    case HexPid::h024D:
+        return "minutes";
+        break;
+    case HexPid::h024E:
+        return "minutes";
+        break;
+    case HexPid::h024F:
+        return "ratio - V - mA - kPa";
+        break;
+    case HexPid::h0250:
+        return "g/s";
+        break;
+    case HexPid::h0251:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0252:
+        return "%";
+        break;
+    case HexPid::h0253:
+        return "kPa";
+        break;
+    case HexPid::h0254:
+        return "Pa";
+        break;
+    case HexPid::h0255:
+        return "%";
+        break;
+    case HexPid::h0256:
+        return "%";
+        break;
+    case HexPid::h0257:
+        return "%";
+        break;
+    case HexPid::h0258:
+        return "%";
+        break;
+    case HexPid::h0259:
+        return "kPa";
+        break;
+    case HexPid::h025A:
+        return "%";
+        break;
+    case HexPid::h025B:
+        return "%";
+        break;
+    case HexPid::h025C:
+        return "Celsius degree";
+        break;
+    case HexPid::h025D:
+        return "degree";
+        break;
+    case HexPid::h025E:
+        return "L/h";
+        break;
+    case HexPid::h025F:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0260:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0261:
+        return "%";
+        break;
+    case HexPid::h0262:
+        return "%";
+        break;
+    case HexPid::h0263:
+        return "Nm";
+        break;
+    case HexPid::h0264:
+        return "%";
+        break;
+    case HexPid::h0265:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0266:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0267:
+        return "Celsius degree";
+        break;
+    case HexPid::h0268:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0269:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h026A:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h026B:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h026C:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h026D:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h026E:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h026F:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0270:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0271:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0272:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0273:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0274:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0275:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0276:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0277:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0278:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0279:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h027A:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h027B:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h027C:
+        return "Celsius degree";
+        break;
+    case HexPid::h027D:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h027E:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h027F:
+        return "seconds";
+        break;
+    case HexPid::h0280:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0281:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0282:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0283:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0284:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0285:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0286:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0287:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0288:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0289:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h028A:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h028B:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h028C:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h028D:
+        return "%";
+        break;
+    case HexPid::h028E:
+        return "%";
+        break;
+    case HexPid::h028F:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0290:
+        return "hours";
+        break;
+    case HexPid::h0291:
+        return "hours";
+        break;
+    case HexPid::h0292:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0293:
+        return "hours";
+        break;
+    case HexPid::h0294:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0295:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0296:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0297:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0298:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h0299:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h029A:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h029B:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h029C:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h029D:
+        return "g/s";
+        break;
+    case HexPid::h029E:
+        return "kg/h";
+        break;
+    case HexPid::h029F:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h02A0:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h02A1:
+        return "ppm";
+        break;
+    case HexPid::h02A2:
+        return "mg/stroke";
+        break;
+    case HexPid::h02A3:
+        return "Pa";
+        break;
+    case HexPid::h02A4:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h02A5:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h02A6:
+        return "hm";
+        break;
+    case HexPid::h02C0:
+        throw ExceptionPid(ExceptionPidType::NoUnits);
+        break;
+    case HexPid::h02C3:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h02C4:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h03:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h04:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0900:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0901:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0902:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0903:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0904:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0905:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0906:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0907:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0908:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h0909:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h090A:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    case HexPid::h090B:
+        throw ExceptionPid(ExceptionPidType::NoDescription);
+        break;
+    default:
+        throw std::runtime_error("unknown HexPid");
+        break;
+    }
 }
 
 float Pid::getMin()
