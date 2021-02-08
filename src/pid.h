@@ -486,6 +486,15 @@ public:
     int getNumberOfDataBytes();
 
     /*!
+     * \brief get the data byte at index specified
+     * \param index : index where to find data byte (from left to right, begins at 0)
+     * \return data byte at index transformed as unsigned int
+     * 
+     * If the PID returns 2 data bytes, the function returns for index 0 the first data byte (from left to right).
+     */
+    unsigned int getDataByteAtIndex(unsigned int index);
+
+    /*!
      * \brief Get minimum value possible for this PID
      * \return minimum value
      */
