@@ -5057,8 +5057,1076 @@ std::string Pid::getUnits()
 
 unsigned int Pid::getNumberOfDataBytes()
 {
+
+    switch (hexPid_)
+    {
+    case HexPid::h0100:
+        return 4;
+        break;
+    case HexPid::h0101:
+        return   4;
+        break;
+    case HexPid::h0102:
+        return   2;
+        break;
+    case HexPid::h0103:
+        return   2;
+        break;
+    case HexPid::h0104:
+        return   1;
+        break;
+    case HexPid::h0105:
+        return   1;
+        break;
+    case HexPid::h0106:
+        return   1;
+        break;
+    case HexPid::h0107:
+        return   1;
+        break;
+    case HexPid::h0108:
+        return   1;
+        break;
+    case HexPid::h0109:
+        return   1;
+        break;
+    case HexPid::h010A:
+        return   1;
+        break;
+    case HexPid::h010B:
+        return   1;
+        break;
+    case HexPid::h010C:
+        return   2;
+        break;
+    case HexPid::h010D:
+        return   1;
+        break;
+    case HexPid::h010E:
+        return   1;
+        break;
+    case HexPid::h010F:
+        return   1;
+        break;
+    case HexPid::h0110:
+        return   2;
+        break;
+    case HexPid::h0111:
+        return   1;
+        break;
+    case HexPid::h0112:
+        return   1;
+        break;
+    case HexPid::h0113:
+        return   1;
+        break;
+    case HexPid::h0114:
+        return   2;
+        break;
+    case HexPid::h0115:
+        return   2;
+        break;
+    case HexPid::h0116:
+        return   2;
+        break;
+    case HexPid::h0117:
+        return   2;
+        break;
+    case HexPid::h0118:
+        return   2;
+        break;
+    case HexPid::h0119:
+        return   2;
+        break;
+    case HexPid::h011A:
+        return   2;
+        break;
+    case HexPid::h011B:
+        return   2;
+        break;
+    case HexPid::h011C:
+        return   1;
+        break;
+    case HexPid::h011D:
+        return   1;
+        break;
+    case HexPid::h011E:
+        return   1;
+        break;
+    case HexPid::h011F:
+        return   2;
+        break;
+    case HexPid::h0120:
+        return   4;
+        break;
+    case HexPid::h0121:
+        return   2;
+        break;
+    case HexPid::h0122:
+        return   2;
+        break;
+    case HexPid::h0123:
+        return   2;
+        break;
+    case HexPid::h0124:
+        return   4;
+        break;
+    case HexPid::h0125:
+        return   4;
+        break;
+    case HexPid::h0126:
+        return   4;
+        break;
+    case HexPid::h0127:
+        return   4;
+        break;
+    case HexPid::h0128:
+        return   4;
+        break;
+    case HexPid::h0129:
+        return   4;
+        break;
+    case HexPid::h012A:
+        return   4;
+        break;
+    case HexPid::h012B:
+        return   4;
+        break;
+    case HexPid::h012C:
+        return   1;
+        break;
+    case HexPid::h012D:
+        return   1;
+        break;
+    case HexPid::h012E:
+        return   1;
+        break;
+    case HexPid::h012F:
+        return   1;
+        break;
+    case HexPid::h0130:
+        return   1;
+        break;
+    case HexPid::h0131:
+        return   2;
+        break;
+    case HexPid::h0132:
+        return   2;
+        break;
+    case HexPid::h0133:
+        return   1;
+        break;
+    case HexPid::h0134:
+        return   4;
+        break;
+    case HexPid::h0135:
+        return   4;
+        break;
+    case HexPid::h0136:
+        return   4;
+        break;
+    case HexPid::h0137:
+        return   4;
+        break;
+    case HexPid::h0138:
+        return   4;
+        break;
+    case HexPid::h0139:
+        return   4;
+        break;
+    case HexPid::h013A:
+        return   4;
+        break;
+    case HexPid::h013B:
+        return   4;
+        break;
+    case HexPid::h013C:
+        return   2;
+        break;
+    case HexPid::h013D:
+        return   2;
+        break;
+    case HexPid::h013E:
+        return   2;
+        break;
+    case HexPid::h013F:
+        return   2;
+        break;
+    case HexPid::h0140:
+        return   4;
+        break;
+    case HexPid::h0141:
+        return   4;
+        break;
+    case HexPid::h0142:
+        return   2;
+        break;
+    case HexPid::h0143:
+        return   2;
+        break;
+    case HexPid::h0144:
+        return   1;
+        break;
+    case HexPid::h0145:
+        return   1;
+        break;
+    case HexPid::h0146:
+        return   1;
+        break;
+    case HexPid::h0147:
+        return   1;
+        break;
+    case HexPid::h0148:
+        return   1;
+        break;
+    case HexPid::h0149:
+        return   1;
+        break;
+    case HexPid::h014A:
+        return   1;
+        break;
+    case HexPid::h014B:
+        return   1;
+        break;
+    case HexPid::h014C:
+        return   1;
+        break;
+    case HexPid::h014D:
+        return   2;
+        break;
+    case HexPid::h014E:
+        return   2;
+        break;
+    case HexPid::h014F:
+        return   4;
+        break;
+    case HexPid::h0150:
+        return   4;
+        break;
+    case HexPid::h0151:
+        return   1;
+        break;
+    case HexPid::h0152:
+        return   1;
+        break;
+    case HexPid::h0153:
+        return   2;
+        break;
+    case HexPid::h0154:
+        return   2;
+        break;
+    case HexPid::h0155:
+        return   2;
+        break;
+    case HexPid::h0156:
+        return   2;
+        break;
+    case HexPid::h0157:
+        return   2;
+        break;
+    case HexPid::h0158:
+        return   2;
+        break;
+    case HexPid::h0159:
+        return   2;
+        break;
+    case HexPid::h015A:
+        return   1;
+        break;
+    case HexPid::h015B:
+        return   1;
+        break;
+    case HexPid::h015C:
+        return   1;
+        break;
+    case HexPid::h015D:
+        return   2;
+        break;
+    case HexPid::h015E:
+        return   2;
+        break;
+    case HexPid::h015F:
+        return   1;
+        break;
+    case HexPid::h0160:
+        return   4;
+        break;
+    case HexPid::h0161:
+        return   1;
+        break;
+    case HexPid::h0162:
+        return   1;
+        break;
+    case HexPid::h0163:
+        return   2;
+        break;
+    case HexPid::h0164:
+        return   5;
+        break;
+    case HexPid::h0165:
+        return   2;
+        break;
+    case HexPid::h0166:
+        return   5;
+        break;
+    case HexPid::h0167:
+        return   3;
+        break;
+    case HexPid::h0168:
+        return   7;
+        break;
+    case HexPid::h0169:
+        return   7;
+        break;
+    case HexPid::h016A:
+        return   5;
+        break;
+    case HexPid::h016B:
+        return   5;
+        break;
+    case HexPid::h016C:
+        return   5;
+        break;
+    case HexPid::h016D:
+        return   6;
+        break;
+    case HexPid::h016E:
+        return   5;
+        break;
+    case HexPid::h016F:
+        return   3;
+        break;
+    case HexPid::h0170:
+        return   9;
+        break;
+    case HexPid::h0171:
+        return   5;
+        break;
+    case HexPid::h0172:
+        return   5;
+        break;
+    case HexPid::h0173:
+        return   5;
+        break;
+    case HexPid::h0174:
+        return   5;
+        break;
+    case HexPid::h0175:
+        return   7;
+        break;
+    case HexPid::h0176:
+        return   7;
+        break;
+    case HexPid::h0177:
+        return   5;
+        break;
+    case HexPid::h0178:
+        return   9;
+        break;
+    case HexPid::h0179:
+        return   9;
+        break;
+    case HexPid::h017A:
+        return   7;
+        break;
+    case HexPid::h017B:
+        return   7;
+        break;
+    case HexPid::h017C:
+        return   9;
+        break;
+    case HexPid::h017D:
+        return   1;
+        break;
+    case HexPid::h017E:
+        return   1;
+        break;
+    case HexPid::h017F:
+        return   13;
+        break;
+    case HexPid::h0180:
+        return   4;
+        break;
+    case HexPid::h0181:
+        return   21;
+        break;
+    case HexPid::h0182:
+        return   21;
+        break;
+    case HexPid::h0183:
+        return   5;
+        break;
+    case HexPid::h0184:
+        return   1;
+        break;
+    case HexPid::h0185:
+        return   10;
+        break;
+    case HexPid::h0186:
+        return   5;
+        break;
+    case HexPid::h0187:
+        return   5;
+        break;
+    case HexPid::h0188:
+        return   13;
+        break;
+    case HexPid::h0189:
+        return   41;
+        break;
+    case HexPid::h018A:
+        return   41;
+        break;
+    case HexPid::h018B:
+        return   7;
+        break;
+    case HexPid::h018C:
+        return   16;
+        break;
+    case HexPid::h018D:
+        return   1;
+        break;
+    case HexPid::h018E:
+        return   1;
+        break;
+    case HexPid::h018F:
+        return   5;
+        break;
+    case HexPid::h0190:
+        return   3;
+        break;
+    case HexPid::h0191:
+        return   5;
+        break;
+    case HexPid::h0192:
+        return   2;
+        break;
+    case HexPid::h0193:
+        return   3;
+        break;
+    case HexPid::h0194:
+        return   12;
+        break;
+    case HexPid::h0195:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h0196:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h0197:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h0198:
+        return   9;
+        break;
+    case HexPid::h0199:
+        return   9;
+        break;
+    case HexPid::h019A:
+        return   6;
+        break;
+    case HexPid::h019B:
+        return   4;
+        break;
+    case HexPid::h019C:
+        return   17;
+        break;
+    case HexPid::h019D:
+        return   4;
+        break;
+    case HexPid::h019E:
+        return   2;
+        break;
+    case HexPid::h019F:
+        return   9;
+        break;
+    case HexPid::h01A0:
+        return   4;
+        break;
+    case HexPid::h01A1:
+        return   9;
+        break;
+    case HexPid::h01A2:
+        return   2;
+        break;
+    case HexPid::h01A3:
+        return   9;
+        break;
+    case HexPid::h01A4:
+        return   4;
+        break;
+    case HexPid::h01A5:
+        return   4;
+        break;
+    case HexPid::h01A6:
+        return   4;
+        break;
+    case HexPid::h01C0:
+        return   4;
+        break;
+    case HexPid::h01C3:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h01C4:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h0200:
+        return   4;
+        break;
+    case HexPid::h0201:
+        return   4;
+        break;
+    case HexPid::h0202:
+        return   2;
+        break;
+    case HexPid::h0203:
+        return   2;
+        break;
+    case HexPid::h0204:
+        return   1;
+        break;
+    case HexPid::h0205:
+        return   1;
+        break;
+    case HexPid::h0206:
+        return   1;
+        break;
+    case HexPid::h0207:
+        return   1;
+        break;
+    case HexPid::h0208:
+        return   1;
+        break;
+    case HexPid::h0209:
+        return   1;
+        break;
+    case HexPid::h020A:
+        return   1;
+        break;
+    case HexPid::h020B:
+        return   1;
+        break;
+    case HexPid::h020C:
+        return   2;
+        break;
+    case HexPid::h020D:
+        return   1;
+        break;
+    case HexPid::h020E:
+        return   1;
+        break;
+    case HexPid::h020F:
+        return   1;
+        break;
+    case HexPid::h0210:
+        return   2;
+        break;
+    case HexPid::h0211:
+        return   1;
+        break;
+    case HexPid::h0212:
+        return   1;
+        break;
+    case HexPid::h0213:
+        return   1;
+        break;
+    case HexPid::h0214:
+        return   2;
+        break;
+    case HexPid::h0215:
+        return   2;
+        break;
+    case HexPid::h0216:
+        return   2;
+        break;
+    case HexPid::h0217:
+        return   2;
+        break;
+    case HexPid::h0218:
+        return   2;
+        break;
+    case HexPid::h0219:
+        return   2;
+        break;
+    case HexPid::h021A:
+        return   2;
+        break;
+    case HexPid::h021B:
+        return   2;
+        break;
+    case HexPid::h021C:
+        return   1;
+        break;
+    case HexPid::h021D:
+        return   1;
+        break;
+    case HexPid::h021E:
+        return   1;
+        break;
+    case HexPid::h021F:
+        return   2;
+        break;
+    case HexPid::h0220:
+        return   4;
+        break;
+    case HexPid::h0221:
+        return   2;
+        break;
+    case HexPid::h0222:
+        return   2;
+        break;
+    case HexPid::h0223:
+        return   2;
+        break;
+    case HexPid::h0224:
+        return   4;
+        break;
+    case HexPid::h0225:
+        return   4;
+        break;
+    case HexPid::h0226:
+        return   4;
+        break;
+    case HexPid::h0227:
+        return   4;
+        break;
+    case HexPid::h0228:
+        return   4;
+        break;
+    case HexPid::h0229:
+        return   4;
+        break;
+    case HexPid::h022A:
+        return   4;
+        break;
+    case HexPid::h022B:
+        return   4;
+        break;
+    case HexPid::h022C:
+        return   1;
+        break;
+    case HexPid::h022D:
+        return   1;
+        break;
+    case HexPid::h022E:
+        return   1;
+        break;
+    case HexPid::h022F:
+        return   1;
+        break;
+    case HexPid::h0230:
+        return   1;
+        break;
+    case HexPid::h0231:
+        return   2;
+        break;
+    case HexPid::h0232:
+        return   2;
+        break;
+    case HexPid::h0233:
+        return   1;
+        break;
+    case HexPid::h0234:
+        return   4;
+        break;
+    case HexPid::h0235:
+        return   4;
+        break;
+    case HexPid::h0236:
+        return   4;
+        break;
+    case HexPid::h0237:
+        return   4;
+        break;
+    case HexPid::h0238:
+        return   4;
+        break;
+    case HexPid::h0239:
+        return   4;
+        break;
+    case HexPid::h023A:
+        return   4;
+        break;
+    case HexPid::h023B:
+        return   4;
+        break;
+    case HexPid::h023C:
+        return   2;
+        break;
+    case HexPid::h023D:
+        return   2;
+        break;
+    case HexPid::h023E:
+        return   2;
+        break;
+    case HexPid::h023F:
+        return   2;
+        break;
+    case HexPid::h0240:
+        return   4;
+        break;
+    case HexPid::h0241:
+        return   4;
+        break;
+    case HexPid::h0242:
+        return   2;
+        break;
+    case HexPid::h0243:
+        return   2;
+        break;
+    case HexPid::h0244:
+        return   1;
+        break;
+    case HexPid::h0245:
+        return   1;
+        break;
+    case HexPid::h0246:
+        return   1;
+        break;
+    case HexPid::h0247:
+        return   1;
+        break;
+    case HexPid::h0248:
+        return   1;
+        break;
+    case HexPid::h0249:
+        return   1;
+        break;
+    case HexPid::h024A:
+        return   1;
+        break;
+    case HexPid::h024B:
+        return   1;
+        break;
+    case HexPid::h024C:
+        return   1;
+        break;
+    case HexPid::h024D:
+        return   2;
+        break;
+    case HexPid::h024E:
+        return   2;
+        break;
+    case HexPid::h024F:
+        return   4;
+        break;
+    case HexPid::h0250:
+        return   4;
+        break;
+    case HexPid::h0251:
+        return   1;
+        break;
+    case HexPid::h0252:
+        return   1;
+        break;
+    case HexPid::h0253:
+        return   2;
+        break;
+    case HexPid::h0254:
+        return   2;
+        break;
+    case HexPid::h0255:
+        return   2;
+        break;
+    case HexPid::h0256:
+        return   2;
+        break;
+    case HexPid::h0257:
+        return   2;
+        break;
+    case HexPid::h0258:
+        return   2;
+        break;
+    case HexPid::h0259:
+        return   2;
+        break;
+    case HexPid::h025A:
+        return   1;
+        break;
+    case HexPid::h025B:
+        return   1;
+        break;
+    case HexPid::h025C:
+        return   1;
+        break;
+    case HexPid::h025D:
+        return   2;
+        break;
+    case HexPid::h025E:
+        return   2;
+        break;
+    case HexPid::h025F:
+        return   1;
+        break;
+    case HexPid::h0260:
+        return   4;
+        break;
+    case HexPid::h0261:
+        return   1;
+        break;
+    case HexPid::h0262:
+        return   1;
+        break;
+    case HexPid::h0263:
+        return   2;
+        break;
+    case HexPid::h0264:
+        return   5;
+        break;
+    case HexPid::h0265:
+        return   2;
+        break;
+    case HexPid::h0266:
+        return   5;
+        break;
+    case HexPid::h0267:
+        return   3;
+        break;
+    case HexPid::h0268:
+        return   7;
+        break;
+    case HexPid::h0269:
+        return   7;
+        break;
+    case HexPid::h026A:
+        return   5;
+        break;
+    case HexPid::h026B:
+        return   5;
+        break;
+    case HexPid::h026C:
+        return   5;
+        break;
+    case HexPid::h026D:
+        return   6;
+        break;
+    case HexPid::h026E:
+        return   5;
+        break;
+    case HexPid::h026F:
+        return   3;
+        break;
+    case HexPid::h0270:
+        return   9;
+        break;
+    case HexPid::h0271:
+        return   5;
+        break;
+    case HexPid::h0272:
+        return   5;
+        break;
+    case HexPid::h0273:
+        return   5;
+        break;
+    case HexPid::h0274:
+        return   5;
+        break;
+    case HexPid::h0275:
+        return   7;
+        break;
+    case HexPid::h0276:
+        return   7;
+        break;
+    case HexPid::h0277:
+        return   5;
+        break;
+    case HexPid::h0278:
+        return   9;
+        break;
+    case HexPid::h0279:
+        return   9;
+        break;
+    case HexPid::h027A:
+        return   7;
+        break;
+    case HexPid::h027B:
+        return   7;
+        break;
+    case HexPid::h027C:
+        return   9;
+        break;
+    case HexPid::h027D:
+        return   1;
+        break;
+    case HexPid::h027E:
+        return   1;
+        break;
+    case HexPid::h027F:
+        return   13;
+        break;
+    case HexPid::h0280:
+        return   4;
+        break;
+    case HexPid::h0281:
+        return   21;
+        break;
+    case HexPid::h0282:
+        return   21;
+        break;
+    case HexPid::h0283:
+        return   5;
+        break;
+    case HexPid::h0284:
+        return   1;
+        break;
+    case HexPid::h0285:
+        return   10;
+        break;
+    case HexPid::h0286:
+        return   5;
+        break;
+    case HexPid::h0287:
+        return   5;
+        break;
+    case HexPid::h0288:
+        return   13;
+        break;
+    case HexPid::h0289:
+        return   41;
+        break;
+    case HexPid::h028A:
+        return   41;
+        break;
+    case HexPid::h028B:
+        return   7;
+        break;
+    case HexPid::h028C:
+        return   16;
+        break;
+    case HexPid::h028D:
+        return   1;
+        break;
+    case HexPid::h028E:
+        return   1;
+        break;
+    case HexPid::h028F:
+        return   5;
+        break;
+    case HexPid::h0290:
+        return   3;
+        break;
+    case HexPid::h0291:
+        return   5;
+        break;
+    case HexPid::h0292:
+        return   2;
+        break;
+    case HexPid::h0293:
+        return   3;
+        break;
+    case HexPid::h0294:
+        return   12;
+        break;
+    case HexPid::h0295:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h0296:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h0297:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h0298:
+        return   9;
+        break;
+    case HexPid::h0299:
+        return   9;
+        break;
+    case HexPid::h029A:
+        return   6;
+        break;
+    case HexPid::h029B:
+        return   4;
+        break;
+    case HexPid::h029C:
+        return   17;
+        break;
+    case HexPid::h029D:
+        return   4;
+        break;
+    case HexPid::h029E:
+        return   2;
+        break;
+    case HexPid::h029F:
+        return   9;
+        break;
+    case HexPid::h02A0:
+        return   4;
+        break;
+    case HexPid::h02A1:
+        return   9;
+        break;
+    case HexPid::h02A2:
+        return   2;
+        break;
+    case HexPid::h02A3:
+        return   9;
+        break;
+    case HexPid::h02A4:
+        return   4;
+        break;
+    case HexPid::h02A5:
+        return   4;
+        break;
+    case HexPid::h02A6:
+        return   4;
+        break;
+    case HexPid::h02C0:
+        return   4;
+        break;
+    case HexPid::h02C3:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h02C4:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h03:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h04:
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+        break;
+    case HexPid::h0900:
+        return   4;
+        break;
+    case HexPid::h0901:
+        return   1;
+        break;
+    case HexPid::h0902:
+        return   17;
+        break;
+    case HexPid::h0903:
+        return   1;
+        break;
+    case HexPid::h0904:
+        return   16;
+        break;
+    case HexPid::h0905:
+        return   1;
+        break;
+    case HexPid::h0906:
+        return   4;
+        break;
+    case HexPid::h0907:
+        return   1;
+        break;
+    case HexPid::h0908:
+        return   4;
+        break;
+    case HexPid::h0909:
+        return   1;
+        break;
+    case HexPid::h090A:
+        return   20;
+        break;
+    case HexPid::h090B:
+        return   4;
+        break;
+    default:
+        throw std::runtime_error("unknown HexPid");
 }
 
+}
 unsigned int Pid::getDataByteAtIndex(unsigned int index)
 {
 }
