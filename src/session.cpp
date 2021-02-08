@@ -129,7 +129,11 @@ int Session::interpreter()
 {
     std::string command = "";
     command = client_->readLine();
-    if (command == "listPID") // if the client wants to know every pid supported by this software
+    if (command == "quit")
+    {
+        return 1;
+    }
+    else if (command == "listPID") // if the client wants to know every pid supported by this software
     {
         std::string list; // string to take every pid separated by a space
         for (const auto hexPid : HexPids::all) // iterate through all pid
