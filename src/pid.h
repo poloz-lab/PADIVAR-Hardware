@@ -480,6 +480,12 @@ public:
     std::string getUnits();
 
     /*!
+     * \brief get number of data bytes returned by the PID
+     * \return number of data bytes returned by the PID
+     */
+    int getNumberOfDataBytes();
+
+    /*!
      * \brief Get minimum value possible for this PID
      * \return minimum value
      */

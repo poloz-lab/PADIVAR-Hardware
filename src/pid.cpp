@@ -5055,6 +5055,10 @@ std::string Pid::getUnits()
     }
 }
 
+int Pid::getNumberOfDataBytes()
+{
+}
+
 float Pid::getMin()
 {
 }
