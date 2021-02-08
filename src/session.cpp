@@ -41,6 +41,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <typeinfo>
 #include <exception>
 #include <iostream>
+#include "pid.h"
 
 
 
@@ -126,7 +127,21 @@ Session::~Session()
 
 int Session::interpreter()
 {
-
+    std::string command = "";
+    command = client_->readLine();
+    if (command == "listPID") // if the client wants to know every pid supported by this software
+    {
+        std::string list; // string to take every pid separated by a space
+        for (const auto hexPid : HexPids::all) // iterate through all pid
+        {
+            Pid p(hexPid);
+            list += p.getPidString();
+            list += " ";
+        }
+        list = list.substr(0, list.size() - 1); // remove last space
+        client_->writeString(list);
+        return 0;
+    }
 }
 
 std::string Session::toString()
