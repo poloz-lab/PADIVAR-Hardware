@@ -4435,13 +4435,13 @@ std::string Pid::getUnits()
         throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0195:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0196:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType:: NoUnits);
         break;
     case HexPid::h0197:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType:: NoUnits);
         break;
     case HexPid::h0198:
         throw ExceptionPid(ExceptionPidType::NoUnits);
@@ -4492,10 +4492,10 @@ std::string Pid::getUnits()
         throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h01C3:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType:: NoUnits);
         break;
     case HexPid::h01C4:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType:: NoUnits);
         break;
     case HexPid::h0200:
         throw ExceptionPid(ExceptionPidType::NoUnits);
@@ -4945,13 +4945,13 @@ std::string Pid::getUnits()
         throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0295:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType:: NoUnits);
         break;
     case HexPid::h0296:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType:: NoUnits);
         break;
     case HexPid::h0297:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType:: NoUnits);
         break;
     case HexPid::h0298:
         throw ExceptionPid(ExceptionPidType::NoUnits);
@@ -5002,52 +5002,52 @@ std::string Pid::getUnits()
         throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h02C3:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h02C4:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h03:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h04:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0900:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0901:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0902:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0903:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0904:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0905:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0906:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0907:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0908:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h0909:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h090A:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     case HexPid::h090B:
-        throw ExceptionPid(ExceptionPidType::NoDescription);
+        throw ExceptionPid(ExceptionPidType::NoUnits);
         break;
     default:
         throw std::runtime_error("unknown HexPid");
