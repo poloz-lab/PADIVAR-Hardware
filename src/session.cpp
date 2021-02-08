@@ -150,8 +150,16 @@ int Session::interpreter()
     {
         std::string pidString = "";
         pidString = client_->readLine();
-        Pid pid(pidString);
-        client_->writeString(pid.getDescription());
+        try
+        {
+            Pid pid(pidString);
+            client_->writeString(pid.getDescription());
+        }
+        catch(std::exception const& e)
+        {
+            std::cerr << e.what() << std::endl;
+            client_->writeString(e.what());
+        }        
         return 0;
     }
     else if (command == "units")
