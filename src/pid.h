@@ -403,7 +403,7 @@ namespace HexPids
         h090B
     };
 
-    static const HexPid All[] = {h0100,
+    static const HexPid all[] = {h0100,
         h0101,
         h0102,
         h0103,
