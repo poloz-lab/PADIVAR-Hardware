@@ -5055,7 +5055,7 @@ std::string Pid::getUnits()
     }
 }
 
-int Pid::getNumberOfDataBytes()
+unsigned int Pid::getNumberOfDataBytes()
 {
 }
 

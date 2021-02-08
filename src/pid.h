@@ -484,7 +484,7 @@ public:
      * \brief get number of data bytes returned by the PID
      * \return number of data bytes returned by the PID
      */
-    int getNumberOfDataBytes();
+    unsigned int getNumberOfDataBytes();
 
     /*!
      * \brief get the data byte at index specified
