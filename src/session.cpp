@@ -146,6 +146,14 @@ int Session::interpreter()
         client_->writeString(list);
         return 0;
     }
+    else if (command == "description") // if the client wants to have description for a pid
+    {
+        std::string pidString = "";
+        pidString = client_->readLine();
+        Pid pid(pidString);
+        client_->writeString(pid.getDescription());
+        return 0;
+    }
 }
 
 std::string Session::toString()
