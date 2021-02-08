@@ -154,6 +154,14 @@ int Session::interpreter()
         client_->writeString(pid.getDescription());
         return 0;
     }
+    else if (command == "units")
+    {
+        std::string pidString = "";
+        pidString = client_->readLine();
+        Pid pid(pidString);
+        client_->writeString(pid.getUnits());
+        return 0;
+    }
 }
 
 std::string Session::toString()
@@ -196,6 +204,9 @@ ExceptionSession::ExceptionSession(ExceptionSessionType type) throw()
         case ExceptionSessionType::BluetoothInitializationFailed:
             reason = "Bluetooth initialization failed";
             break;
+        case ExceptionSessionType::UnknownCommand:
+            reason = "unknown command";
+            break;
         default:
             reason = "Missing reason";
             break;
@@ -226,6 +237,9 @@ ExceptionSession::ExceptionSession(ExceptionSessionType type, std::string option
             break;
         case ExceptionSessionType::BluetoothInitializationFailed:
             reason = "Bluetooth initialization failed: " + option;
+            break;
+        case ExceptionSessionType::UnknownCommand:
+            reason = "unknown command: " + option;
             break;
         default:
             reason = "Missing reason";

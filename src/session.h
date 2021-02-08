@@ -76,7 +76,8 @@ namespace ExceptionSessionTypes
 		UnknownInterface, /*< interface asked by the client is unknown */
 		UsbInitializationFailed, /*< usb initialization failed */
 		WifiInitializationFailed, /*< wifi initialization failed */
-		BluetoothInitializationFailed /*< bluetooth initialization failed */
+		BluetoothInitializationFailed, /*< bluetooth initialization failed */
+		UnknownCommand, /*!< command unknown in interpreter */
 	};
 }
 typedef ExceptionSessionTypes::ExceptionSessionType ExceptionSessionType;
