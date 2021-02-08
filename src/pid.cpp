@@ -5063,6 +5063,10 @@ unsigned int Pid::getDataByteAtIndex(unsigned int index)
 {
 }
 
+unsigned int Pid::getNumberOfValues()
+{
+}
+
 float Pid::getMin()
 {
 }

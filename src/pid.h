@@ -495,6 +495,14 @@ public:
     unsigned int getDataByteAtIndex(unsigned int index);
 
     /*!
+     * \brief get the number of values returned by the Pid
+     * \return number of values returned by the Pid
+     * 
+     * Sometimes a PID gives two informations, for example PID 0129 that gives Air-Fuel equivalence ratio (lambda) & voltage
+     */
+    unsigned int getNumberOfValues();
+
+    /*!
      * \brief Get minimum value possible for this PID
      * \return minimum value
      */
