@@ -166,8 +166,16 @@ int Session::interpreter()
     {
         std::string pidString = "";
         pidString = client_->readLine();
-        Pid pid(pidString);
-        client_->writeString(pid.getUnits());
+        try
+        {
+            Pid pid(pidString);
+            client_->writeString(pid.getUnits());
+        }
+        catch(std::exception const& e)
+        {
+            std::cerr << e.what() << std::endl;
+            client_->writeString(e.what());
+        }
         return 0;
     }
     else
