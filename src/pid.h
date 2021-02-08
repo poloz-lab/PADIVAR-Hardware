@@ -41,6 +41,7 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #include <string>
 #include <exception>
+#include <vector>
 
 namespace HexPids
 {
@@ -504,21 +505,27 @@ public:
 
     /*!
      * \brief Get minimum value possible for this PID
-     * \return minimum value
+     * \return minimum values as vector in case of multiple values
+     * 
+     * The size of the vector depends of the number of values returned by the PID.
      */
-    float getMin();
+    std::vector<float> getMin();
 
     /*!
      * \brief Get maximum value possible for this PID
-     * \return maximum value
+     * \return maximum values as vector in case of multiple values
+     * 
+     * The size of the vector depends of the number of values returned by the PID.
      */
-    float getMax();
+    std::vector<float> getMax();
 
     /*!
      * \brief Get the value associated to the data bytes. Sometimes, a calculation may be necessary
-     * \return value associated to data_bytes
+     * \return values associated to data_bytes as vector in case of multiple values
+     * 
+     * The size of the vector depends of the number of values returned by the PID.
      */
-    float getValue();
+    std::vector<float> getValue();
 };
 
 namespace ExceptionPidTypes

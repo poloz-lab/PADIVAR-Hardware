@@ -5067,15 +5067,15 @@ unsigned int Pid::getNumberOfValues()
 {
 }
 
-float Pid::getMin()
+std::vector<float> Pid::getMin()
 {
 }
 
-float Pid::getMax()
+std::vector<float> Pid::getMax()
 {
 }
 
-float Pid::getValue()
+std::vector<float> Pid::getValue()
 {
 }
 
