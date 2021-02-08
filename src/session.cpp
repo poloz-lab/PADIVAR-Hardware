@@ -162,6 +162,10 @@ int Session::interpreter()
         client_->writeString(pid.getUnits());
         return 0;
     }
+    else
+    {
+        throw ExceptionSession(ExceptionSessionType::UnknownCommand, command);
+    }
 }
 
 std::string Session::toString()
