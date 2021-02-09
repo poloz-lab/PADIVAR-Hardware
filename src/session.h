@@ -51,7 +51,7 @@ class Session
 {
 private:
 	Device* connected_device_; /*!< Device connected for the session */
-	ClientSocket* client_;
+	ClientSocket* client_; /*!< Socket with the client to communicate with */
 	Session();
 public:
 	Session(ClientSocket* client);
