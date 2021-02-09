@@ -71,6 +71,11 @@ public:
 	 * \brief destructor
 	 */
 	~Session();
+
+	/*!
+	 * \brief interpret commands from client socket
+	 * \return  0 if everything's fine. 1 if the client want to disconnect.
+	 */
 	int interpreter();
     std::string toString();
 };
