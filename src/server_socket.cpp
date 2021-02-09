@@ -84,6 +84,7 @@ std::string ClientSocket::readLine()
 
 void ClientSocket::writeString(std::string data)
 {
+    data += '\n';
     if (write(socket_fd_, data.c_str(), data.size()) == -1)
     {
         throw ExceptionSocketClient(ExceptionSocketClientTypes::Writing, errno);
