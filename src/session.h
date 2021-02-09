@@ -71,12 +71,12 @@ namespace ExceptionSessionTypes
 	 */
 	enum ExceptionSessionType
 	{
-		NoError, /*< no error */
-		UnknownDevice, /*< device asked by the client is unknown */
-		UnknownInterface, /*< interface asked by the client is unknown */
-		UsbInitializationFailed, /*< usb initialization failed */
-		WifiInitializationFailed, /*< wifi initialization failed */
-		BluetoothInitializationFailed, /*< bluetooth initialization failed */
+		NoError, /*!< no error */
+		UnknownDevice, /*!< device asked by the client is unknown */
+		UnknownInterface, /*!< interface asked by the client is unknown */
+		UsbInitializationFailed, /*!< usb initialization failed */
+		WifiInitializationFailed, /*!< wifi initialization failed */
+		BluetoothInitializationFailed, /*!< bluetooth initialization failed */
 		UnknownCommand, /*!< command unknown in interpreter */
 	};
 }
