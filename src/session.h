@@ -50,7 +50,7 @@ knowledge of the CeCILL license and that you accept its terms.
 class Session
 {
 private:
-	Device* connected_device_;
+	Device* connected_device_; /*!< Device connected for the session */
 	ClientSocket* client_;
 	Session();
 public:
