@@ -66,6 +66,10 @@ public:
 	 * device, interface...
 	 */
 	Session(ClientSocket* client);
+
+	/*!
+	 * \brief destructor
+	 */
 	~Session();
 	int interpreter();
     std::string toString();
