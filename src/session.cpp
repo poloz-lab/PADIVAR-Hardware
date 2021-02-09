@@ -41,6 +41,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <typeinfo>
 #include <exception>
 #include <iostream>
+#include "pid.h"
 
 
 
@@ -126,7 +127,61 @@ Session::~Session()
 
 int Session::interpreter()
 {
-
+    std::string command = "";
+    command = client_->readLine();
+    if (command == "quit")
+    {
+        return 1;
+    }
+    else if (command == "listPID") // if the client wants to know every pid supported by this software
+    {
+        std::string list; // string to take every pid separated by a space
+        for (const auto hexPid : HexPids::all) // iterate through all pid
+        {
+            Pid p(hexPid);
+            list += p.getPidString();
+            list += " ";
+        }
+        list = list.substr(0, list.size() - 1); // remove last space
+        client_->writeString(list);
+        return 0;
+    }
+    else if (command == "description") // if the client wants to have description for a pid
+    {
+        std::string pidString = "";
+        pidString = client_->readLine();
+        try
+        {
+            Pid pid(pidString);
+            client_->writeString(pid.getDescription());
+        }
+        catch(std::exception const& e)
+        {
+            std::cerr << e.what() << std::endl;
+            client_->writeString(e.what());
+        }        
+        return 0;
+    }
+    else if (command == "units")
+    {
+        std::string pidString = "";
+        pidString = client_->readLine();
+        try
+        {
+            Pid pid(pidString);
+            client_->writeString(pid.getUnits());
+        }
+        catch(std::exception const& e)
+        {
+            std::cerr << e.what() << std::endl;
+            client_->writeString(e.what());
+        }
+        return 0;
+    }
+    else
+    {
+        throw ExceptionSession(ExceptionSessionType::UnknownCommand, command);
+    }
 }
 
 std::string Session::toString()
@@ -169,6 +224,9 @@ ExceptionSession::ExceptionSession(ExceptionSessionType type) throw()
         case ExceptionSessionType::BluetoothInitializationFailed:
             reason = "Bluetooth initialization failed";
             break;
+        case ExceptionSessionType::UnknownCommand:
+            reason = "unknown command";
+            break;
         default:
             reason = "Missing reason";
             break;
@@ -199,6 +257,9 @@ ExceptionSession::ExceptionSession(ExceptionSessionType type, std::string option
             break;
         case ExceptionSessionType::BluetoothInitializationFailed:
             reason = "Bluetooth initialization failed: " + option;
+            break;
+        case ExceptionSessionType::UnknownCommand:
+            reason = "unknown command: " + option;
             break;
         default:
             reason = "Missing reason";
