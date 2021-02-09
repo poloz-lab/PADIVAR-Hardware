@@ -1,5 +1,5 @@
 /*
-Copyright or © or Copr. PST PADIVAR Hardware (2020)
+Copyright or © or Copr. PST PADIVarr Harrdwarre (2020)
 contributors:
 QuentinC <quclement@et.esiea.fr>
 Nulan <novais@et.esiea.fr>
@@ -7,32 +7,32 @@ Mathilde <mroyer@et.esiea.fr>
 Poloz <polozfr@laposte.net>
 MathysG <gageot@et.esiea.fr>
 
-This software is a computer program whose purpose is to diagnose a vehicle.
+This softwarre is a computer program whose purpose is to diagnose a vehicle.
 
-This software is governed by the CeCILL license under French law and
-abiding by the rules of distribution of free software.  You can  use, 
-modify and/ or redistribute the software under the terms of the CeCILL
+This softwarre is governed by the CeCILL license under French law and
+abiding by the rules of distribution of free softwarre.  You can  use, 
+modify and/ or redistribute the softwarre under the terms of the CeCILL
 license as circulated by CEA, CNRS and INRIA at the following URL
 "http://www.cecill.info". 
 
-As a counterpart to the access to the source code and  rights to copy,
-modify and redistribute granted by the license, users are provided only
-with a limited warranty  and the software's author,  the holder of the
+As a counterparrt to the access to the source code and  rights to copy,
+modify and redistribute granted by the license, users arre provided only
+with a limited warrranty  and the softwarre's author,  the holder of the
 economic rights,  and the successive licensors  have only  limited
 liability. 
 
 In this respect, the user's attention is drawn to the risks associated
 with loading,  using,  modifying and/or developing or reproducing the
-software by the user in light of its specific status of free software,
+softwarre by the user in light of its specific status of free softwarre,
 that may mean  that it is complicated to manipulate,  and  that  also
 therefore means  that it is reserved for developers  and  experienced
-professionals having in-depth computer knowledge. Users are therefore
-encouraged to load and test the software's suitability as regards their
+professionals having in-depth computer knowledge. Users arre therefore
+encouraged to load and test the softwarre's suitability as regarrds their
 requirements in conditions enabling the security of their systems and/or 
 data to be ensured and,  more generally, to use and operate it in the 
-same conditions as regards security. 
+same conditions as regarrds security. 
 
-The fact that you are presently reading this means that you have had
+The fact that you arre presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 
@@ -2919,7 +2919,7 @@ std::string Pid::getDescription()
         return "PIDs supported [01 - 20]";
         break;
     case HexPid::h0101:
-        return "Monitor status since DTCs cleared. (Includes malfunction indicator lamp (MIL) status and number of DTCs.)";
+        return "Monitor status since DTCs clearred. (Includes malfunction indicator lamp (MIL) status and number of DTCs.)";
         break;
     case HexPid::h0102:
         return "Freeze DTC";
@@ -2970,7 +2970,7 @@ std::string Pid::getDescription()
         return "Throttle position";
         break;
     case HexPid::h0112:
-        return "Commanded secondary air status";
+        return "Commanded secondarry air status";
         break;
     case HexPid::h0113:
         return "Oxygen sensors present (in 2 banks)";
@@ -3000,16 +3000,16 @@ std::string Pid::getDescription()
         return "Oxygen Sensor 8";
         break;
     case HexPid::h011C:
-        return "OBD standards this vehicle conforms to";
+        return "OBD standarrds this vehicle conforms to";
         break;
     case HexPid::h011D:
         return "Oxygen sensors present (in 4 banks)";
         break;
     case HexPid::h011E:
-        return "Auxiliary input status";
+        return "Auxiliarry input status";
         break;
     case HexPid::h011F:
-        return "Run time since engine start";
+        return "Run time since engine starrt";
         break;
     case HexPid::h0120:
         return "PIDs supported [21 - 40]";
@@ -3060,16 +3060,16 @@ std::string Pid::getDescription()
         return "Fuel Tank Level Input";
         break;
     case HexPid::h0130:
-        return "Warm-ups since codes cleared";
+        return "Warrm-ups since codes clearred";
         break;
     case HexPid::h0131:
-        return "Distance traveled since codes cleared";
+        return "Distance traveled since codes clearred";
         break;
     case HexPid::h0132:
         return "Evap. System Vapor Pressure	";
         break;
     case HexPid::h0133:
-        return "Absolute Barometric Pressure";
+        return "Absolute Barrometric Pressure";
         break;
     case HexPid::h0134:
         return "Oxygen Sensor 1";
@@ -3150,7 +3150,7 @@ std::string Pid::getDescription()
         return "Time run with MIL on";
         break;
     case HexPid::h014E:
-        return "Time since trouble codes cleared";
+        return "Time since trouble codes clearred";
         break;
     case HexPid::h014F:
         return "Maximum value for Fuel–Air equivalence ratio, oxygen sensor voltage, oxygen sensor current, and intake manifold absolute pressure";
@@ -3171,16 +3171,16 @@ std::string Pid::getDescription()
         return "Evap system vapor pressure";
         break;
     case HexPid::h0155:
-        return "Short term secondary oxygen sensor trim , Bank 1 - Bank 3";
+        return "Short term secondarry oxygen sensor trim , Bank 1 - Bank 3";
         break;
     case HexPid::h0156:
-        return "Long term secondary oxygen sensor trim, Bank 1 - Bank 3";
+        return "Long term secondarry oxygen sensor trim, Bank 1 - Bank 3";
         break;
     case HexPid::h0157:
-        return "Short term secondary oxygen sensor trim , Bank 2 - Bank 4";
+        return "Short term secondarry oxygen sensor trim , Bank 2 - Bank 4";
         break;
     case HexPid::h0158:
-        return "Long term secondary oxygen sensor trim , Bank 2 - Bank 4";
+        return "Long term secondarry oxygen sensor trim , Bank 2 - Bank 4";
         break;
     case HexPid::h0159:
         return "Fuel rail absolute pressure";
@@ -3219,7 +3219,7 @@ std::string Pid::getDescription()
         return "Engine percent torque data";
         break;
     case HexPid::h0165:
-        return "Auxiliary input / output supported";
+        return "Auxiliarry input / output supported";
         break;
     case HexPid::h0166:
         return "Mass air flow sensor";
@@ -3249,13 +3249,13 @@ std::string Pid::getDescription()
         return "Injection pressure control system";
         break;
     case HexPid::h016F:
-        return "Turbocharger compressor inlet pressure";
+        return "Turbocharrger compressor inlet pressure";
         break;
     case HexPid::h0170:
         return "Boost pressure control";
         break;
     case HexPid::h0171:
-        return "Variable Geometry turbo (VGT) control";
+        return "Varriable Geometry turbo (VGT) control";
         break;
     case HexPid::h0172:
         return "Wastegate control";
@@ -3264,16 +3264,16 @@ std::string Pid::getDescription()
         return "Exhaust pressure";
         break;
     case HexPid::h0174:
-        return "Turbocharger RPM";
+        return "Turbocharrger RPM";
         break;
     case HexPid::h0175:
-        return "Turbocharger temperature";
+        return "Turbocharrger temperature";
         break;
     case HexPid::h0176:
-        return "Turbocharger temperature";
+        return "Turbocharrger temperature";
         break;
     case HexPid::h0177:
-        return "Charge air cooler temperature (CACT)";
+        return "Charrge air cooler temperature (CACT)";
         break;
     case HexPid::h0178:
         return "Exhaust Gas temperature (EGT) Bank 1";
@@ -3282,19 +3282,19 @@ std::string Pid::getDescription()
         return "Exhaust Gas temperature (EGT) Bank 2";
         break;
     case HexPid::h017A:
-        return "Diesel particulate filter (DPF)";
+        return "Diesel parrticulate filter (DPF)";
         break;
     case HexPid::h017B:
-        return "Diesel particulate filter (DPF)";
+        return "Diesel parrticulate filter (DPF)";
         break;
     case HexPid::h017C:
-        return "Diesel Particulate filter (DPF) temperature";
+        return "Diesel Parrticulate filter (DPF) temperature";
         break;
     case HexPid::h017D:
-        return "NOx NTE (Not-To-Exceed) control area status";
+        return "NOx NTE (Not-To-Exceed) control arrea status";
         break;
     case HexPid::h017E:
-        return "PM NTE (Not-To-Exceed) control area status";
+        return "PM NTE (Not-To-Exceed) control arrea status";
         break;
     case HexPid::h017F:
         return "Engine run time";
@@ -3303,10 +3303,10 @@ std::string Pid::getDescription()
         return "PIDs supported [81 - A0]";
         break;
     case HexPid::h0181:
-        return "Engine run time for Auxiliary Emissions Control Device(AECD)";
+        return "Engine run time for Auxiliarry Emissions Control Device(AECD)";
         break;
     case HexPid::h0182:
-        return "Engine run time for Auxiliary Emissions Control Device(AECD)";
+        return "Engine run time for Auxiliarry Emissions Control Device(AECD)";
         break;
     case HexPid::h0183:
         return "NOx sensor";
@@ -3318,7 +3318,7 @@ std::string Pid::getDescription()
         return "NOx reagent system";
         break;
     case HexPid::h0186:
-        return "Particulate matter (PM) sensor";
+        return "Parrticulate matter (PM) sensor";
         break;
     case HexPid::h0187:
         return "Intake manifold absolute pressure";
@@ -3360,7 +3360,7 @@ std::string Pid::getDescription()
         return "WWH-OBD Vehicle OBD Counters support";
         break;
     case HexPid::h0194:
-        return "NOx Warning And Inducement System";
+        return "NOx Warrning And Inducement System";
         break;
     case HexPid::h0195:
         throw ExceptionPid(ExceptionPidType::NoDescription);
@@ -3408,7 +3408,7 @@ std::string Pid::getDescription()
         return "Evap System Vapor Pressure";
         break;
     case HexPid::h01A4:
-        return "Transmission Actual Gear";
+        return "Transmission Actual Gearr";
         break;
     case HexPid::h01A5:
         return "Diesel Exhaust Fluid Dosing	";
@@ -3429,7 +3429,7 @@ std::string Pid::getDescription()
         return "PIDs supported [01 - 20]";
         break;
     case HexPid::h0201:
-        return "Monitor status since DTCs cleared. (Includes malfunction indicator lamp (MIL) status and number of DTCs.)";
+        return "Monitor status since DTCs clearred. (Includes malfunction indicator lamp (MIL) status and number of DTCs.)";
         break;
     case HexPid::h0202:
         return "Freeze DTC";
@@ -3480,7 +3480,7 @@ std::string Pid::getDescription()
         return "DTC:Throttle position";
         break;
     case HexPid::h0212:
-        return "DTC:Commanded secondary air status";
+        return "DTC:Commanded secondarry air status";
         break;
     case HexPid::h0213:
         return "DTC:Oxygen sensors present (in 2 banks)";
@@ -3510,16 +3510,16 @@ std::string Pid::getDescription()
         return "DTC:Oxygen Sensor 8";
         break;
     case HexPid::h021C:
-        return "DTC:OBD standards this vehicle conforms to";
+        return "DTC:OBD standarrds this vehicle conforms to";
         break;
     case HexPid::h021D:
         return "DTC:Oxygen sensors present (in 4 banks)";
         break;
     case HexPid::h021E:
-        return "DTC:Auxiliary input status";
+        return "DTC:Auxiliarry input status";
         break;
     case HexPid::h021F:
-        return "DTC:Run time since engine start";
+        return "DTC:Run time since engine starrt";
         break;
     case HexPid::h0220:
         return "DTC:PIDs supported [21 - 40]";
@@ -3570,16 +3570,16 @@ std::string Pid::getDescription()
         return "DTC:Fuel Tank Level Input";
         break;
     case HexPid::h0230:
-        return "DTC:Warm-ups since codes cleared";
+        return "DTC:Warrm-ups since codes clearred";
         break;
     case HexPid::h0231:
-        return "DTC:Distance traveled since codes cleared";
+        return "DTC:Distance traveled since codes clearred";
         break;
     case HexPid::h0232:
         return "DTC:Evap. System Vapor Pressure	";
         break;
     case HexPid::h0233:
-        return "DTC:Absolute Barometric Pressure";
+        return "DTC:Absolute Barrometric Pressure";
         break;
     case HexPid::h0234:
         return "DTC:Oxygen Sensor 1";
@@ -3660,7 +3660,7 @@ std::string Pid::getDescription()
         return "DTC:Time run with MIL on";
         break;
     case HexPid::h024E:
-        return "DTC:Time since trouble codes cleared";
+        return "DTC:Time since trouble codes clearred";
         break;
     case HexPid::h024F:
         return "DTC:Maximum value for Fuel–Air equivalence ratio, oxygen sensor voltage, oxygen sensor current, and intake manifold absolute pressure";
@@ -3681,16 +3681,16 @@ std::string Pid::getDescription()
         return "DTC:Evap system vapor pressure";
         break;
     case HexPid::h0255:
-        return "DTC:Short term secondary oxygen sensor trim , Bank 1 - Bank 3";
+        return "DTC:Short term secondarry oxygen sensor trim , Bank 1 - Bank 3";
         break;
     case HexPid::h0256:
-        return "DTC:Long term secondary oxygen sensor trim, Bank 1 - Bank 3";
+        return "DTC:Long term secondarry oxygen sensor trim, Bank 1 - Bank 3";
         break;
     case HexPid::h0257:
-        return "DTC:Short term secondary oxygen sensor trim , Bank 2 - Bank 4";
+        return "DTC:Short term secondarry oxygen sensor trim , Bank 2 - Bank 4";
         break;
     case HexPid::h0258:
-        return "DTC:Long term secondary oxygen sensor trim , Bank 2 - Bank 4";
+        return "DTC:Long term secondarry oxygen sensor trim , Bank 2 - Bank 4";
         break;
     case HexPid::h0259:
         return "DTC:Fuel rail absolute pressure";
@@ -3729,7 +3729,7 @@ std::string Pid::getDescription()
         return "DTC:Engine percent torque data";
         break;
     case HexPid::h0265:
-        return "DTC:Auxiliary input / output supported";
+        return "DTC:Auxiliarry input / output supported";
         break;
     case HexPid::h0266:
         return "DTC:Mass air flow sensor";
@@ -3759,13 +3759,13 @@ std::string Pid::getDescription()
         return "DTC:Injection pressure control system";
         break;
     case HexPid::h026F:
-        return "DTC:Turbocharger compressor inlet pressure";
+        return "DTC:Turbocharrger compressor inlet pressure";
         break;
     case HexPid::h0270:
         return "DTC:Boost pressure control";
         break;
     case HexPid::h0271:
-        return "DTC:Variable Geometry turbo (VGT) control";
+        return "DTC:Varriable Geometry turbo (VGT) control";
         break;
     case HexPid::h0272:
         return "DTC:Wastegate control";
@@ -3774,16 +3774,16 @@ std::string Pid::getDescription()
         return "DTC:Exhaust pressure";
         break;
     case HexPid::h0274:
-        return "DTC:Turbocharger RPM";
+        return "DTC:Turbocharrger RPM";
         break;
     case HexPid::h0275:
-        return "DTC:Turbocharger temperature";
+        return "DTC:Turbocharrger temperature";
         break;
     case HexPid::h0276:
-        return "DTC:Turbocharger temperature";
+        return "DTC:Turbocharrger temperature";
         break;
     case HexPid::h0277:
-        return "DTC:Charge air cooler temperature (CACT)";
+        return "DTC:Charrge air cooler temperature (CACT)";
         break;
     case HexPid::h0278:
         return "DTC:Exhaust Gas temperature (EGT) Bank 1";
@@ -3792,19 +3792,19 @@ std::string Pid::getDescription()
         return "DTC:Exhaust Gas temperature (EGT) Bank 2";
         break;
     case HexPid::h027A:
-        return "DTC:Diesel particulate filter (DPF)";
+        return "DTC:Diesel parrticulate filter (DPF)";
         break;
     case HexPid::h027B:
-        return "DTC:Diesel particulate filter (DPF)";
+        return "DTC:Diesel parrticulate filter (DPF)";
         break;
     case HexPid::h027C:
-        return "DTC:Diesel Particulate filter (DPF) temperature";
+        return "DTC:Diesel Parrticulate filter (DPF) temperature";
         break;
     case HexPid::h027D:
-        return "DTC:NOx NTE (Not-To-Exceed) control area status";
+        return "DTC:NOx NTE (Not-To-Exceed) control arrea status";
         break;
     case HexPid::h027E:
-        return "DTC:PM NTE (Not-To-Exceed) control area status";
+        return "DTC:PM NTE (Not-To-Exceed) control arrea status";
         break;
     case HexPid::h027F:
         return "DTC:Engine run time";
@@ -3813,10 +3813,10 @@ std::string Pid::getDescription()
         return "DTC:PIDs supported [81 - A0]";
         break;
     case HexPid::h0281:
-        return "DTC:Engine run time for Auxiliary Emissions Control Device(AECD)";
+        return "DTC:Engine run time for Auxiliarry Emissions Control Device(AECD)";
         break;
     case HexPid::h0282:
-        return "DTC:Engine run time for Auxiliary Emissions Control Device(AECD)";
+        return "DTC:Engine run time for Auxiliarry Emissions Control Device(AECD)";
         break;
     case HexPid::h0283:
         return "DTC:NOx sensor";
@@ -3828,7 +3828,7 @@ std::string Pid::getDescription()
         return "DTC:NOx reagent system";
         break;
     case HexPid::h0286:
-        return "DTC:Particulate matter (PM) sensor";
+        return "DTC:Parrticulate matter (PM) sensor";
         break;
     case HexPid::h0287:
         return "DTC:Intake manifold absolute pressure";
@@ -3870,7 +3870,7 @@ std::string Pid::getDescription()
         return "DTC:WWH-OBD Vehicle OBD Counters support";
         break;
     case HexPid::h0294:
-        return "DTC:NOx Warning And Inducement System";
+        return "DTC:NOx Warrning And Inducement System";
         break;
     case HexPid::h0295:
         throw ExceptionPid(ExceptionPidType::NoDescription);
@@ -3918,7 +3918,7 @@ std::string Pid::getDescription()
         return "DTC:Evap System Vapor Pressure";
         break;
     case HexPid::h02A4:
-        return "DTC:Transmission Actual Gear";
+        return "DTC:Transmission Actual Gearr";
         break;
     case HexPid::h02A5:
         return "DTC:Diesel Exhaust Fluid Dosing	";
@@ -3939,7 +3939,7 @@ std::string Pid::getDescription()
         return "Request trouble codes";
         break;
     case HexPid::h04:
-        return "Clear trouble codes / Malfunction indicator lamp (MIL) / Check engine light";
+        return "Clearr trouble codes / Malfunction indicator lamp (MIL) / Check engine light";
         break;
     case HexPid::h0900:
         return "Service 9 supported PIDs (01 to 20)";
@@ -3966,7 +3966,7 @@ std::string Pid::getDescription()
         return "In-use performance tracking message count for PID 08 and 0B. Only for ISO 9141-2, ISO 14230-4 and SAE J1850.";
         break;
     case HexPid::h0908:
-        return "In-use performance tracking for spark ignition vehicles";
+        return "In-use performance tracking for sparrk ignition vehicles";
         break;
     case HexPid::h0909:
         return "ECU name message count for PID 0A";
@@ -7203,9 +7203,1265 @@ unsigned int Pid::getNumberOfValues()
     }
 }
 
+
 std::vector<float> Pid::getMin()
 {
+    std::vector<float> arr;
+	switch (hexPid_)
+    {
+    case HexPid::h0100:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0101:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0102:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0103:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0104:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0105:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h0106:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0107:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0108:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0109:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h010A:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h010B:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h010C:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h010D:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h010E:
+        arr = {-64}; 
+        return arr;
+        break;
+    case HexPid::h010F:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h0110:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0111:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0112:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0113:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0114:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h0115:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h0116:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h0117:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h0118:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h0119:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h011A:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h011B:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h011C:
+         arr = {1}; 
+         return arr;
+        break;
+    case HexPid::h011D:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h011E:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h011F:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0120:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0121:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0122:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0123:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0124:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h0125:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h0126:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h0127:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h0128:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h0129:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h012A:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h012B:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h012C:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h012D:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h012E:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h012F:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0130:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0131:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0132:
+        arr = {-8.192}; 
+        return arr;
+        break;
+    case HexPid::h0133:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0134:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h0135:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h0136:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h0137:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h0138:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h0139:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h013A:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h013B:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h013C:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h013D:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h013E:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h013F:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h0140:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0141:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0142:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0143:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0144:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0145:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0146:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h0147:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h0148:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0149:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h014A:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h014B:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h014C:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h014D:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h014E:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h014F:
+        arr = {0,0,0,0}; 
+        return arr;
+        break;
+    case HexPid::h0150:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0151:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0152:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0153:
+        arr = {-32,767}; 
+        return arr;
+        break;
+    case HexPid::h0154:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0155:
+        arr = {-100};
+        return arr;
+        break;
+    case HexPid::h0156:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0157:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0158:
+        arr = {-100};
+        return arr;
+        break;
+    case HexPid::h0159:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h015A:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h015B:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h015C:
+        arr = {1}; 
+        return arr;
+        break;
+    case HexPid::h015D:
+        arr = {-210}; 
+        return arr;
+        break;
+    case HexPid::h015E:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h015F:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0160:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0161:
+        arr = {-125};
+        return arr;
+        break;
+    case HexPid::h0162:
+        arr = {-125};
+        return arr;
+        break;
+    case HexPid::h0163:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0164:
+        arr = {-125};
+        return arr;
+        break;
+    case HexPid::h0165:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0166:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0167:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0168:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0169:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h016A:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h016B:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h016C:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h016D:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h016E:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h016F:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0170:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0171:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0172:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0173:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0174:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0175:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0176:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0177:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0178:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0179:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h017A:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h017B:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h017C:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h017D:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h017E:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h017F:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0180:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0181:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0182:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0183:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0184:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0185:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0186:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0187:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0188:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0189:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h018A:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h018B:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h018C:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h018D:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h018E:
+        arr = {-125};
+        return arr;
+        break;
+    case HexPid::h018F:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0190:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0191:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0192:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0193:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0194:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0195:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0196:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0197:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0198:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0199:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h019A:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h019B:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h019C:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h019D:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h019E:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h019F:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h01A0:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h01A1:
+        arr = {1}; return arr;
+        break;
+    case HexPid::h01A2:
+        arr = {1}; return arr;
+        break;
+    case HexPid::h01A3:
+        arr = {1}; return arr;
+        break;
+    case HexPid::h01A4:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h01A5:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h01A6:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h01C0:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h01C3:
+        throw ExceptionPid(ExceptionPidType:: NoMin);
+        break;
+    case HexPid::h01C4:
+        throw ExceptionPid(ExceptionPidType:: NoMin);
+        break;
+    case HexPid::h0200:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0201:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0202:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0203:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0204:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0205:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h0206:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0207:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0208:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0209:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h020A:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h020B:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h020C:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h020D:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h020E:
+        arr = {-64}; 
+        return arr;
+        break;
+    case HexPid::h020F:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h0210:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0211:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0212:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0213:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0214:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h0215:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h0216:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h0217:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h0218:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h0219:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h021A:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h021B:
+        arr = {0,-100}; 
+        return arr;
+        break;
+    case HexPid::h021C:
+         arr = {1}; 
+         return arr;
+        break;
+    case HexPid::h021D:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h021E:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h021F:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0220:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0221:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0222:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0223:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0224:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h0225:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h0226:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h0227:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h0228:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h0229:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h022A:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h022B:
+        arr = {0,0}; 
+        return arr;
+        break;
+    case HexPid::h022C:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h022D:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h022E:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h022F:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0230:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0231:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0232:
+        arr = {-8.192}; 
+        return arr;
+        break;
+    case HexPid::h0233:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0234:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h0235:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h0236:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h0237:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h0238:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h0239:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h023A:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h023B:
+        arr = {0,-128}; 
+        return arr;
+        break;
+    case HexPid::h023C:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h023D:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h023E:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h023F:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h0240:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0241:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0242:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0243:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0244:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0245:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0246:
+        arr = {-40}; 
+        return arr;
+        break;
+    case HexPid::h0247:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h0248:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0249:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h024A:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h024B:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h024C:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h024D:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h024E:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h024F:
+        arr = {0,0,0,0}; 
+        return arr;
+        break;
+    case HexPid::h0250:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0251:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0252:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0253:
+        arr = {-32,767}; 
+        return arr;
+        break;
+    case HexPid::h0254:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0255:
+        arr = {-100};
+        return arr;
+        break;
+    case HexPid::h0256:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0257:
+        arr = {-100}; 
+        return arr;
+        break;
+    case HexPid::h0258:
+        arr = {-100};
+        return arr;
+        break;
+    case HexPid::h0259:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h025A:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h025B:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h025C:
+        arr = {1}; 
+        return arr;
+        break;
+    case HexPid::h025D:
+        arr = {-210}; 
+        return arr;
+        break;
+    case HexPid::h025E:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h025F:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0260:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0261:
+        arr = {-125};
+        return arr;
+        break;
+    case HexPid::h0262:
+        arr = {-125};
+        return arr;
+        break;
+    case HexPid::h0263:
+        arr = {0}; 
+        return arr;
+        break;
+    case HexPid::h0264:
+        arr = {-125};
+        return arr;
+        break;
+    case HexPid::h0265:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0266:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0267:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0268:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0269:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h026A:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h026B:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h026C:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h026D:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h026E:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h026F:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0270:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0271:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0272:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0273:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0274:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0275:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0276:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0277:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0278:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0279:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h027A:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h027B:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h027C:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h027D:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h027E:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h027F:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0280:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0281:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0282:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0283:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0284:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0285:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0286:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0287:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0288:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0289:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h028A:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h028B:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h028C:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h028D:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h028E:
+        arr = {-125};
+        return arr;
+        break;
+    case HexPid::h028F:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0290:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0291:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0292:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0293:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0294:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0295:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0296:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0297:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0298:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0299:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h029A:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h029B:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h029C:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h029D:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h029E:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h029F:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h02A0:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h02A1:
+        arr = {1}; 
+        return arr;
+        break;
+    case HexPid::h02A2:
+        arr = {1}; 
+        return arr;
+        break;
+    case HexPid::h02A3:
+        arr = {1}; 
+        return arr;
+        break;
+    case HexPid::h02A4:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h02A5:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h02A6:
+        arr = {0};
+        return arr;
+        break;
+    case HexPid::h02C0:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h02C3:
+        throw ExceptionPid(ExceptionPidType:: NoMin);
+        break;
+    case HexPid::h02C4:
+        throw ExceptionPid(ExceptionPidType:: NoMin);
+        break;
+    case HexPid::h03:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h04:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0900:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0901:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0902:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0903:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0904:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0905:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0906:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0907:
+        arr = {8}; 
+        return arr;
+        break;
+        break;
+    case HexPid::h0908:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h0909:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h090A:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    case HexPid::h090B:
+        throw ExceptionPid(ExceptionPidType::NoMin);
+        break;
+    default:
+        throw std::runtime_error("unknown HexPid");
+        break;
+    }
 }
+
 
 std::vector<float> Pid::getMax()
 {
