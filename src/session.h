@@ -50,13 +50,38 @@ knowledge of the CeCILL license and that you accept its terms.
 class Session
 {
 private:
-	Device* connected_device_;
-	ClientSocket* client_;
+	Device* connected_device_; /*!< Device connected for the session */
+	ClientSocket* client_; /*!< Socket with the client to communicate with */
+
+	/*!
+	 * \brief forbid access to default constructor
+	 */
 	Session();
 public:
+	/*!
+	 * \brief constructor for session
+	 * \param client : socket with the client
+	 * 
+	 * initialize the session, receive some information from the client:
+	 * device, interface...
+	 */
 	Session(ClientSocket* client);
+
+	/*!
+	 * \brief destructor
+	 */
 	~Session();
+
+	/*!
+	 * \brief interpret commands from client socket
+	 * \return  0 if everything's fine. 1 if the client want to disconnect.
+	 */
 	int interpreter();
+
+	/*!
+	 * \brief translate the object into a string
+	 * \return string that describes the object
+	 */
     std::string toString();
 };
 
