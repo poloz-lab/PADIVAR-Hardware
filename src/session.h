@@ -58,6 +58,13 @@ private:
 	 */
 	Session();
 public:
+	/*!
+	 * \brief constructor for session
+	 * \param client : socket with the client
+	 * 
+	 * initialize the session, receive some information from the client:
+	 * device, interface...
+	 */
 	Session(ClientSocket* client);
 	~Session();
 	int interpreter();
