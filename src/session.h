@@ -52,6 +52,10 @@ class Session
 private:
 	Device* connected_device_; /*!< Device connected for the session */
 	ClientSocket* client_; /*!< Socket with the client to communicate with */
+
+	/*!
+	 * \brief forbid access to default constructor
+	 */
 	Session();
 public:
 	Session(ClientSocket* client);
