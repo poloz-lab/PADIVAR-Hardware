@@ -77,6 +77,11 @@ public:
 	 * \return  0 if everything's fine. 1 if the client want to disconnect.
 	 */
 	int interpreter();
+
+	/*!
+	 * \brief translate the object into a string
+	 * \return string that describes the object
+	 */
     std::string toString();
 };
 
