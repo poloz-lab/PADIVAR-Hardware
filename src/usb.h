@@ -48,7 +48,7 @@ private:
     Usb();
 public:
     Usb(std::string path); 
-    void send(std::string message); 
+    void sendMessage(std::string message); 
     std::string receive();
 };
 

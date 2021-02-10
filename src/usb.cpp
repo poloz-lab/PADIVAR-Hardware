@@ -48,7 +48,7 @@ Usb::Usb(std::string path)
     
 }
 
-void Usb::send(std::string message)
+void Usb::sendMessage(std::string message)
 {
 
 }

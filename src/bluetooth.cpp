@@ -83,9 +83,8 @@ Bluetooth::Bluetooth(std::string mac_address)
     }
 }
 
-void Bluetooth::send(std::string message)
+void Bluetooth::sendMessage(std::string message)
 {
-
 }
 
 std::string Bluetooth::receive()

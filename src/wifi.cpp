@@ -46,7 +46,7 @@ Wifi::Wifi(std::string ip_address, int port)
 {
 }
 
-void Wifi::send(std::string message)
+void Wifi::sendMessage(std::string message)
 {
 
 }

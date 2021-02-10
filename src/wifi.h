@@ -49,7 +49,7 @@ private:
     Wifi();
 public:
     Wifi(std::string ip_address, int port); 
-    void send(std::string message); 
+    void sendMessage(std::string message); 
     std::string receive();
 };
 
