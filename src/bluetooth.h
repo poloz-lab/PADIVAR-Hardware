@@ -48,6 +48,11 @@ private:
     Bluetooth();
 public:
     /*!
+     * \brief destructor that close the socket
+     */
+    ~Bluetooth();
+
+    /*!
      * \brief constructor to connect to bluetooth device
      * \param mac_address : mac address of the device
      * 

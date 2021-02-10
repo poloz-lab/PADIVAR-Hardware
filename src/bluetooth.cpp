@@ -51,6 +51,14 @@ Bluetooth::Bluetooth()
    
 }
 
+Bluetooth::~Bluetooth()
+{
+    if (fd_)
+    {
+        close(fd_);
+    }
+}
+
 Bluetooth::Bluetooth(std::string mac_address)
 {  
     struct sockaddr_rc addr = {0};
