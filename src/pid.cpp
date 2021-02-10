@@ -7530,11 +7530,11 @@ std::vector<float> Pid::getMin()
         return arr;
         break;
     case HexPid::h0153:
-        arr = {-32,767}; 
+        arr = {0}; 
         return arr;
         break;
     case HexPid::h0154:
-        arr = {-100}; 
+        arr = {-32767}; 
         return arr;
         break;
     case HexPid::h0155:
@@ -7782,13 +7782,13 @@ std::vector<float> Pid::getMin()
         throw ExceptionPid(ExceptionPidType::NoMin);
         break;
     case HexPid::h01A1:
-        arr = {1}; return arr;
+       throw ExceptionPid(ExceptionPidType::NoMin);
         break;
     case HexPid::h01A2:
-        arr = {1}; return arr;
+        throw ExceptionPid(ExceptionPidType::NoMin);
         break;
     case HexPid::h01A3:
-        arr = {1}; return arr;
+        throw ExceptionPid(ExceptionPidType::NoMin);
         break;
     case HexPid::h01A4:
         throw ExceptionPid(ExceptionPidType::NoMin);
@@ -8130,11 +8130,11 @@ std::vector<float> Pid::getMin()
         return arr;
         break;
     case HexPid::h0253:
-        arr = {-32,767}; 
+        arr = {0}; 
         return arr;
         break;
     case HexPid::h0254:
-        arr = {-100}; 
+        arr = {-32767}; 
         return arr;
         break;
     case HexPid::h0255:
@@ -8382,15 +8382,15 @@ std::vector<float> Pid::getMin()
         throw ExceptionPid(ExceptionPidType::NoMin);
         break;
     case HexPid::h02A1:
-        arr = {1}; 
+        throw ExceptionPid(ExceptionPidType::NoMin);
         return arr;
         break;
     case HexPid::h02A2:
-        arr = {1}; 
+        throw ExceptionPid(ExceptionPidType::NoMin); 
         return arr;
         break;
     case HexPid::h02A3:
-        arr = {1}; 
+        throw ExceptionPid(ExceptionPidType::NoMin); 
         return arr;
         break;
     case HexPid::h02A4:
