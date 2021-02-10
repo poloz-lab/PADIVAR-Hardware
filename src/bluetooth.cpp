@@ -85,6 +85,16 @@ Bluetooth::Bluetooth(std::string mac_address)
 
 void Bluetooth::sendMessage(std::string message)
 {
+    ssize_t status = 0;
+    status = send(fd_, message.c_str(), message.size(), 0);
+    if (status == (ssize_t) -1)
+    {
+        throw std::runtime_error("cannot send message through Bluetooth");
+    }
+    else if (status != (ssize_t) message.size())
+    {
+        throw std::runtime_error("message sent through Bluetooth is incomplete");
+    }
 }
 
 std::string Bluetooth::receive()
