@@ -65,7 +65,7 @@ Bluetooth::Bluetooth(std::string mac_address)
 
     // set connection parameters
     addr.rc_family = AF_BLUETOOTH;
-    addr.rc_channel = (uint8_t) 1;
+    addr.rc_channel = (uint8_t) 1; // default channel
     str2ba(destination, &addr.rc_bdaddr); 
 
     // connection

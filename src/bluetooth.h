@@ -47,6 +47,12 @@ private:
     int fd_;
     Bluetooth();
 public:
+    /*!
+     * \brief constructor to connect to bluetooth device
+     * \param mac_address : mac address of the device
+     * 
+     * this constructor uses RFCOMM socket with channel 1 hardcoded
+     */
     Bluetooth(std::string mac_address); 
     void send(std::string message); 
     std::string receive();
