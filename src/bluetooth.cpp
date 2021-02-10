@@ -37,15 +37,50 @@ knowledge of the CeCILL license and that you accept its terms.
 */
 
 #include "bluetooth.h"
+#include <list>
+#include <string>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <bluetooth/bluetooth.h>
+#include <bluetooth/rfcomm.h>
+#include <exception>
+#include <stdexcept>
 
 Bluetooth::Bluetooth()
 {
    
 }
 
-Bluetooth::Bluetooth(std::string mac_address)
+Bluetooth::~Bluetooth()
 {
-    
+    if (fd_)
+    {
+        close(fd_);
+    }
+}
+
+Bluetooth::Bluetooth(std::string mac_address)
+{  
+    struct sockaddr_rc addr = {0};
+    const char *destination = mac_address.c_str();
+
+    // creation of the socket
+    fd_ = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
+    if (fd_ == -1) // if the creation failed
+    {
+        throw std::runtime_error("can't create the bluetooth socket");
+    }
+
+    // set connection parameters
+    addr.rc_family = AF_BLUETOOTH;
+    addr.rc_channel = (uint8_t) 1; // default channel
+    str2ba(destination, &addr.rc_bdaddr); 
+
+    // connection
+    if (connect(fd_, (struct sockaddr *)&addr, sizeof(addr)))
+    {
+        throw std::runtime_error("can't connect to bluetooth destination");
+    }
 }
 
 void Bluetooth::send(std::string message)
