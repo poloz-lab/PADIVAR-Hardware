@@ -115,6 +115,11 @@ Session::Session(ClientSocket* client)
         }
         
     }
+    else if(type_device == "no device")
+    {
+            connected_device_ = nullptr;
+            client->writeString("initialization ok");
+    }
     else
     {
         throw ExceptionSession(ExceptionSessionType::UnknownDevice, type_device);
