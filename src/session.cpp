@@ -41,6 +41,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <typeinfo>
 #include <exception>
 #include <iostream>
+#include "pid.h"
 
 
 
@@ -75,9 +76,8 @@ Session::Session(ClientSocket* client)
             }
             catch(std::exception const& e)
             {
-                std::cerr << e.what() << std::endl;
                 client_->writeString("initialization failed");
-                throw std::runtime_error("can\'t initialize ELM327 via USB");
+                throw ExceptionSession(ExceptionSessionType::UsbInitializationFailed, e.what());
             }
         }
         else if(type_interface == "wifi")
@@ -91,9 +91,8 @@ Session::Session(ClientSocket* client)
             }
             catch(std::exception const& e)
             {
-                std::cerr << e.what() << std::endl;
                 client_->writeString("initialization failed");
-                throw std::runtime_error("can\'t initialize ELM327 via Wifi");
+                throw ExceptionSession(ExceptionSessionType::WifiInitializationFailed, e.what());
             }
         }
         else if(type_interface == "bluetooth")
@@ -106,20 +105,24 @@ Session::Session(ClientSocket* client)
             }
             catch(std::exception const& e)
             {
-                std::cerr << e.what() << std::endl;
                 client_->writeString("initialization failed");
-                throw std::runtime_error("can\'t initialize ELM327 via Bluetooth");
+                throw ExceptionSession(ExceptionSessionType::BluetoothInitializationFailed, e.what());
             }
         }
         else
         {
-            throw std::exception();
+            throw ExceptionSession(ExceptionSessionType::UnknownInterface, type_interface);
         }
         
     }
+    else if(type_device == "no device")
+    {
+        connected_device_ = nullptr;
+        client->writeString("initialization ok");
+    }
     else
     {
-        throw std::exception();
+        throw ExceptionSession(ExceptionSessionType::UnknownDevice, type_device);
     }
 }
 
@@ -129,7 +132,61 @@ Session::~Session()
 
 int Session::interpreter()
 {
-
+    std::string command = "";
+    command = client_->readLine();
+    if (command == "quit")
+    {
+        return 1;
+    }
+    else if (command == "listPID") // if the client wants to know every pid supported by this software
+    {
+        std::string list; // string to take every pid separated by a space
+        for (const auto hexPid : HexPids::all) // iterate through all pid
+        {
+            Pid p(hexPid);
+            list += p.getPidString();
+            list += " ";
+        }
+        list = list.substr(0, list.size() - 1); // remove last space
+        client_->writeString(list);
+        return 0;
+    }
+    else if (command == "description") // if the client wants to have description for a pid
+    {
+        std::string pidString = "";
+        pidString = client_->readLine();
+        try
+        {
+            Pid pid(pidString);
+            client_->writeString(pid.getDescription());
+        }
+        catch(std::exception const& e)
+        {
+            std::cerr << e.what() << std::endl;
+            client_->writeString(e.what());
+        }        
+        return 0;
+    }
+    else if (command == "units")
+    {
+        std::string pidString = "";
+        pidString = client_->readLine();
+        try
+        {
+            Pid pid(pidString);
+            client_->writeString(pid.getUnits());
+        }
+        catch(std::exception const& e)
+        {
+            std::cerr << e.what() << std::endl;
+            client_->writeString(e.what());
+        }
+        return 0;
+    }
+    else
+    {
+        throw ExceptionSession(ExceptionSessionType::UnknownCommand, command);
+    }
 }
 
 std::string Session::toString()
@@ -146,4 +203,77 @@ std::string Session::toString()
         s += "with no device";
     }
     return s;
+}
+
+ExceptionSession::ExceptionSession(ExceptionSessionType type) throw()
+    :type_(type)
+{
+    std::string reason;
+    switch(type_)
+    {
+        case ExceptionSessionType::NoError:
+            reason = "no error";
+            break;
+        case ExceptionSessionType::UnknownDevice:
+            reason = "unknown device";
+            break;
+        case ExceptionSessionType::UnknownInterface:
+            reason = "unknown interface";
+            break;
+        case ExceptionSessionType::UsbInitializationFailed:
+            reason = "USB initialization failed";
+            break;
+        case ExceptionSessionType::WifiInitializationFailed:
+            reason = "Wifi initialization failed";
+            break;
+        case ExceptionSessionType::BluetoothInitializationFailed:
+            reason = "Bluetooth initialization failed";
+            break;
+        case ExceptionSessionType::UnknownCommand:
+            reason = "unknown command";
+            break;
+        default:
+            reason = "Missing reason";
+            break;
+    }
+    explaination_ = reason;
+}
+
+ExceptionSession::ExceptionSession(ExceptionSessionType type, std::string option) throw()
+    :type_(type)
+{
+    std::string reason;
+    switch(type_)
+    {
+        case ExceptionSessionType::NoError:
+            reason = "no error";
+            break;
+        case ExceptionSessionType::UnknownDevice:
+            reason = "unknown device: " + option;
+            break;
+        case ExceptionSessionType::UnknownInterface:
+            reason = "unknown interface: " + option;
+            break;
+        case ExceptionSessionType::UsbInitializationFailed:
+            reason = "USB initialization failed: " + option;
+            break;
+        case ExceptionSessionType::WifiInitializationFailed:
+            reason = "Wifi initialization failed: " + option;
+            break;
+        case ExceptionSessionType::BluetoothInitializationFailed:
+            reason = "Bluetooth initialization failed: " + option;
+            break;
+        case ExceptionSessionType::UnknownCommand:
+            reason = "unknown command: " + option;
+            break;
+        default:
+            reason = "Missing reason";
+            break;
+    }
+    explaination_ = reason;
+}
+
+const char *ExceptionSession::what() const throw()
+{
+    return explaination_.c_str();
 }

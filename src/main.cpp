@@ -157,13 +157,22 @@ int main(int argc, char** argv)
     while (!g_quit)
     {
         ClientSocket client = server->waitingForConnection();
-        Session *session = new Session(&client);
-        /* intepret requests from client */
-        while (!g_quit && ! session->interpreter())
+        Session *session = nullptr;
+        try
         {
+            session = new Session(&client);
+            /* intepret requests from client */
+            while (!g_quit && ! session->interpreter())
+            {
+            }
+            delete session;
+            session = nullptr;
         }
-        delete session;
-        session = nullptr;
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << std::endl;
+            client.writeString(e.what());
+        }
     }
     
     return EXIT_SUCCESS;

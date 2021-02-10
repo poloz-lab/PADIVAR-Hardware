@@ -50,14 +50,92 @@ knowledge of the CeCILL license and that you accept its terms.
 class Session
 {
 private:
-	Device* connected_device_;
-	ClientSocket* client_;
+	Device* connected_device_; /*!< Device connected for the session */
+	ClientSocket* client_; /*!< Socket with the client to communicate with */
+
+	/*!
+	 * \brief forbid access to default constructor
+	 */
 	Session();
 public:
+	/*!
+	 * \brief constructor for session
+	 * \param client : socket with the client
+	 * 
+	 * initialize the session, receive some information from the client:
+	 * device, interface...
+	 */
 	Session(ClientSocket* client);
+
+	/*!
+	 * \brief destructor
+	 */
 	~Session();
+
+	/*!
+	 * \brief interpret commands from client socket
+	 * \return  0 if everything's fine. 1 if the client want to disconnect.
+	 */
 	int interpreter();
+
+	/*!
+	 * \brief translate the object into a string
+	 * \return string that describes the object
+	 */
     std::string toString();
+};
+
+/*!
+ * \namespace ExceptionSessionTypes
+ */
+namespace ExceptionSessionTypes
+{
+	/*!
+	 * \enum ExceptionSessionType
+	 * \brief type of error that could be encountered in Session
+	 */
+	enum ExceptionSessionType
+	{
+		NoError, /*!< no error */
+		UnknownDevice, /*!< device asked by the client is unknown */
+		UnknownInterface, /*!< interface asked by the client is unknown */
+		UsbInitializationFailed, /*!< usb initialization failed */
+		WifiInitializationFailed, /*!< wifi initialization failed */
+		BluetoothInitializationFailed, /*!< bluetooth initialization failed */
+		UnknownCommand, /*!< command unknown in interpreter */
+	};
+}
+typedef ExceptionSessionTypes::ExceptionSessionType ExceptionSessionType;
+
+/*!
+ * \class ExceptionSession
+ * \brief class for handling errors in session
+ */
+class ExceptionSession: public std::exception
+{
+public:
+	/*!
+	 * \brief constructor with no details
+	 * \param type : type of the error
+	 */
+	ExceptionSession(ExceptionSessionType type) throw();
+
+	/*!
+	 * \brief constructor which accept a detail
+	 * \param type : type of the error
+	 * \param option : detail of the error
+	 */
+	ExceptionSession(ExceptionSessionType type, std::string option) throw();
+
+	/*!
+	 * \brief give the reason of the exception
+	 * \return string to give the reason of the exception
+	 */
+	virtual const char* what() const throw();
+
+private:
+	ExceptionSessionType type_; /*< type of exception */
+	std::string explaination_; /*< string to explain the exception */
 };
 
 #endif
