@@ -8463,10 +8463,1261 @@ std::vector<float> Pid::getMin()
 }
 
 
+
 std::vector<float> Pid::getMax()
 {
+    std::vector<float> arr;
+	switch (hexPid_)
+    {
+    case HexPid::h0100:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0101:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0102:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0103:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0104:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0105:
+        arr = {215}; 
+        return arr;
+        break;
+    case HexPid::h0106:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h0107:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h0108:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h0109:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h010A:
+        arr = {765}; 
+        return arr;
+        break;
+    case HexPid::h010B:
+        arr = {255}; 
+        return arr;
+        break;
+    case HexPid::h010C:
+        arr = {16383.75}; 
+        return arr;
+        break;
+    case HexPid::h010D:
+        arr = {255}; 
+        return arr;
+        break;
+    case HexPid::h010E:
+        arr = {63.5}; 
+        return arr;
+        break;
+    case HexPid::h010F:
+        arr = {215}; 
+        return arr;
+        break;
+    case HexPid::h0110:
+        arr = {655.35}; 
+        return arr;
+        break;
+    case HexPid::h0111:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0112:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0113:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0114:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h0115:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h0116:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h0117:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h0118:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h0119:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h011A:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h011B:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h011C:
+         arr = {250}; 
+         return arr;
+        break;
+    case HexPid::h011D:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h011E:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h011F:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h0120:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0121:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h0122:
+        arr = {5177.265}; 
+        return arr;
+        break;
+    case HexPid::h0123:
+        arr = {655350}; 
+        return arr;
+        break;
+    case HexPid::h0124:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h0125:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h0126:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h0127:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h0128:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h0129:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h012A:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h012B:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h012C:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h012D:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h012E:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h012F:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0130:
+        arr = {255}; 
+        return arr;
+        break;
+    case HexPid::h0131:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h0132:
+        arr = {8191.75}; 
+        return arr;
+        break;
+    case HexPid::h0133:
+        arr = {255}; 
+        return arr;
+        break;
+    case HexPid::h0134:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h0135:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h0136:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h0137:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h0138:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h0139:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h013A:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h013B:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h013C:
+        arr = {6513.5}; 
+        return arr;
+        break;
+    case HexPid::h013D:
+        arr = {6513.5}; 
+        return arr;
+        break;
+    case HexPid::h013E:
+        arr = {6513.5}; 
+        return arr;
+        break;
+    case HexPid::h013F:
+        arr = {6513.5}; 
+        return arr;
+        break;
+    case HexPid::h0140:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0141:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0142:
+        arr = {65.535}; 
+        return arr;
+        break;
+    case HexPid::h0143:
+        arr = {25700}; 
+        return arr;
+        break;
+    case HexPid::h0144:
+        arr = {2}; 
+        return arr;
+        break;
+    case HexPid::h0145:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0146:
+        arr = {215}; 
+        return arr;
+        break;
+    case HexPid::h0147:
+        arr = {100};
+        return arr;
+        break;
+    case HexPid::h0148:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0149:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h014A:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h014B:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h014C:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h014D:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h014E:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h014F:
+        arr = {255,255,255,2550}; 
+        return arr;
+        break;
+    case HexPid::h0150:
+        arr = {2550}; 
+        return arr;
+        break;
+    case HexPid::h0151:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0152:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0153:
+        arr = {327.675}; 
+        return arr;
+        break;
+    case HexPid::h0154:
+        arr = {32768}; 
+        return arr;
+        break;
+    case HexPid::h0155:
+        arr = {99.2};
+        return arr;
+        break;
+    case HexPid::h0156:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h0157:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h0158:
+        arr = {99.2};
+        return arr;
+        break;
+    case HexPid::h0159:
+        arr = {655350};
+        return arr;
+        break;
+    case HexPid::h015A:
+        arr = {100};
+        return arr;
+        break;
+    case HexPid::h015B:
+        arr = {100};
+        return arr;
+        break;
+    case HexPid::h015C:
+        arr = {210}; 
+        return arr;
+        break;
+    case HexPid::h015D:
+        arr = {301.992}; 
+        return arr;
+        break;
+    case HexPid::h015E:
+        arr = {3212.75}; 
+        return arr;
+        break;
+    case HexPid::h015F:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0160:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0161:
+        arr = {130};
+        return arr;
+        break;
+    case HexPid::h0162:
+        arr = {130};
+        return arr;
+        break;
+    case HexPid::h0163:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h0164:
+        arr = {130};
+        return arr;
+        break;
+    case HexPid::h0165:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0166:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0167:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0168:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0169:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h016A:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h016B:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h016C:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h016D:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h016E:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h016F:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0170:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0171:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0172:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0173:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0174:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0175:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0176:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0177:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0178:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0179:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h017A:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h017B:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h017C:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h017D:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h017E:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h017F:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0180:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0181:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0182:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0183:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0184:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0185:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0186:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0187:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0188:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0189:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h018A:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h018B:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h018C:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h018D:
+        arr = {100};
+        return arr;
+        break;
+    case HexPid::h018E:
+        arr = {130};
+        return arr;
+        break;
+    case HexPid::h018F:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0190:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0191:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0192:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0193:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0194:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0195:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0196:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0197:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0198:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0199:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h019A:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h019B:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h019C:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h019D:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h019E:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h019F:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h01A0:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h01A1:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h01A2:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h01A3:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h01A4:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h01A5:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h01A6:
+        arr = {429496729.5};
+        return arr;
+        break;
+    case HexPid::h01C0:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h01C3:
+        throw ExceptionPid(ExceptionPidType:: NoMax);
+        break;
+    case HexPid::h01C4:
+        throw ExceptionPid(ExceptionPidType:: NoMax);
+        break;
+        case HexPid::h0200:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0201:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0202:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0203:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0204:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0205:
+        arr = {215}; 
+        return arr;
+        break;
+    case HexPid::h0206:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h0207:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h0208:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h0209:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h020A:
+        arr = {765}; 
+        return arr;
+        break;
+    case HexPid::h020B:
+        arr = {255}; 
+        return arr;
+        break;
+    case HexPid::h020C:
+        arr = {16383.75}; 
+        return arr;
+        break;
+    case HexPid::h020D:
+        arr = {255}; 
+        return arr;
+        break;
+    case HexPid::h020E:
+        arr = {63.5}; 
+        return arr;
+        break;
+    case HexPid::h020F:
+        arr = {215}; 
+        return arr;
+        break;
+    case HexPid::h0210:
+        arr = {655.35}; 
+        return arr;
+        break;
+    case HexPid::h0211:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0212:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0213:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0214:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h0215:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h0216:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h0217:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h0218:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h0219:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h021A:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h021B:
+        arr = {1.275,99.2}; 
+        return arr;
+        break;
+    case HexPid::h021C:
+         arr = {250}; 
+         return arr;
+        break;
+    case HexPid::h021D:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h021E:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h021F:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h0220:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0221:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h0222:
+        arr = {5177.265}; 
+        return arr;
+        break;
+    case HexPid::h0223:
+        arr = {655350}; 
+        return arr;
+        break;
+    case HexPid::h0224:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h0225:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h0226:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h0227:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h0228:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h0229:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h022A:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h022B:
+        arr = {2,8}; 
+        return arr;
+        break;
+    case HexPid::h022C:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h022D:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h022E:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h022F:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0230:
+        arr = {255}; 
+        return arr;
+        break;
+    case HexPid::h0231:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h0232:
+        arr = {8191.75}; 
+        return arr;
+        break;
+    case HexPid::h0233:
+        arr = {255}; 
+        return arr;
+        break;
+    case HexPid::h0234:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h0235:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h0236:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h0237:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h0238:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h0239:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h023A:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h023B:
+        arr = {2,128}; 
+        return arr;
+        break;
+    case HexPid::h023C:
+        arr = {6513.5}; 
+        return arr;
+        break;
+    case HexPid::h023D:
+        arr = {6513.5}; 
+        return arr;
+        break;
+    case HexPid::h023E:
+        arr = {6513.5}; 
+        return arr;
+        break;
+    case HexPid::h023F:
+        arr = {6513.5}; 
+        return arr;
+        break;
+    case HexPid::h0240:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0241:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0242:
+        arr = {65.535}; 
+        return arr;
+        break;
+    case HexPid::h0243:
+        arr = {25700}; 
+        return arr;
+        break;
+    case HexPid::h0244:
+        arr = {2}; 
+        return arr;
+        break;
+    case HexPid::h0245:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0246:
+        arr = {215}; 
+        return arr;
+        break;
+    case HexPid::h0247:
+        arr = {100};
+        return arr;
+        break;
+    case HexPid::h0248:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0249:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h024A:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h024B:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h024C:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h024D:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h024E:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h024F:
+        arr = {255,255,255,2550}; 
+        return arr;
+        break;
+    case HexPid::h0250:
+        arr = {2550}; 
+        return arr;
+        break;
+    case HexPid::h0251:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0252:
+        arr = {100}; 
+        return arr;
+        break;
+    case HexPid::h0253:
+        arr = {327.675}; 
+        return arr;
+        break;
+    case HexPid::h0254:
+        arr = {32768}; 
+        return arr;
+        break;
+    case HexPid::h0255:
+        arr = {99.2};
+        return arr;
+        break;
+    case HexPid::h0256:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h0257:
+        arr = {99.2}; 
+        return arr;
+        break;
+    case HexPid::h0258:
+        arr = {99.2};
+        return arr;
+        break;
+    case HexPid::h0259:
+        arr = {655350};
+        return arr;
+        break;
+    case HexPid::h025A:
+        arr = {100};
+        return arr;
+        break;
+    case HexPid::h025B:
+        arr = {100};
+        return arr;
+        break;
+    case HexPid::h025C:
+        arr = {210}; 
+        return arr;
+        break;
+    case HexPid::h025D:
+        arr = {301.992}; 
+        return arr;
+        break;
+    case HexPid::h025E:
+        arr = {3212.75}; 
+        return arr;
+        break;
+    case HexPid::h025F:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0260:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0261:
+        arr = {130};
+        return arr;
+        break;
+    case HexPid::h0262:
+        arr = {130};
+        return arr;
+        break;
+    case HexPid::h0263:
+        arr = {65535}; 
+        return arr;
+        break;
+    case HexPid::h0264:
+        arr = {130};
+        return arr;
+        break;
+    case HexPid::h0265:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0266:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0267:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0268:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0269:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h026A:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h026B:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h026C:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h026D:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h026E:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h026F:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0270:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0271:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0272:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0273:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0274:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0275:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0276:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0277:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0278:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0279:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h027A:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h027B:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h027C:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h027D:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h027E:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h027F:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0280:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0281:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0282:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0283:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0284:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0285:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0286:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0287:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0288:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0289:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h028A:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h028B:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h028C:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h028D:
+        arr = {100};
+        return arr;
+        break;
+    case HexPid::h028E:
+        arr = {130};
+        return arr;
+        break;
+    case HexPid::h028F:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0290:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0291:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0292:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0293:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0294:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0295:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0296:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0297:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0298:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0299:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h029A:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h029B:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h029C:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h029D:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h029E:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h029F:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h02A0:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h02A1:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h02A2:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h02A3:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h02A4:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h02A5:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h02A6:
+        arr = {429496729.5};
+        return arr;
+        break;
+    case HexPid::h02C0:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h02C3:
+        throw ExceptionPid(ExceptionPidType:: NoMax);
+        break;
+    case HexPid::h02C4:
+        throw ExceptionPid(ExceptionPidType:: NoMax);
+        break;
+    case HexPid::h03:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h04:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0900:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0901:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0902:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0903:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0904:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0905:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0906:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0907:
+        arr = {10}; 
+        return arr;
+        break;
+        break;
+    case HexPid::h0908:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h0909:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h090A:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    case HexPid::h090B:
+        throw ExceptionPid(ExceptionPidType::NoMax);
+        break;
+    default:
+        throw std::runtime_error("unknown HexPid");
+        break;
+    }
 }
-
 std::vector<float> Pid::getValue()
 {
 }
