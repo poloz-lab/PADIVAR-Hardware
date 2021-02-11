@@ -39,6 +39,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include "server_socket.h"
 #include <string>
 #include <unistd.h>
+#include <iostream>
 
 /*!
  * \file server_socket.c
