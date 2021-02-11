@@ -45,6 +45,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include "session.h"
 
 bool g_quit = false;
+bool g_verbose = false;
 
 namespace Options
 {
