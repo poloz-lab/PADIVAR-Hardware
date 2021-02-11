@@ -82,6 +82,10 @@ std::string ClientSocket::readLine()
         }
     }while (c != '\n');
     // return the whole string at the end
+    if (g_verbose)
+    {
+        std::cout << "received: " + s << std::endl;
+    }
     return s;
 }
 
