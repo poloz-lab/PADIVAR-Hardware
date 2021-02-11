@@ -169,6 +169,10 @@ ClientSocket ServerSocket::waitingForConnection()
     sockaddr_in client_address = {0};
     socklen_t client_address_size = sizeof(client_address);
     // waiting for connection
+    if (g_verbose)
+    {
+        std::cout << "waiting for client..." << std::endl;
+    }
     client_fd = accept(socket_fd_, (struct sockaddr *) &client_address, &client_address_size);
     // return the ClientSocket corresponding to the previous information
     return ClientSocket(client_fd, client_address, client_address_size);
