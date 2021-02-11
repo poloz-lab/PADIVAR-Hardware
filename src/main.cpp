@@ -171,6 +171,10 @@ int main(int argc, char** argv)
         try
         {
             session = new Session(&client);
+            if (g_verbose)
+            {
+                std::cout << "session initialized successfully" << std::endl;
+            }
             /* intepret requests from client */
             while (!g_quit && ! session->interpreter())
             {
