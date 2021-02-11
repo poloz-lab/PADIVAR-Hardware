@@ -75,6 +75,7 @@ void shortHelp()
     std::cout << "--help print long help" << std::endl;
     std::cout << "-p --port NUM port for the server NECESSARY" << std::endl;
     std::cout << "--max-connection-pending NUM" << std::endl;
+    std::cout << "-v --verbose for verbose mode" << std::endl;
 }
 
 void longHelp()
