@@ -85,6 +85,7 @@ void longHelp()
     std::cout << "--help print this help message" << std::endl;
     std::cout << "-p --port NUM port for the server to listen NECESSARY" << std::endl;
     std::cout << "--max-connection-pending NUM specify the number of connection that can wait before being accepted" << std::endl;
+    std::cout << "-v --verbose for verbose mode" << std::endl;
 }
 
 int main(int argc, char** argv)
