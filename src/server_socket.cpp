@@ -174,6 +174,10 @@ ClientSocket ServerSocket::waitingForConnection()
         std::cout << "waiting for client..." << std::endl;
     }
     client_fd = accept(socket_fd_, (struct sockaddr *) &client_address, &client_address_size);
+    if (g_verbose)
+    {
+        std::cout << "client accepted" << std::endl;
+    }
     // return the ClientSocket corresponding to the previous information
     return ClientSocket(client_fd, client_address, client_address_size);
 }
