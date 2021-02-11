@@ -87,6 +87,10 @@ std::string ClientSocket::readLine()
 
 void ClientSocket::writeString(std::string data)
 {
+    if (g_verbose)
+    {
+        std::cout << "sending: " + data << std::endl;
+    }
     data += '\n';
     if (write(socket_fd_, data.c_str(), data.size()) == -1)
     {
