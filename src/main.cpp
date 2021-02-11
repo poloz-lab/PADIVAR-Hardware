@@ -54,7 +54,8 @@ namespace Options
         ShortHelp = 'h',
         LongHelp,
         Port = 'p',
-        MaxConnectionPending
+        MaxConnectionPending,
+        Verbose = 'v',
     };
 }
 
