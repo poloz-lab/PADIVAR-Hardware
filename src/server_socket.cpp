@@ -67,6 +67,10 @@ std::string ClientSocket::readLine()
     char c = '\n';
     std::string s = "";
     // reading the socket one by one character until \0 is sent
+    if (g_verbose)
+    {
+        std::cout << "receiving..." << std::endl;
+    }
     do
     {
         // reading
