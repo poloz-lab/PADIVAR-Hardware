@@ -181,6 +181,10 @@ int main(int argc, char** argv)
             }
             delete session;
             session = nullptr;
+            if (g_verbose)
+            {
+                std::cout << "session closed" << std::endl;
+            }
         }
         catch(const std::exception& e)
         {
