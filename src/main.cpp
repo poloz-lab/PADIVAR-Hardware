@@ -165,13 +165,16 @@ int main(int argc, char** argv)
             while (!g_quit && ! session->interpreter())
             {
             }
-            delete session;
-            session = nullptr;
         }
         catch(const std::exception& e)
         {
             std::cerr << e.what() << std::endl;
             client.writeString(e.what());
+        }
+        if(session)
+        {
+            delete session;
+            session = nullptr;
         }
     }
     
