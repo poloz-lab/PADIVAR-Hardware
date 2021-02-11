@@ -138,6 +138,11 @@ Session::~Session()
 int Session::interpreter()
 {
     std::string command = "";
+
+    if (g_verbose)
+    {
+        std::cout << "waiting for command..." << std::endl;
+    }
     command = client_->readLine();
     if (command == "quit")
     {
