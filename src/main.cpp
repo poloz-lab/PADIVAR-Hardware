@@ -96,6 +96,7 @@ int main(int argc, char** argv)
         {"help", no_argument, NULL, Options::LongHelp},
         {"port", required_argument, NULL, Options::Port},
         {"max-connection-pending", required_argument, NULL, Options::MaxConnectionPending},
+        {"verbose", no_argument, NULL, Options::Verbose},
         {0}
     };
 
