@@ -48,6 +48,8 @@ knowledge of the CeCILL license and that you accept its terms.
  * \date 20/10/2020
  */
 
+extern bool g_verbose;
+
 ClientSocket::ClientSocket(int socket_fd, sockaddr_in client_address, socklen_t client_address_size)
     :socket_fd_(socket_fd),client_address_(client_address),client_address_size_(client_address_size)
 {
