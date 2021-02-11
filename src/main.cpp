@@ -127,6 +127,9 @@ int main(int argc, char** argv)
             case Options::MaxConnectionPending:
                 max_connection_pending = std::atoi(optarg);
                 break;
+            case Options::Verbose:
+                g_verbose = true;
+                break;
             case '?':
                 usage(argv[0]);
                 return EXIT_FAILURE;
