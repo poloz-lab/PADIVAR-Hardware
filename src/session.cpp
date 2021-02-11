@@ -60,6 +60,11 @@ Session::Session(ClientSocket* client)
     std::string mac_address = "";
 
     client_ = client;
+
+    if (g_verbose)
+    {
+        std::cout << "creating session..." << std::endl;
+    }
     type_device = client_->readLine();
 
     if(type_device == "elm327")
