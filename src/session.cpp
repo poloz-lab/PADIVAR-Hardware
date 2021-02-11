@@ -43,7 +43,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <iostream>
 #include "pid.h"
 
-
+extern bool g_verbose;
 
 Session::Session()
 {
