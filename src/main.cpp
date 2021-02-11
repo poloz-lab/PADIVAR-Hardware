@@ -152,6 +152,10 @@ int main(int argc, char** argv)
     try
     {
         server = new ServerSocket(port, max_connection_pending, INADDR_ANY);
+        if (g_verbose)
+        {
+            std::cout << "server initialized successfully" << std::endl;
+        }
     }
     catch (ExceptionSocketServer const& e)
     {
