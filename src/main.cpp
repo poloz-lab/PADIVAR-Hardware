@@ -108,7 +108,7 @@ int main(int argc, char** argv)
     }
 
     /* loop to process every option in command line */
-    while ((option = getopt_long(argc, argv, "hp:", long_options, 0)) != -1)
+    while ((option = getopt_long(argc, argv, "hp:v", long_options, 0)) != -1)
     {
         switch(option)
         {
