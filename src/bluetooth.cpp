@@ -83,12 +83,39 @@ Bluetooth::Bluetooth(std::string mac_address)
     }
 }
 
-void Bluetooth::send(std::string message)
+void Bluetooth::sendMessage(std::string message)
 {
-
+    ssize_t status = 0;
+    status = send(fd_, message.c_str(), message.size(), 0);
+    if (status == (ssize_t) -1)
+    {
+        throw std::runtime_error("cannot send message through Bluetooth");
+    }
+    else if (status != (ssize_t) message.size())
+    {
+        throw std::runtime_error("message sent through Bluetooth is incomplete");
+    }
 }
 
-std::string Bluetooth::receive()
+std::string Bluetooth::receive(char stopCharacter)
 {
-    
+    char c = stopCharacter;
+    std::string s = "";
+    // reading the socket one by one character until stop character is sent
+    do
+    {
+        // receiving
+        if (recv(fd_, &c, sizeof(char), 0) <= 0)
+        {
+            throw std::runtime_error("can't receive through Bluetooth");
+        }
+        // if c is not stop character
+        if (c != stopCharacter)
+        {
+            // concatenate the character to the string
+            s += c;
+        }
+    } while (c != stopCharacter);
+    // return the whole string at the end
+    return s;
 }

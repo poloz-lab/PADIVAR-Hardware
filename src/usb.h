@@ -48,8 +48,8 @@ private:
     Usb();
 public:
     Usb(std::string path); 
-    void send(std::string message); 
-    std::string receive();
+    void sendMessage(std::string message); 
+    std::string receive(char stopCharacter);
 };
 
 #endif

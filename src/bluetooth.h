@@ -59,8 +59,8 @@ public:
      * this constructor uses RFCOMM socket with channel 1 hardcoded
      */
     Bluetooth(std::string mac_address); 
-    void send(std::string message); 
-    std::string receive();
+    void sendMessage(std::string message); 
+    std::string receive(char stopCharacter);
 };
 
 #endif
