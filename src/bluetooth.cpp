@@ -99,5 +99,23 @@ void Bluetooth::sendMessage(std::string message)
 
 std::string Bluetooth::receive(char stopCharacter)
 {
-    
+    char c = stopCharacter;
+    std::string s = "";
+    // reading the socket one by one character until stop character is sent
+    do
+    {
+        // receiving
+        if (recv(fd_, &c, sizeof(char), 0) <= 0)
+        {
+            throw std::runtime_error("can't receive through Bluetooth");
+        }
+        // if c is not stop character
+        if (c != stopCharacter)
+        {
+            // concatenate the character to the string
+            s += c;
+        }
+    } while (c != stopCharacter);
+    // return the whole string at the end
+    return s;
 }
