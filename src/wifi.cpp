@@ -51,7 +51,7 @@ void Wifi::sendMessage(std::string message)
 
 }
 
-std::string Wifi::receive()
+std::string Wifi::receive(char stopCharacter)
 {
     
 }

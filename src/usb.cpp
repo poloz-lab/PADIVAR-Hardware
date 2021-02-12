@@ -53,7 +53,7 @@ void Usb::sendMessage(std::string message)
 
 }
 
-std::string Usb::receive()
+std::string Usb::receive(char stopCharacter)
 {
     
 }

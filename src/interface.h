@@ -45,7 +45,7 @@ class Interface
 {
 public:
     virtual void sendMessage(std::string message) = 0; 
-    virtual std::string receive() = 0;
+    virtual std::string receive(char stopCharacter) = 0;
 };
 
 #endif

@@ -97,7 +97,7 @@ void Bluetooth::sendMessage(std::string message)
     }
 }
 
-std::string Bluetooth::receive()
+std::string Bluetooth::receive(char stopCharacter)
 {
     
 }

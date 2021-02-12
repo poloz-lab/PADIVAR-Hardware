@@ -50,7 +50,7 @@ private:
 public:
     Wifi(std::string ip_address, int port); 
     void sendMessage(std::string message); 
-    std::string receive();
+    std::string receive(char stopCharacter);
 };
 
 #endif

@@ -60,7 +60,7 @@ public:
      */
     Bluetooth(std::string mac_address); 
     void sendMessage(std::string message); 
-    std::string receive();
+    std::string receive(char stopCharacter);
 };
 
 #endif

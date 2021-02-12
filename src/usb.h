@@ -49,7 +49,7 @@ private:
 public:
     Usb(std::string path); 
     void sendMessage(std::string message); 
-    std::string receive();
+    std::string receive(char stopCharacter);
 };
 
 #endif
