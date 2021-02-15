@@ -36,19 +36,19 @@ The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 
-    #include "device.h"
+#include "device.h"
     
-    /*Pid getPidList()
-    {
+/*Pid getPidList()
+{
 
-    }
+}
 
-    string sendPid(Pid pid)
-    {
+string sendPid(Pid pid)
+{
 
-    }
+}
 
-    Pid diagnostic(ClientSocket client_socket)
-    {
+Pid diagnostic(ClientSocket client_socket)
+{
 
-    }*/
+}*/
