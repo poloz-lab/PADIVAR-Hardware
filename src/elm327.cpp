@@ -46,7 +46,7 @@ Elm327::Elm327(Interface* communication_medium)
 
 void Elm327::initialization()
 {
-
+    communication_medium_->sendMessage("ATZ\r");
 }
 
 std::string Elm327::sendOBD(std::string obd_code)
