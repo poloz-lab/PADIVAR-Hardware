@@ -43,7 +43,7 @@ knowledge of the CeCILL license and that you accept its terms.
 class Device 
 {
 protected:
-    Interface* communication_medium_;
+    Interface* communication_medium_; /*!< communication medium used to communicate with the device */
 public:
     virtual void initialization()=0;
     virtual std::string sendOBD(std::string obd_code)=0;
