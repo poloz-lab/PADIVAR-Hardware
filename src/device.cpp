@@ -37,6 +37,12 @@ knowledge of the CeCILL license and that you accept its terms.
 */
 
 #include "device.h"
+
+Device::Device(Interface* communication_medium)
+    :communication_medium_(communication_medium)
+{
+
+}
     
 /*Pid getPidList()
 {

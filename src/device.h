@@ -42,8 +42,19 @@ knowledge of the CeCILL license and that you accept its terms.
 #include "server_socket.h"
 class Device 
 {
+private:
+
 protected:
     Interface* communication_medium_; /*!< communication medium used to communicate with the device */
+
+    /*! 
+     * \brief forbid access to default constructor
+     */
+    Device();
+    /*!
+     * \brief constructor with communication medium
+     */
+    Device(Interface* communication_medium);
 public:
     virtual void initialization()=0;
     virtual std::string sendOBD(std::string obd_code)=0;
