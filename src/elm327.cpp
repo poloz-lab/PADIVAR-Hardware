@@ -38,14 +38,10 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #include "elm327.h"
 
-Elm327::Elm327()
-{
-   
-}
-
 Elm327::Elm327(Interface* communication_medium)
+    :Device(communication_medium)
 {
-    
+    initialization();
 }
 
 void Elm327::initialization()
