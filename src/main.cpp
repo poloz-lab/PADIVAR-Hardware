@@ -181,17 +181,20 @@ int main(int argc, char** argv)
             while (!g_quit && ! session->interpreter())
             {
             }
-            delete session;
-            session = nullptr;
-            if (g_verbose)
-            {
-                std::cout << "session closed" << std::endl;
-            }
         }
         catch(const std::exception& e)
         {
             std::cerr << e.what() << std::endl;
             client.writeString(e.what());
+        }
+        if(session)
+        {
+            delete session;
+            session = nullptr;
+        }            
+        if (g_verbose)
+        {
+            std::cout << "session closed" << std::endl;
         }
     }
     
