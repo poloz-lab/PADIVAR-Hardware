@@ -9721,6 +9721,15 @@ std::vector<float> Pid::getMax()
 std::vector<float> Pid::getValue()
 {
 }
+ unsigned int Pid::HexaToDec(std::string data_bytes)
+ {
+    std::istringstream nb(data_bytes);
+	unsigned int n;
+
+	nb >> std::hex >> n;
+
+	return n;
+ }
 
 ExceptionPid::ExceptionPid(ExceptionPidType type) throw()
     :type_(type)

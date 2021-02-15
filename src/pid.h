@@ -42,6 +42,9 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <string>
 #include <exception>
 #include <vector>
+#include <iostream>
+#include <sstream>
+#include <string>
 
 namespace HexPids
 {
@@ -771,6 +774,13 @@ private:
      * \brief Forbid access to default constructor
      */
     Pid();
+
+    /*!
+     * \brief Hexadecimal to decimal conversion
+     * \param data_bytes : Data bytes in hexadecimal format (as string)
+     * \return decimal
+     */
+    unsigned int HexaToDec(std::string data_bytes);
 
 public:
     /*!
