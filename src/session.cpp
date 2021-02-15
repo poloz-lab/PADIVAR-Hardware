@@ -43,7 +43,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <iostream>
 #include "pid.h"
 
-
+extern bool g_verbose;
 
 Session::Session()
 {
@@ -60,6 +60,11 @@ Session::Session(ClientSocket* client)
     std::string mac_address = "";
 
     client_ = client;
+
+    if (g_verbose)
+    {
+        std::cout << "creating session..." << std::endl;
+    }
     type_device = client_->readLine();
 
     if(type_device == "elm327")
@@ -133,6 +138,11 @@ Session::~Session()
 int Session::interpreter()
 {
     std::string command = "";
+
+    if (g_verbose)
+    {
+        std::cout << "waiting for command..." << std::endl;
+    }
     command = client_->readLine();
     if (command == "quit")
     {

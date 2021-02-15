@@ -44,8 +44,8 @@ knowledge of the CeCILL license and that you accept its terms.
 class Interface
 {
 public:
-    virtual void send(std::string message) = 0; 
-    virtual std::string receive() = 0;
+    virtual void sendMessage(std::string message) = 0; 
+    virtual std::string receive(char stopCharacter) = 0;
 };
 
 #endif

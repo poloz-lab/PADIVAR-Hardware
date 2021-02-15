@@ -45,6 +45,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include "session.h"
 
 bool g_quit = false;
+bool g_verbose = false;
 
 namespace Options
 {
@@ -53,7 +54,8 @@ namespace Options
         ShortHelp = 'h',
         LongHelp,
         Port = 'p',
-        MaxConnectionPending
+        MaxConnectionPending,
+        Verbose = 'v',
     };
 }
 
@@ -73,6 +75,7 @@ void shortHelp()
     std::cout << "--help print long help" << std::endl;
     std::cout << "-p --port NUM port for the server NECESSARY" << std::endl;
     std::cout << "--max-connection-pending NUM" << std::endl;
+    std::cout << "-v --verbose for verbose mode" << std::endl;
 }
 
 void longHelp()
@@ -82,6 +85,7 @@ void longHelp()
     std::cout << "--help print this help message" << std::endl;
     std::cout << "-p --port NUM port for the server to listen NECESSARY" << std::endl;
     std::cout << "--max-connection-pending NUM specify the number of connection that can wait before being accepted" << std::endl;
+    std::cout << "-v --verbose for verbose mode" << std::endl;
 }
 
 int main(int argc, char** argv)
@@ -94,6 +98,7 @@ int main(int argc, char** argv)
         {"help", no_argument, NULL, Options::LongHelp},
         {"port", required_argument, NULL, Options::Port},
         {"max-connection-pending", required_argument, NULL, Options::MaxConnectionPending},
+        {"verbose", no_argument, NULL, Options::Verbose},
         {0}
     };
 
@@ -105,7 +110,7 @@ int main(int argc, char** argv)
     }
 
     /* loop to process every option in command line */
-    while ((option = getopt_long(argc, argv, "hp:", long_options, 0)) != -1)
+    while ((option = getopt_long(argc, argv, "hp:v", long_options, 0)) != -1)
     {
         switch(option)
         {
@@ -123,6 +128,9 @@ int main(int argc, char** argv)
                 break;
             case Options::MaxConnectionPending:
                 max_connection_pending = std::atoi(optarg);
+                break;
+            case Options::Verbose:
+                g_verbose = true;
                 break;
             case '?':
                 usage(argv[0]);
@@ -146,6 +154,10 @@ int main(int argc, char** argv)
     try
     {
         server = new ServerSocket(port, max_connection_pending, INADDR_ANY);
+        if (g_verbose)
+        {
+            std::cout << "server initialized successfully" << std::endl;
+        }
     }
     catch (ExceptionSocketServer const& e)
     {
@@ -161,10 +173,23 @@ int main(int argc, char** argv)
         try
         {
             session = new Session(&client);
+            if (g_verbose)
+            {
+                std::cout << "session initialized successfully" << std::endl;
+            }
             /* intepret requests from client */
             while (!g_quit && ! session->interpreter())
             {
             }
+<<<<<<< HEAD
+=======
+            delete session;
+            session = nullptr;
+            if (g_verbose)
+            {
+                std::cout << "session closed" << std::endl;
+            }
+>>>>>>> b975cab47eb71e8bda474969a3ed8dc15e077bec
         }
         catch(const std::exception& e)
         {
