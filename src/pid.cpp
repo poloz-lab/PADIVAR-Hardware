@@ -2909,6 +2909,12 @@ std::string Pid::getDataBytes()
 
 void Pid::setDataBytes(std::string data_bytes)
 {
+    /* check the size of the data */
+    unsigned int good_size = 4 + (getNumberOfDataBytes() * 2); // plus 4 because 2 for 41 and 2 for pid then number of data bytes * 2 because each byte must have 2 hex symbol
+    if (data_bytes.size() != good_size)
+    {
+        throw ExceptionPid(ExceptionPidType::BadDataBytes, "pid " + getPidString() + " must be " + std::to_string(good_size) + " bytes long but it is " + std::to_string(data_bytes.size()));
+    }
 }
 
 std::string Pid::getDescription()
