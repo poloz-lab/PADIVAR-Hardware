@@ -48,12 +48,12 @@ Usb::Usb(std::string path)
     
 }
 
-void Usb::send(std::string message)
+void Usb::sendMessage(std::string message)
 {
 
 }
 
-std::string Usb::receive()
+std::string Usb::receive(char stopCharacter)
 {
     
 }

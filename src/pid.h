@@ -759,7 +759,8 @@ namespace HexPids
         h0908,
         h0909,
         h090A,
-        h090B};
+        h090B
+    };
 }
 typedef HexPids::HexPid HexPid;
 

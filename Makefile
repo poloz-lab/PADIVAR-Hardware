@@ -58,7 +58,7 @@ DOBJ = $(SRC:.cpp=_d.o)
 OBJ = $(SRC:.cpp=.o)
 
 # list of librairies to be linked
-LIBS =
+LIBS = -lbluetooth
 
 # recipes
 

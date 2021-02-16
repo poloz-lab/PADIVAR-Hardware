@@ -46,12 +46,12 @@ Wifi::Wifi(std::string ip_address, int port)
 {
 }
 
-void Wifi::send(std::string message)
+void Wifi::sendMessage(std::string message)
 {
 
 }
 
-std::string Wifi::receive()
+std::string Wifi::receive(char stopCharacter)
 {
     
 }

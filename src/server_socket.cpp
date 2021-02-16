@@ -39,6 +39,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include "server_socket.h"
 #include <string>
 #include <unistd.h>
+#include <iostream>
 
 /*!
  * \file server_socket.c
@@ -47,6 +48,8 @@ knowledge of the CeCILL license and that you accept its terms.
  * \version 0.1
  * \date 20/10/2020
  */
+
+extern bool g_verbose;
 
 ClientSocket::ClientSocket(int socket_fd, sockaddr_in client_address, socklen_t client_address_size)
     :socket_fd_(socket_fd),client_address_(client_address),client_address_size_(client_address_size)
@@ -64,6 +67,10 @@ std::string ClientSocket::readLine()
     char c = '\n';
     std::string s = "";
     // reading the socket one by one character until \0 is sent
+    if (g_verbose)
+    {
+        std::cout << "receiving..." << std::endl;
+    }
     do
     {
         // reading
@@ -79,12 +86,21 @@ std::string ClientSocket::readLine()
         }
     }while (c != '\n');
     // return the whole string at the end
+    if (g_verbose)
+    {
+        std::cout << "received: " + s << std::endl;
+    }
     return s;
 }
 
 void ClientSocket::writeString(std::string data)
 {
-    if (write(socket_fd_, data.c_str(), sizeof(data.c_str())) == -1)
+    if (g_verbose)
+    {
+        std::cout << "sending: " + data << std::endl;
+    }
+    data += '\n';
+    if (write(socket_fd_, data.c_str(), data.size()) == -1)
     {
         throw ExceptionSocketClient(ExceptionSocketClientTypes::Writing, errno);
     }
@@ -153,7 +169,15 @@ ClientSocket ServerSocket::waitingForConnection()
     sockaddr_in client_address = {0};
     socklen_t client_address_size = sizeof(client_address);
     // waiting for connection
+    if (g_verbose)
+    {
+        std::cout << "waiting for client..." << std::endl;
+    }
     client_fd = accept(socket_fd_, (struct sockaddr *) &client_address, &client_address_size);
+    if (g_verbose)
+    {
+        std::cout << "client accepted" << std::endl;
+    }
     // return the ClientSocket corresponding to the previous information
     return ClientSocket(client_fd, client_address, client_address_size);
 }
