@@ -906,6 +906,7 @@ namespace ExceptionPidTypes
         NoUnits,
         NoMin,
         NoMax,
+        BadDataBytes, /*!< Data bytes aren't valid */
         NoValue
     };
 }

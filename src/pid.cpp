@@ -9760,6 +9760,9 @@ ExceptionPid::ExceptionPid(ExceptionPidType type) throw()
     case ExceptionPidType::NoMax:
         explaination_ = "no maximum";
         break;
+    case ExceptionPidType::BadDataBytes:
+        explaination_ = "bad data bytes";
+        break;
     case ExceptionPidType::NoValue:
         explaination_ = "no value";
         break;
@@ -9796,6 +9799,9 @@ ExceptionPid::ExceptionPid(ExceptionPidType type, std::string option) throw()
         break;
     case ExceptionPidType::NoMax:
         explaination_ = "no maximum";
+        break;
+    case ExceptionPidType::BadDataBytes:
+        explaination_ = "bad data bytes: " + option;
         break;
     case ExceptionPidType::NoValue:
         explaination_ = "no value";
