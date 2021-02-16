@@ -6138,6 +6138,51 @@ unsigned int Pid::getNumberOfDataBytes()
 }
 unsigned int Pid::getDataByteAtIndex(unsigned int index)
 {
+    std::string data = data_bytes_;
+    /*example: if data = "4102654468" and index = 1
+    delete the first 6 characters in the string and keep the 2 characters and delete the rest
+    data = 44 do a decimal conversion and return the value */
+
+    if (index == 0)
+    {
+        data.erase(0, 4);
+        data.erase(2, data.size() - 2);
+        return HexaToDec(data);
+    }
+    else if (index == 1)
+    {
+        data.erase(0, 6);
+        data.erase(2, data.size() - 2);
+        return HexaToDec(data);
+    }
+    else if (index == 2)
+    {
+        data.erase(0, 8);
+        data.erase(2, data.size() - 2);
+        return HexaToDec(data);
+    }
+    else if (index == 3)
+    {
+        data.erase(0, 10);
+        data.erase(2, data.size() - 2);
+        return HexaToDec(data);
+    }
+    else if (index == 4)
+    {
+        data.erase(0, 12);
+        data.erase(2, data.size() - 2);
+        return HexaToDec(data);
+    }
+    else if (index == 5)
+    {
+        data.erase(0, 14);
+        data.erase(2, data.size() - 2);
+        return HexaToDec(data);
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 unsigned int Pid::getNumberOfValues()
