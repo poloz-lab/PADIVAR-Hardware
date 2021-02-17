@@ -2900,6 +2900,12 @@ Pid::Pid(HexPid pid)
     data_bytes_ = "";
 }
 
+Pid::Pid(HexPid pid, std::string data_bytes)
+    :Pid(pid)
+{
+    setDataBytes(data_bytes_);
+}
+
 std::string Pid::getPidString()
 {
     return pidString_;
