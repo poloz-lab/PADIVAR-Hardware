@@ -2922,6 +2922,22 @@ void Pid::setDataBytes(std::string data_bytes)
         throw ExceptionPid(ExceptionPidType::BadDataBytes, "pid " + getPidString() + " must begin with 41 but begins with " + data_bytes[0] + data_bytes[1]);
     }
 
+    /* check if the PID in answer is correct */
+    if (getPidString().size() == 2)
+    {
+        if ((getPidString()[0] != data_bytes[2]) || (getPidString()[1] != data_bytes[3]))
+        {
+            throw ExceptionPid(ExceptionPidType::BadDataBytes, "pid " + getPidString() + " must contain " + getPidString()[0] + getPidString()[1] + " but it has " + data_bytes[2] + data_bytes[3]);
+        }
+    }
+    else if (getPidString().size() == 4)
+    {
+        if ((getPidString()[2] != data_bytes[2]) || (getPidString()[3] != data_bytes[3]))
+        {
+            throw ExceptionPid(ExceptionPidType::BadDataBytes, "pid " + getPidString() + " must contain " + getPidString()[2] + getPidString()[3] + " but it has " + data_bytes[2] + data_bytes[3]);
+        }
+    }
+
     /* if no exception thrown, it must be good */
     data_bytes_ = data_bytes;
 }
