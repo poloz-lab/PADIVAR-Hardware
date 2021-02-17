@@ -2916,6 +2916,12 @@ void Pid::setDataBytes(std::string data_bytes)
         throw ExceptionPid(ExceptionPidType::BadDataBytes, "pid " + getPidString() + " must be " + std::to_string(good_size) + " bytes long but it is " + std::to_string(data_bytes.size()));
     }
 
+    /* check if the data are correct thanks to first byte (must be 41) */
+    if ((data_bytes[0] != '4') || (data_bytes[1] != '1'))
+    {
+        throw ExceptionPid(ExceptionPidType::BadDataBytes, "pid " + getPidString() + " must begin with 41 but begins with " + data_bytes[0] + data_bytes[1]);
+    }
+
     /* if no exception thrown, it must be good */
     data_bytes_ = data_bytes;
 }
