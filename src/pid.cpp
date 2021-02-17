@@ -1820,6 +1820,12 @@ Pid::Pid(std::string pid)
     data_bytes_ = "";
 }
 
+Pid::Pid(std::string pid, std::string data_bytes)
+    :Pid(pid)
+{
+    setDataBytes(data_bytes);
+}
+
 Pid::Pid(HexPid pid)
 {
     switch(pid)
