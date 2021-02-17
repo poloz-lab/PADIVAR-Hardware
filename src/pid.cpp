@@ -1817,7 +1817,7 @@ Pid::Pid(std::string pid)
     {
         throw ExceptionPid(ExceptionPidType::UnknownPidString, pid);
     }
-    
+    data_bytes_ = "";
 }
 
 Pid::Pid(HexPid pid)
@@ -2891,6 +2891,7 @@ Pid::Pid(HexPid pid)
         break;
     }
     hexPid_ = pid;
+    data_bytes_ = "";
 }
 
 std::string Pid::getPidString()
