@@ -1817,7 +1817,13 @@ Pid::Pid(std::string pid)
     {
         throw ExceptionPid(ExceptionPidType::UnknownPidString, pid);
     }
-    
+    data_bytes_ = "";
+}
+
+Pid::Pid(std::string pid, std::string data_bytes)
+    :Pid(pid)
+{
+    setDataBytes(data_bytes);
 }
 
 Pid::Pid(HexPid pid)
@@ -2891,6 +2897,13 @@ Pid::Pid(HexPid pid)
         break;
     }
     hexPid_ = pid;
+    data_bytes_ = "";
+}
+
+Pid::Pid(HexPid pid, std::string data_bytes)
+    :Pid(pid)
+{
+    setDataBytes(data_bytes_);
 }
 
 std::string Pid::getPidString()
@@ -2905,6 +2918,15 @@ HexPid Pid::getHexPid()
 
 std::string Pid::getDataBytes()
 {
+    if (data_bytes_ != "")
+    {
+        return data_bytes_;
+    }
+    else
+    {
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+    }
+    
 }
 
 void Pid::setDataBytes(std::string data_bytes)
@@ -2914,6 +2936,28 @@ void Pid::setDataBytes(std::string data_bytes)
     if (data_bytes.size() != good_size)
     {
         throw ExceptionPid(ExceptionPidType::BadDataBytes, "pid " + getPidString() + " must be " + std::to_string(good_size) + " bytes long but it is " + std::to_string(data_bytes.size()));
+    }
+
+    /* check if the data are correct thanks to first byte (must be 41) */
+    if ((data_bytes[0] != '4') || (data_bytes[1] != '1'))
+    {
+        throw ExceptionPid(ExceptionPidType::BadDataBytes, "pid " + getPidString() + " must begin with 41 but begins with " + data_bytes[0] + data_bytes[1]);
+    }
+
+    /* check if the PID in answer is correct */
+    if (getPidString().size() == 2)
+    {
+        if ((getPidString()[0] != data_bytes[2]) || (getPidString()[1] != data_bytes[3]))
+        {
+            throw ExceptionPid(ExceptionPidType::BadDataBytes, "pid " + getPidString() + " must contain " + getPidString()[0] + getPidString()[1] + " but it has " + data_bytes[2] + data_bytes[3]);
+        }
+    }
+    else if (getPidString().size() == 4)
+    {
+        if ((getPidString()[2] != data_bytes[2]) || (getPidString()[3] != data_bytes[3]))
+        {
+            throw ExceptionPid(ExceptionPidType::BadDataBytes, "pid " + getPidString() + " must contain " + getPidString()[2] + getPidString()[3] + " but it has " + data_bytes[2] + data_bytes[3]);
+        }
     }
 
     /* if no exception thrown, it must be good */
