@@ -2905,6 +2905,15 @@ HexPid Pid::getHexPid()
 
 std::string Pid::getDataBytes()
 {
+    if (data_bytes_ != "")
+    {
+        return data_bytes_;
+    }
+    else
+    {
+        throw ExceptionPid(ExceptionPidType::NoDataBytes);
+    }
+    
 }
 
 void Pid::setDataBytes(std::string data_bytes)
