@@ -38,20 +38,44 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #include "wifi.h"
 
-Wifi::Wifi()
-{
-}
+#include "wifi.h"
+#include <stdexcept>
+#include <cstring>
+#include <unistd.h>
 
 Wifi::Wifi(std::string ip_address, int port)
 {
+	struct sockaddr_in device_address;
+	device_address.sin_family = AF_INET;
+	device_address.sin_port=htons(port);
+	if(inet_aton(ip_address.c_str(), &device_address.sin_addr)==0)
+	{
+		throw std::runtime_error("can\'t asign the ip_address");
+	}
+	int socket_fd = socket(AF_INET, SOCK_STREAM, 0);
+	socklen_t device_address_size = sizeof(device_address);
+	fd_ = connect(socket_fd, (struct sockaddr*)& device_address, device_address_size);
+	if(fd_ == -1)
+	{
+		throw std::runtime_error("can\'t connect to the device");
+	}
 }
 
 void Wifi::sendMessage(std::string message)
 {
-
+	if(write(fd_, message.c_str(), strlen(message.c_str()))==-1)
+	{
+		throw std::runtime_error("can\'t send the message");
+	}
 }
 
 std::string Wifi::receive(char stopCharacter)
 {
-    
+	char data = stopCharacter;
+	std::string message="";
+	do
+	{
+		message = message +data;
+	}while(read(fd_, &data, 1) > 0 && data != stopCharacter); 
+	return message;
 }
