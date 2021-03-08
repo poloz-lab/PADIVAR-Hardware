@@ -9818,6 +9818,2109 @@ std::vector<float> Pid::getMax()
 }
 std::vector<float> Pid::getValue()
 {
+    std::vector<float> arr;
+    float res = 0.0, res1 = 0.0 , A = 0.0, B = 0.0, C = 0.0, D = 0.0, E = 0.0;
+    switch (hexPid_)
+    {
+    case HexPid::h0100:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0101:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0102:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0103:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0104:
+        A = getDataByteAtIndex(0);
+        A = A / 2.55;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0105:
+        A = getDataByteAtIndex(0);
+        A = A - 40;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0106:
+        A = getDataByteAtIndex(0);
+        A = A / 1.28;
+        A = A - 100;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0107:
+        A = getDataByteAtIndex(0);
+        A = A / 1.28;
+        A = A - 100;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0108:
+        A = getDataByteAtIndex(0);
+        A = A / 1.28;
+        A = A - 100;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0109:
+        A = getDataByteAtIndex(0);
+        A = A / 1.28;
+        A = A - 100;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h010A:
+        A = getDataByteAtIndex(0);
+        A = A * 3;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h010B:
+        A = getDataByteAtIndex(0);
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h010C:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B) / 4;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h010D:
+        A = getDataByteAtIndex(0);
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h010E:
+        A = getDataByteAtIndex(0);
+        A = A - 40;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h010F:
+        A = getDataByteAtIndex(0);
+        A = A - 40;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0110:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B) / 100;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0111:
+        A = getDataByteAtIndex(0);
+        A = A / 2.55;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0112:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0113:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0114:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100/128)*B ;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0115:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0116:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0117:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0118:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0119:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h011A:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h011B:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h011C:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h011D:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h011E:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h011F:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B ;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0120:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0121:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0122:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * 0.079;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0123:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * 10;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0124:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2/65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0125:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0126:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0127:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0128:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0129:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h012A:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;;
+    case HexPid::h012B:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h012C:
+        A = getDataByteAtIndex(0);
+        A = (100 / 255) * A;
+        arr = {A};
+        return arr;
+        break;
+    case HexPid::h012D:
+        A = getDataByteAtIndex(0);
+        A = (100 / 128) * A;
+        A = A - 100;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h012E:
+        A = getDataByteAtIndex(0);
+        A = (100 / 255) * A;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h012F:
+        A = getDataByteAtIndex(0);
+        A = (100 / 255) * A;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0130:
+        A = getDataByteAtIndex(0);
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0131:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = 256 * A;
+        res = A + B;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0132:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = 256 * A;
+        res = A + B;
+        res = res / 4;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0133:
+        A = getDataByteAtIndex(0);
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0134:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0135:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0136:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0137:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0138:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0139:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h013A:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h013B:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h013C:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res / 10;
+        res = res - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h013D:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res / 10;
+        res = res - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h013E:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res / 10;
+        res = res - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h013F:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res / 10;
+        res = res - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0140:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0141:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0142:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res / 1000;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0143:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (100/255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0144:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0145:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0146:
+        A = getDataByteAtIndex(0);
+        res = A - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0147:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0148:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0149:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h014A:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h014B:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h014C:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h014D:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h014E:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h014F:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D * 10;
+        arr = { A,B,C,D };
+        return arr;
+        break;
+    case HexPid::h0150:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        A = A * 10;
+        arr = { A,B,C,D };
+        return arr;
+        break;
+    case HexPid::h0151:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0152:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0153:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B; 
+        res = res * 200;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0154:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res - 32767;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0155:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * (100/128);
+        A = A - 100;
+        B = B * (100 / 128);
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0156:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * (100 / 128);
+        A = A - 100;
+        B = B * (100 / 128);
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0157:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * (100 / 128);
+        A = A - 100;
+        B = B * (100 / 128);
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0158:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * (100 / 128);
+        A = A - 100;
+        B = B * (100 / 128);
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0159:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256 ;
+        res = A + B;
+        res = res * 10;
+        arr = {res};
+        return arr;
+        break;
+    case HexPid::h015A:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h015B:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h015C:
+        A = getDataByteAtIndex(0);
+        res = A - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h015D:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B)/128;
+        res = res - 210;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h015E:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B);
+        res = res/20;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h015F:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0160:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0161:
+        A = getDataByteAtIndex(0);
+        res = A - 125;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0162:
+        A = getDataByteAtIndex(0);
+        res = A - 125;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0163:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0164:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        E = getDataByteAtIndex(4);
+        A = A - 125;
+        B = B - 125;
+        C = C - 125;
+        D = D - 125;
+        arr = {A,B,C,D,E};
+        return arr;
+        break;
+    case HexPid::h0165:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0166:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0167:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0168:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0169:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h016A:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h016B:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h016C:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h016D:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h016E:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h016F:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0170:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0171:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0172:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0173:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0174:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0175:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0176:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0177:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0178:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0179:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h017A:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h017B:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h017C:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B) / 10;
+        res = res - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h017D:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h017E:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h017F:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0180:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0181:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0182:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0183:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0184:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0185:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0186:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0187:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0188:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0189:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h018A:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h018B:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h018C:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h018D:
+        A = getDataByteAtIndex(0);
+        res = A - 125;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h018E:
+        arr = { 130 };
+        return arr;
+        break;
+    case HexPid::h018F:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0190:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0191:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0192:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0193:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0194:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0195:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0196:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0197:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0198:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0199:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h019A:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h019B:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h019C:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h019D:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h019E:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h019F:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h01A0:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h01A1:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h01A2:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h01A3:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h01A4:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h01A5:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h01A6:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        A = A * pow(2, 24);
+        B = B * pow(2, 16);
+        C = C * pow(2, 8);
+        res = (A+B+C+D) / 10;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h01C0:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h01C3:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h01C4:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0200:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0201:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0202:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0203:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0204:
+        A = getDataByteAtIndex(0);
+        A = A / 2.55;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0205:
+        A = getDataByteAtIndex(0);
+        A = A - 40;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0206:
+        A = getDataByteAtIndex(0);
+        A = A / 1.28;
+        A = A - 100;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0207:
+        A = getDataByteAtIndex(0);
+        A = A / 1.28;
+        A = A - 100;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0208:
+        A = getDataByteAtIndex(0);
+        A = A / 1.28;
+        A = A - 100;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0209:
+        A = getDataByteAtIndex(0);
+        A = A / 1.28;
+        A = A - 100;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h020A:
+        A = getDataByteAtIndex(0);
+        A = A * 3;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h020B:
+        A = getDataByteAtIndex(0);
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h020C:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B) / 4;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h020D:
+        A = getDataByteAtIndex(0);
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h020E:
+        A = getDataByteAtIndex(0);
+        A = A - 40;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h020F:
+        A = getDataByteAtIndex(0);
+        A = A - 40;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0210:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B) / 100;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0211:
+        A = getDataByteAtIndex(0);
+        A = A / 2.55;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0212:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0213:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0214:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0215:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0216:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0217:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0218:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0219:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h021A:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h021B:
+        A = getDataByteAtIndex(0);
+        A = A / 200;
+        B = getDataByteAtIndex(1);
+        B = (100 / 128) * B;
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h021C:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h021D:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h021E:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h021F:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0220:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0221:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0222:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * 0.079;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0223:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * 10;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0224:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0225:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0226:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0227:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0228:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0229:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h022A:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;;
+    case HexPid::h022B:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        C = C * 256;
+        res1 = C + D;
+        res1 = res1 * (8 / 65536);
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h022C:
+        A = getDataByteAtIndex(0);
+        A = (100 / 255) * A;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h022D:
+        A = getDataByteAtIndex(0);
+        A = (100 / 128) * A;
+        A = A - 100;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h022E:
+        A = getDataByteAtIndex(0);
+        A = (100 / 255) * A;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h022F:
+        A = getDataByteAtIndex(0);
+        A = (100 / 255) * A;
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0230:
+        A = getDataByteAtIndex(0);
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0231:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = 256 * A;
+        res = A + B;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0232:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = 256 * A;
+        res = A + B;
+        res = res / 4;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0233:
+        A = getDataByteAtIndex(0);
+        arr = { A };
+        return arr;
+        break;
+    case HexPid::h0234:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0235:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0236:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0237:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0238:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h0239:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h023A:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h023B:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D / 256;
+        res1 = C + D - 128;
+        arr = { res,res1 };
+        return arr;
+        break;
+    case HexPid::h023C:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res / 10;
+        res = res - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h023D:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res / 10;
+        res = res - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h023E:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res / 10;
+        res = res - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h023F:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res / 10;
+        res = res - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0240:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0241:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0242:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res / 1000;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0243:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0244:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * (2 / 65536);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0245:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0246:
+        A = getDataByteAtIndex(0);
+        res = A - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0247:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0248:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0249:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h024A:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h024B:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h024C:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h024D:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h024E:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h024F:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        D = D * 10;
+        arr = { A,B,C,D };
+        return arr;
+        break;
+    case HexPid::h0250:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        A = A * 10;
+        arr = { A,B,C,D };
+        return arr;
+        break;
+    case HexPid::h0251:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0252:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0253:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * 200;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0254:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res - 32767;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0255:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * (100 / 128);
+        A = A - 100;
+        B = B * (100 / 128);
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0256:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * (100 / 128);
+        A = A - 100;
+        B = B * (100 / 128);
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0257:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * (100 / 128);
+        A = A - 100;
+        B = B * (100 / 128);
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0258:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * (100 / 128);
+        A = A - 100;
+        B = B * (100 / 128);
+        B = B - 100;
+        arr = { A,B };
+        return arr;
+        break;
+    case HexPid::h0259:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = A + B;
+        res = res * 10;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h025A:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255); throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h025B:
+        A = getDataByteAtIndex(0);
+        res = A * (100 / 255);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h025C:
+        A = getDataByteAtIndex(0);
+        res = A - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h025D:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B) / 128;
+        res = res - 210;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h025E:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B);
+        res = res / 20;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h025F:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0260:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0261:
+        A = getDataByteAtIndex(0);
+        res = A - 125;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0262:
+        A = getDataByteAtIndex(0);
+        res = A - 125;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0263:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B);
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h0264:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        E = getDataByteAtIndex(4);
+        A = A - 125;
+        B = B - 125;
+        C = C - 125;
+        D = D - 125;
+        arr = { A,B,C,D,E };
+        return arr;
+        break;
+    case HexPid::h0265:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0266:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0267:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0268:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0269:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h026A:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h026B:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h026C:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h026D:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h026E:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h026F:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0270:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0271:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0272:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0273:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0274:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0275:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0276:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0277:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0278:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0279:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h027A:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h027B:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h027C:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        A = A * 256;
+        res = (A + B) / 10;
+        res = res - 40;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h027D:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h027E:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h027F:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0280:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0281:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0282:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0283:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0284:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0285:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0286:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0287:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0288:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0289:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h028A:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h028B:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h028C:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h028D:
+        A = getDataByteAtIndex(0);
+        res = A - 125;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h028E:
+        arr = { 130 };
+        return arr;
+        break;
+    case HexPid::h028F:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0290:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0291:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0292:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0293:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0294:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0295:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0296:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0297:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0298:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0299:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h029A:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h029B:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h029C:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h029D:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h029E:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h029F:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h02A0:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h02A1:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h02A2:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h02A3:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h02A4:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h02A5:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h02A6:
+        A = getDataByteAtIndex(0);
+        B = getDataByteAtIndex(1);
+        C = getDataByteAtIndex(2);
+        D = getDataByteAtIndex(3);
+        A = A * pow(2, 24);
+        B = B * pow(2, 16);
+        C = C * pow(2, 8);
+        res = (A + B + C + D) / 10;
+        arr = { res };
+        return arr;
+        break;
+    case HexPid::h02C0:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h02C3:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h02C4:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h03:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h04:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0900:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0901:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0902:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0903:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0904:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0905:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0906:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0907:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0908:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h0909:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h090A:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    case HexPid::h090B:
+        throw ExceptionPid(ExceptionPidType::NoValue);
+        break;
+    default:
+        throw std::runtime_error("unknown HexPid");
+        break;
+    }
 }
  unsigned int Pid::HexaToDec(std::string data_bytes)
  {

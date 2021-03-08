@@ -45,6 +45,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <math.h>
 
 namespace HexPids
 {
