@@ -146,7 +146,7 @@ int Session::interpreter()
     command = client_->readLine();
     if (command == "quit")
     {
-        return 1;
+        return StateInterpreterType::Quitting;
     }
     else if (command == "listPID") // if the client wants to know every pid supported by this software
     {
@@ -159,7 +159,7 @@ int Session::interpreter()
         }
         list = list.substr(0, list.size() - 1); // remove last space
         client_->writeString(list);
-        return 0;
+        return StateInterpreterType::NoError;
     }
     else if (command == "description") // if the client wants to have description for a pid
     {
@@ -174,8 +174,8 @@ int Session::interpreter()
         {
             std::cerr << e.what() << std::endl;
             client_->writeString(e.what());
-        }        
-        return 0;
+        }
+        return StateInterpreterType::NoError;
     }
     else if (command == "units")
     {
@@ -191,7 +191,7 @@ int Session::interpreter()
             std::cerr << e.what() << std::endl;
             client_->writeString(e.what());
         }
-        return 0;
+        return StateInterpreterType::NoError;
     }
     else
     {

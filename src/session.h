@@ -107,6 +107,19 @@ namespace ExceptionSessionTypes
 }
 typedef ExceptionSessionTypes::ExceptionSessionType ExceptionSessionType;
 
+namespace StateInterpreterTypes
+{
+	/*!
+	 * \enum StateInterpreterTypes
+	 * \brief type of state of the interpreter that could occurs
+	 */
+	enum StateInterpreterType
+	{
+		NoError, /*!< no error */
+		Quitting, /*!< Quit state */
+	};
+}
+typedef StateInterpreterTypes::StateInterpreterType StateInterpreterType;
 /*!
  * \class ExceptionSession
  * \brief class for handling errors in session
