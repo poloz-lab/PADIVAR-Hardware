@@ -130,6 +130,32 @@ const char *ExceptionSocketClient::what() const throw()
     return explaination_.c_str();
 }
 
+ServerSocket::ServerSocket()
+{
+    // creation of the socket
+    socket_fd_ = socket(AF_INET, SOCK_STREAM, 0); // create a IPv4 for TCP connection
+    if (socket_fd_ == -1) // if the creation failed
+    {
+        throw ExceptionSocketServer(ExceptionSocketServerTypes::Creation, errno);
+    }
+
+    // binding the socket to the port
+    server_address_.sin_addr.s_addr = htonl(INADDR_ANY); // accepting from any address
+    server_address_.sin_family = AF_INET;
+    server_address_.sin_port = htons(20222);
+    if (bind(socket_fd_, (struct sockaddr *) &server_address_, sizeof(server_address_)) == -1)
+    {
+        // if an error occured while binding
+        throw ExceptionSocketServer(ExceptionSocketServerTypes::Binding, errno, 20222);
+    }
+
+    // listening
+    if (listen(socket_fd_, 10) == -1)
+    {
+        throw ExceptionSocketServer(ExceptionSocketServerTypes::Listening, errno);
+    }
+}
+
 ServerSocket::ServerSocket(unsigned int port, int max_connection_pending = 10,in_addr_t accept_from = INADDR_ANY)
 {
     // creation of the socket
