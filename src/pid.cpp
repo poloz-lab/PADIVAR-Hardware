@@ -6489,16 +6489,16 @@ unsigned int Pid::getNumberOfValues()
         return 1;
         break;
     case HexPid::h0155:
-        return 1;
+        return 2;
         break;
     case HexPid::h0156:
-        return 1;
+        return 2;
         break;
     case HexPid::h0157:
-        return 1;
+        return 2;
         break;
     case HexPid::h0158:
-        return 1;
+        return 2;
         break;
     case HexPid::h0159:
         return 1;
@@ -6999,16 +6999,16 @@ unsigned int Pid::getNumberOfValues()
         return 1;
         break;
     case HexPid::h0255:
-        return 1;
+        return 2;
         break;
     case HexPid::h0256:
-        return 1;
+        return 2;
         break;
     case HexPid::h0257:
-        return 1;
+        return 2;
         break;
     case HexPid::h0258:
-        return 1;
+        return 2;
         break;
     case HexPid::h0259:
         return 1;
@@ -7636,19 +7636,19 @@ std::vector<float> Pid::getMin()
         return arr;
         break;
     case HexPid::h0155:
-        arr = {-100};
+        arr = {-100,-100};
         return arr;
         break;
     case HexPid::h0156:
-        arr = {-100}; 
+        arr = {-100,-100}; 
         return arr;
         break;
     case HexPid::h0157:
-        arr = {-100}; 
+        arr = {-100,-100}; 
         return arr;
         break;
     case HexPid::h0158:
-        arr = {-100};
+        arr = {-100,-100};
         return arr;
         break;
     case HexPid::h0159:
@@ -8236,19 +8236,19 @@ std::vector<float> Pid::getMin()
         return arr;
         break;
     case HexPid::h0255:
-        arr = {-100};
+        arr = {-100,-100};
         return arr;
         break;
     case HexPid::h0256:
-        arr = {-100}; 
+        arr = {-100,-100}; 
         return arr;
         break;
     case HexPid::h0257:
-        arr = {-100}; 
+        arr = {-100,-100}; 
         return arr;
         break;
     case HexPid::h0258:
-        arr = {-100};
+        arr = {-100,-100};
         return arr;
         break;
     case HexPid::h0259:
@@ -8896,19 +8896,19 @@ std::vector<float> Pid::getMax()
         return arr;
         break;
     case HexPid::h0155:
-        arr = {99.2};
+        arr = {99.2,99.2};
         return arr;
         break;
     case HexPid::h0156:
-        arr = {99.2}; 
+        arr = {99.2,99.2}; 
         return arr;
         break;
     case HexPid::h0157:
-        arr = {99.2}; 
+        arr = {99.2,99.2}; 
         return arr;
         break;
     case HexPid::h0158:
-        arr = {99.2};
+        arr = {99.2,99.2};
         return arr;
         break;
     case HexPid::h0159:
@@ -9496,19 +9496,19 @@ std::vector<float> Pid::getMax()
         return arr;
         break;
     case HexPid::h0255:
-        arr = {99.2};
+        arr = {99.2,99.2};
         return arr;
         break;
     case HexPid::h0256:
-        arr = {99.2}; 
+        arr = {99.2,99.2}; 
         return arr;
         break;
     case HexPid::h0257:
-        arr = {99.2}; 
+        arr = {99.2,99.2}; 
         return arr;
         break;
     case HexPid::h0258:
-        arr = {99.2};
+        arr = {99.2,99.2};
         return arr;
         break;
     case HexPid::h0259:
