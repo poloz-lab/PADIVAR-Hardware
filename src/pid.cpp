@@ -6534,7 +6534,7 @@ unsigned int Pid::getNumberOfValues()
         return 1;
         break;
     case HexPid::h0164:
-        return 1;
+        return 5;
         break;
     case HexPid::h0165:
         throw ExceptionPid(ExceptionPidType::NoValue);
@@ -7044,7 +7044,7 @@ unsigned int Pid::getNumberOfValues()
         return 1;
         break;
     case HexPid::h0264:
-        return 1;
+        return 5;
         break;
     case HexPid::h0265:
         throw ExceptionPid(ExceptionPidType::NoValue);
@@ -7694,7 +7694,7 @@ std::vector<float> Pid::getMin()
         return arr;
         break;
     case HexPid::h0164:
-        arr = {-125};
+        arr = {-125,-125,-125,-125,-125};
         return arr;
         break;
     case HexPid::h0165:
@@ -8294,7 +8294,7 @@ std::vector<float> Pid::getMin()
         return arr;
         break;
     case HexPid::h0264:
-        arr = {-125};
+        arr = {-125,-125,-125,-125,-125};
         return arr;
         break;
     case HexPid::h0265:
@@ -8954,7 +8954,7 @@ std::vector<float> Pid::getMax()
         return arr;
         break;
     case HexPid::h0164:
-        arr = {130};
+        arr = {130,130,130,130,130};
         return arr;
         break;
     case HexPid::h0165:
@@ -9554,7 +9554,7 @@ std::vector<float> Pid::getMax()
         return arr;
         break;
     case HexPid::h0264:
-        arr = {130};
+        arr = {130,130,130,130,130};
         return arr;
         break;
     case HexPid::h0265:
