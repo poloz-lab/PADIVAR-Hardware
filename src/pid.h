@@ -42,6 +42,10 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <string>
 #include <exception>
 #include <vector>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <math.h>
 
 namespace HexPids
 {
@@ -773,6 +777,13 @@ private:
      */
     Pid();
 
+    /*!
+     * \brief Hexadecimal to decimal conversion
+     * \param data_bytes : Data bytes in hexadecimal format (as string)
+     * \return decimal
+     */
+    unsigned int HexaToDec(std::string data_bytes);
+
 public:
     /*!
      * \brief constructor when we don't have the data bytes, only when we know which pid (as string) we have to try
@@ -896,6 +907,7 @@ namespace ExceptionPidTypes
         NoUnits,
         NoMin,
         NoMax,
+        BadDataBytes, /*!< Data bytes aren't valid */
         NoValue
     };
 }
