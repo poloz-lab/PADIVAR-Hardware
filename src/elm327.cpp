@@ -38,6 +38,9 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #include "elm327.h"
 #include <stdexcept>
+#include <iostream>
+
+extern bool g_verbose;
 
 Elm327::Elm327(Interface* communication_medium)
     :Device(communication_medium)
@@ -108,6 +111,11 @@ std::string Elm327::sendOBD(std::string obd_code)
     if (pos != std::string::npos)
     {
         answer.erase(answer.begin()+pos, answer.end());
+    }
+
+    if (g_verbose)
+    {
+        std::cout << "obd code: " + obd_code + " sent, answer is: " + answer << std::endl;
     }
 
     return answer;
