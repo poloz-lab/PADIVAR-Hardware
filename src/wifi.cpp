@@ -72,13 +72,12 @@ void Wifi::sendMessage(std::string message)
 {
 	if (g_verbose)
     {
-        std::cout << "sending : " << message << std::endl;
+        std::cout << "wifi sending : " << message << std::endl;
     }
 	if(write(fd_, message.c_str(), strlen(message.c_str()))==-1)
 	{
 		throw std::runtime_error("can\'t send the message");
 	}
-	
 }
 
 std::string Wifi::receive(char stopCharacter)
@@ -92,7 +91,7 @@ std::string Wifi::receive(char stopCharacter)
 	}while(read(fd_, &data, 1) > 0 && data != stopCharacter); 
 	if (g_verbose)
     {
-        std::cout << "received : " << message << std::endl;
+        std::cout << "wifi received : " << message << std::endl;
     }
 	return message;
 }
