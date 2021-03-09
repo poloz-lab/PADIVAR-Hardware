@@ -69,7 +69,7 @@ std::string ClientSocket::readLine()
     // reading the socket one by one character until \0 is sent
     if (g_verbose)
     {
-        std::cout << "receiving..." << std::endl;
+        std::cout << "receiving from client..." << std::endl;
     }
     do
     {
@@ -88,7 +88,7 @@ std::string ClientSocket::readLine()
     // return the whole string at the end
     if (g_verbose)
     {
-        std::cout << "received: " + s << std::endl;
+        std::cout << "received from client: " + s << std::endl;
     }
     return s;
 }
@@ -97,7 +97,7 @@ void ClientSocket::writeString(std::string data)
 {
     if (g_verbose)
     {
-        std::cout << "sending: " + data << std::endl;
+        std::cout << "sending to client: " + data << std::endl;
     }
     data += '\n';
     if (write(socket_fd_, data.c_str(), data.size()) == -1)
