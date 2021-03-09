@@ -130,6 +130,8 @@ const char *ExceptionSocketClient::what() const throw()
     return explaination_.c_str();
 }
 
+ServerSocket::ServerSocket() : ServerSocket(20222,10,INADDR_ANY) {}
+
 ServerSocket::ServerSocket(unsigned int port, int max_connection_pending = 10,in_addr_t accept_from = INADDR_ANY)
 {
     // creation of the socket
