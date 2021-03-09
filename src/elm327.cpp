@@ -37,20 +37,22 @@ knowledge of the CeCILL license and that you accept its terms.
 */
 
 #include "elm327.h"
-
-Elm327::Elm327()
-{
-   
-}
+#include <stdexcept>
 
 Elm327::Elm327(Interface* communication_medium)
+    :Device(communication_medium)
 {
-    
+    initialization();
 }
 
 void Elm327::initialization()
 {
-
+    communication_medium_->sendMessage("ATZ\r");
+    std::string answer = communication_medium_->receive('>');
+    if (answer.rfind("ELM327",0) == std::string::npos)
+    {
+        std::runtime_error("elm initialization failed, elm answered: " + answer + " but it must start with ELM327");
+    }
 }
 
 std::string Elm327::sendOBD(std::string obd_code)

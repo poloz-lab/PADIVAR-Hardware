@@ -36,19 +36,25 @@ The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 
-    #include "device.h"
+#include "device.h"
+
+Device::Device(Interface* communication_medium)
+    :communication_medium_(communication_medium)
+{
+
+}
     
-    /*Pid getPidList()
-    {
+/*Pid getPidList()
+{
 
-    }
+}
 
-    string sendPid(Pid pid)
-    {
+string sendPid(Pid pid)
+{
 
-    }
+}
 
-    Pid diagnostic(ClientSocket client_socket)
-    {
+Pid diagnostic(ClientSocket client_socket)
+{
 
-    }*/
+}*/
