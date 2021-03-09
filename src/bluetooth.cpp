@@ -91,6 +91,10 @@ Bluetooth::Bluetooth(std::string mac_address)
 
 void Bluetooth::sendMessage(std::string message)
 {
+    if (g_verbose)
+    {
+        std::cout << "bluetooth sending: " << message << std::endl;
+    }
     ssize_t status = 0;
     status = send(fd_, message.c_str(), message.size(), 0);
     if (status == (ssize_t) -1)
@@ -100,10 +104,6 @@ void Bluetooth::sendMessage(std::string message)
     else if (status != (ssize_t) message.size())
     {
         throw std::runtime_error("message sent through Bluetooth is incomplete");
-    }
-    if (g_verbose)
-    {
-        std::cout << "bluetooth sending: " << message << std::endl;
     }
 }
 
