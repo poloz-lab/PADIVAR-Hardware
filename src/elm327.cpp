@@ -38,6 +38,9 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #include "elm327.h"
 #include <stdexcept>
+#include <iostream>
+
+extern bool g_verbose;
 
 Elm327::Elm327(Interface* communication_medium)
     :Device(communication_medium)
@@ -47,15 +50,73 @@ Elm327::Elm327(Interface* communication_medium)
 
 void Elm327::initialization()
 {
+    std::string answer;
+    communication_medium_->sendMessage("ATD\r");
+    answer = communication_medium_->receive('>');
+    communication_medium_->sendMessage("ATD\r");
+    answer = communication_medium_->receive('>');
     communication_medium_->sendMessage("ATZ\r");
-    std::string answer = communication_medium_->receive('>');
-    if (answer.rfind("ELM327",0) == std::string::npos)
+    answer = communication_medium_->receive('>');
+    if (answer.find("ELM327") == std::string::npos)
     {
-        std::runtime_error("elm initialization failed, elm answered: " + answer + " but it must start with ELM327");
+        throw std::runtime_error("elm initialization failed: elm answered to ATZ: " + answer + " but it must contain: ELM327");
+    }
+    communication_medium_->sendMessage("ATE0\r");
+    answer = communication_medium_->receive('>');
+    if (answer.find("OK") == std::string::npos)
+    {
+        throw std::runtime_error("elm initialization failed: elm answered to ATE0: " + answer + " but it must contain: OK");
+    }
+    communication_medium_->sendMessage("ATL0\r");
+    answer = communication_medium_->receive('>');
+    if (answer.find("OK") == std::string::npos)
+    {
+        throw std::runtime_error("elm initialization failed: elm answered to ATE0: " + answer + " but it must contain: OK");
+    }
+    communication_medium_->sendMessage("ATS0\r");
+    answer = communication_medium_->receive('>');
+    if (answer.find("OK") == std::string::npos)
+    {
+        throw std::runtime_error("elm initialization failed: elm answered to ATE0: " + answer + " but it must contain: OK");
+    }
+    communication_medium_->sendMessage("ATH0\r");
+    answer = communication_medium_->receive('>');
+    if (answer.find("OK") == std::string::npos)
+    {
+        throw std::runtime_error("elm initialization failed: elm answered to ATE0: " + answer + " but it must contain: OK");
+    }
+    communication_medium_->sendMessage("ATSP0\r");
+    answer = communication_medium_->receive('>');
+    if (answer.find("OK") == std::string::npos)
+    {
+        throw std::runtime_error("elm initialization failed: elm answered to ATE0: " + answer + " but it must contain: OK");
     }
 }
 
 std::string Elm327::sendOBD(std::string obd_code)
 {
-    
+    std::string answer;
+    communication_medium_->sendMessage(obd_code + '\r');
+    answer = communication_medium_->receive('>');
+    /* remove the SEARCHING...\r */
+    std::string to_erase = "SEARCHING...\r";
+    size_t pos = answer.find(to_erase);
+    if (pos != std::string::npos)
+    {
+        answer.erase(pos, to_erase.length());
+    }
+
+    /* remove every thing after first \r */
+    pos = answer.find("\r");
+    if (pos != std::string::npos)
+    {
+        answer.erase(answer.begin()+pos, answer.end());
+    }
+
+    if (g_verbose)
+    {
+        std::cout << "obd code: " + obd_code + " sent, answer is: " + answer << std::endl;
+    }
+
+    return answer;
 }
