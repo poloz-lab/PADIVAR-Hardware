@@ -42,6 +42,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <stdexcept>
 #include <cstring>
 #include <unistd.h>
+#include <iostream>
 
 Wifi::Wifi(std::string ip_address, int port)
 {
@@ -52,10 +53,10 @@ Wifi::Wifi(std::string ip_address, int port)
 	{
 		throw std::runtime_error("can\'t asign the ip_address");
 	}
-	int socket_fd = socket(AF_INET, SOCK_STREAM, 0);
+	fd_ = socket(AF_INET, SOCK_STREAM, 0);
 	socklen_t device_address_size = sizeof(device_address);
-	fd_ = connect(socket_fd, (struct sockaddr*)& device_address, device_address_size);
-	if(fd_ == -1)
+	
+	if(connect(fd_, (struct sockaddr*)& device_address, device_address_size) == -1)
 	{
 		throw std::runtime_error("can\'t connect to the device");
 	}
@@ -73,6 +74,7 @@ std::string Wifi::receive(char stopCharacter)
 {
 	char data = stopCharacter;
 	std::string message="";
+	read(fd_, &data, 1);
 	do
 	{
 		message = message +data;
