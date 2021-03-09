@@ -41,9 +41,9 @@ DOPT = -Wall -g
 # release options
 ROPT = -o3
 # release exe name
-EXE = padivarHardware.bin
+EXE = padivarServer.bin
 # debug exe name
-DEXE = padivarHardware_d.bin
+DEXE = padivarServer_d.bin
 
 # source files
 SRC = $(wildcard src/*.cpp)
