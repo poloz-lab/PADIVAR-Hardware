@@ -40,12 +40,14 @@ knowledge of the CeCILL license and that you accept its terms.
 #define WIFI_H
 
 #include "interface.h"
+#include "server_socket.h"
 
 class Wifi : public Interface
 {
 private:
     std::string ip_address_;
     int port_;
+    int fd_;
     Wifi();
 public:
     Wifi(std::string ip_address, int port); 
