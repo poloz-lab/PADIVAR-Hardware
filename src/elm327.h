@@ -47,6 +47,12 @@ private:
 public:
     Elm327(Interface* communication_medium);
     void initialization();
+
+    /*!
+     * \brief send an obd code to the vehicle through the ELM327
+     * \param obd_code : obd_code to send (string)
+     * \return the answer from the vehicle
+     */
     std::string sendOBD(std::string obd_code);
 };
 
