@@ -157,7 +157,7 @@ public:
      * \param accept_from : source address accepted from the socket.
      * default is INADDR_ANY
      */
-    ServerSocket(); //Default constructor , default port 20222 & 10 maximum pending connections
+    ServerSocket() : ServerSocket(20222,10,INADDR_ANY) {} //Default constructor , default port 20222 & 10 maximum pending connections
     ServerSocket(unsigned int port, int max_connection_pending, in_addr_t accept_from);
 
     /*!
