@@ -45,6 +45,9 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <bluetooth/rfcomm.h>
 #include <exception>
 #include <stdexcept>
+#include <iostream>
+
+extern bool g_verbose;
 
 Bluetooth::Bluetooth()
 {
@@ -63,14 +66,13 @@ Bluetooth::Bluetooth(std::string mac_address)
 {  
     struct sockaddr_rc addr = {0};
     const char *destination = mac_address.c_str();
-
+   
     // creation of the socket
     fd_ = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
     if (fd_ == -1) // if the creation failed
     {
         throw std::runtime_error("can't create the bluetooth socket");
     }
-
     // set connection parameters
     addr.rc_family = AF_BLUETOOTH;
     addr.rc_channel = (uint8_t) 1; // default channel
@@ -80,6 +82,10 @@ Bluetooth::Bluetooth(std::string mac_address)
     if (connect(fd_, (struct sockaddr *)&addr, sizeof(addr)))
     {
         throw std::runtime_error("can't connect to bluetooth destination");
+    }
+    if (g_verbose)
+    {
+        std::cout << "bluetooth connection successful " << std::endl;
     }
 }
 
@@ -94,6 +100,10 @@ void Bluetooth::sendMessage(std::string message)
     else if (status != (ssize_t) message.size())
     {
         throw std::runtime_error("message sent through Bluetooth is incomplete");
+    }
+    if (g_verbose)
+    {
+        std::cout << message << " sent" << std::endl;
     }
 }
 
@@ -117,5 +127,9 @@ std::string Bluetooth::receive(char stopCharacter)
         }
     } while (c != stopCharacter);
     // return the whole string at the end
+    if (g_verbose)
+    {
+        std::cout << "received : " << s << std::endl;
+    }
     return s;
 }
