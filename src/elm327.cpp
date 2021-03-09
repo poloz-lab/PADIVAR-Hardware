@@ -54,20 +54,40 @@ void Elm327::initialization()
     answer = communication_medium_->receive('>');
     communication_medium_->sendMessage("ATZ\r");
     answer = communication_medium_->receive('>');
-    if (answer.rfind("ATZ\rELM327",0) == std::string::npos)
+    if (answer.find("ELM327") == std::string::npos)
     {
-        throw std::runtime_error("elm initialization failed, elm answered: " + answer + " but it must start with ATZ\\rELM327");
+        throw std::runtime_error("elm initialization failed: elm answered to ATZ: " + answer + " but it must contain: ELM327");
     }
     communication_medium_->sendMessage("ATE0\r");
     answer = communication_medium_->receive('>');
+    if (answer.find("OK") == std::string::npos)
+    {
+        throw std::runtime_error("elm initialization failed: elm answered to ATE0: " + answer + " but it must contain: OK");
+    }
     communication_medium_->sendMessage("ATL0\r");
     answer = communication_medium_->receive('>');
+    if (answer.find("OK") == std::string::npos)
+    {
+        throw std::runtime_error("elm initialization failed: elm answered to ATE0: " + answer + " but it must contain: OK");
+    }
     communication_medium_->sendMessage("ATS0\r");
     answer = communication_medium_->receive('>');
+    if (answer.find("OK") == std::string::npos)
+    {
+        throw std::runtime_error("elm initialization failed: elm answered to ATE0: " + answer + " but it must contain: OK");
+    }
     communication_medium_->sendMessage("ATH0\r");
     answer = communication_medium_->receive('>');
+    if (answer.find("OK") == std::string::npos)
+    {
+        throw std::runtime_error("elm initialization failed: elm answered to ATE0: " + answer + " but it must contain: OK");
+    }
     communication_medium_->sendMessage("ATSP0\r");
     answer = communication_medium_->receive('>');
+    if (answer.find("OK") == std::string::npos)
+    {
+        throw std::runtime_error("elm initialization failed: elm answered to ATE0: " + answer + " but it must contain: OK");
+    }
 }
 
 std::string Elm327::sendOBD(std::string obd_code)
