@@ -103,7 +103,7 @@ void Bluetooth::sendMessage(std::string message)
     }
     if (g_verbose)
     {
-        std::cout << message << " sent" << std::endl;
+        std::cout << "bluetooth sending: " << message << std::endl;
     }
 }
 
@@ -129,7 +129,7 @@ std::string Bluetooth::receive(char stopCharacter)
     // return the whole string at the end
     if (g_verbose)
     {
-        std::cout << "received : " << s << std::endl;
+        std::cout << "bluetooth received : " << s << std::endl;
     }
     return s;
 }
