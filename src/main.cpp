@@ -178,7 +178,7 @@ int main(int argc, char** argv)
                 std::cout << "session initialized successfully" << std::endl;
             }
             /* intepret requests from client */
-            while (!g_quit && ! session->interpreter())
+            while (!g_quit && (session->interpreter() != StateInterpreterType::Quitting))
             {
             }
         }
