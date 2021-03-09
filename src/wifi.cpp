@@ -44,6 +44,8 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <unistd.h>
 #include <iostream>
 
+extern bool g_verbose;
+
 Wifi::Wifi(std::string ip_address, int port)
 {
 	struct sockaddr_in device_address;
@@ -60,14 +62,23 @@ Wifi::Wifi(std::string ip_address, int port)
 	{
 		throw std::runtime_error("can\'t connect to the device");
 	}
+	if (g_verbose)
+    {
+        std::cout << "wifi connection successfull" << std::endl;
+    }
 }
 
 void Wifi::sendMessage(std::string message)
 {
+	if (g_verbose)
+    {
+        std::cout << "sending : " << message << std::endl;
+    }
 	if(write(fd_, message.c_str(), strlen(message.c_str()))==-1)
 	{
 		throw std::runtime_error("can\'t send the message");
 	}
+	
 }
 
 std::string Wifi::receive(char stopCharacter)
@@ -79,5 +90,9 @@ std::string Wifi::receive(char stopCharacter)
 	{
 		message = message +data;
 	}while(read(fd_, &data, 1) > 0 && data != stopCharacter); 
+	if (g_verbose)
+    {
+        std::cout << "received : " << message << std::endl;
+    }
 	return message;
 }
