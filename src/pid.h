@@ -39,6 +39,11 @@ knowledge of the CeCILL license and that you accept its terms.
 #ifndef PID_H
 #define PID_H
 
+/*!
+ * \file pid.h
+ * \brief it helps to represent a PID for the human and the machine
+ */
+
 #include <string>
 #include <exception>
 #include <vector>
