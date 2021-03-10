@@ -38,13 +38,23 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #ifndef BLUETOOTH_H
 #define BLUETOOTH_H
+
+/*!
+ * \file bluetooth.h
+ * \brief handle bluetooth connections
+ */
+
 #include "interface.h"
 
+/*!
+ * \class Bluetooth
+ * \brief Class that represents a Bluetooth interface used to communicate with a device.
+ */
 class Bluetooth : public Interface
 {
 private:
-    std::string mac_address_;
-    int fd_;
+    std::string mac_address_; /*!< MAC address of the bluetooth device */
+    int fd_; /*!< file descriptor for the bluetooth socket */
     Bluetooth();
 public:
     /*!
@@ -59,7 +69,18 @@ public:
      * this constructor uses RFCOMM socket with channel 1 hardcoded
      */
     Bluetooth(std::string mac_address); 
+
+    /*!
+     * \brief send a string to the device
+     * \param message : string to send
+     */
     void sendMessage(std::string message); 
+
+    /*!
+     * \brief receive a string from the device
+     * \param stopCharacter : character that stop receiving
+     * \return string received
+     */
     std::string receive(char stopCharacter);
 };
 
