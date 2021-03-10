@@ -63,6 +63,10 @@ public:
      * \param communication_medium : interface used to communicate with the device
      */
     Elm327(Interface* communication_medium);
+
+    /*!
+     * \brief initialization of the Elm327, send some AT code in order to communicate easily
+     */
     void initialization();
 
     /*!
