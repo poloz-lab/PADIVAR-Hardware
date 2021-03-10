@@ -166,12 +166,12 @@ public:
 
     /*!
      * \brief waiting for a connection from a client
-     * \return ClientSocket object which represent the socket between the server and the new client
+     * \return ClientSocket object pointer which represent the socket between the server and the new client
      *
      * waiting for a client connection to the socket.
      * BLOCKING FUNCTION
      */
-    ClientSocket waitingForConnection();
+    ClientSocket* waitingForConnection();
 private:
     ServerSocket(); // forbid access to default constructor
     int socket_fd_; /*< file descriptor for the socket */
