@@ -47,6 +47,10 @@ knowledge of the CeCILL license and that you accept its terms.
 #include "interface.h"
 #include "server_socket.h"
 
+/*!
+ * \class Wifi
+ * \brief Class that represents a Wifi interface used to communicate with a device.
+ */
 class Wifi : public Interface
 {
 private:
