@@ -40,6 +40,10 @@ knowledge of the CeCILL license and that you accept its terms.
 #define BLUETOOTH_H
 #include "interface.h"
 
+/*!
+ * \class Bluetooth
+ * \brief Class that represents a Bluetooth interface used to communicate with a device.
+ */
 class Bluetooth : public Interface
 {
 private:
