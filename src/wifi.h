@@ -56,7 +56,7 @@ class Wifi : public Interface
 private:
     std::string ip_address_; /*!< IP address of the Wifi device */
     int port_; /*!< Port used to communicate with the device */
-    int fd_;
+    int fd_; /*!< file descriptor for the socket */
     Wifi();
 public:
     Wifi(std::string ip_address, int port); 
