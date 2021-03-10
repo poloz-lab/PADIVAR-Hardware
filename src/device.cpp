@@ -51,7 +51,7 @@ Device::Device(Interface* communication_medium)
 
 std::string Device::sendPid(Pid const& pid)
 {
-
+    return this->sendOBD(pid.getPidString());
 }
 
 /*
