@@ -38,6 +38,12 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #ifndef ELM327_h
 #define ELM327_h
+
+/*!
+ * \file elm327.h
+ * \brief handle elm327 devices
+ */
+
 #include "device.h"
 
 class Elm327 : public Device
