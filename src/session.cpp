@@ -239,10 +239,10 @@ int Session::interpreter()
         pidString = client_->readLine();
         int nbSecondes = 1;
         nbSecondes = stoi(client_->readLine());
-        clock_t start, end; 
+        time_t start, end; 
         try
         {
-            start = clock();
+            start = time(NULL);
             do
             {
                 Pid pid(pidString);
@@ -253,16 +253,13 @@ int Session::interpreter()
                 {
                     client_->writeString(std::to_string(values[i]));
                 }
-                end = clock();
+                time(&end);
                 std::cout << "start : " << start << std::endl;
                 std::cout << "end : " << end << std::endl;
-                std::cout << "sec : " << ((end - start) / CLOCKS_PER_SEC) << std::endl;
-                std::cout << "sec2 : " << (end - start) / CLOCKS_PER_SEC << std::endl;
                 std::cout << "clock_per_sec : " << CLOCKS_PER_SEC << std::endl;
                 std::cout << "time : " << nbSecondes << std::endl;
                 std::cout << "diffendstart : " <<  end - start << std::endl;
-                std::cout << "diffendstartdiv1000 : " << (end-start)/1000 << std::endl;
-            } while (((end - start) / 1000)< nbSecondes);
+            } while (((end - start)< nbSecondes));
         }
         catch(const std::exception& e)
         {
