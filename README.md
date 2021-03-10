@@ -26,6 +26,7 @@ Developed by [ESIEA](https://www.esiea.fr/) students for [Le Mans Métropole](ht
 
 ## Build
 
+* Download `g++` and `make`
 * Download `libbluetooth-dev` (Debian) or `libbluez3` (Mageia)
 * Clone project `git clone https://github.com/poloz-lab/PADIVAR-Hardware`
 * Compile with `make`
