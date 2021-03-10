@@ -42,11 +42,8 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <iostream>
 
 /*!
- * \file server_socket.c
- * \brief socket for accpeting connexion from clients
- * \author poloz-lab
- * \version 0.1
- * \date 20/10/2020
+ * \file server_socket.cpp
+ * \brief sockets for accpeting connexion from clients
  */
 
 extern bool g_verbose;

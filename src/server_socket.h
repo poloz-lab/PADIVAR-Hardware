@@ -41,10 +41,7 @@ knowledge of the CeCILL license and that you accept its terms.
 
 /*!
  * \file server_socket.h
- * \brief socket for accepting connexion from clients
- * \author poloz-lab
- * \version 0.1
- * \date 20/10/2020
+ * \brief sockets for accepting connexion from clients
  */
 #include <sys/types.h>
 #include <sys/socket.h>
