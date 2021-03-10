@@ -133,6 +133,14 @@ Session::Session(ClientSocket* client)
 
 Session::~Session()
 {
+    if (client_)
+    {
+        delete client_;
+    }
+    if (connected_device_)
+    {
+        delete connected_device_;
+    }
 }
 
 int Session::interpreter()
