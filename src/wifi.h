@@ -57,6 +57,10 @@ private:
     std::string ip_address_; /*!< IP address of the Wifi device */
     int port_; /*!< Port used to communicate with the device */
     int fd_; /*!< file descriptor for the socket */
+
+    /*!
+     * \brief forbid access to default constructor
+     */
     Wifi();
 public:
     Wifi(std::string ip_address, int port); 
