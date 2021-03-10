@@ -38,20 +38,41 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #ifndef ELM327_h
 #define ELM327_h
+
+/*!
+ * \file elm327.h
+ * \brief handle elm327 devices
+ */
+
 #include "device.h"
 
+/*!
+ * \class Elm327
+ * \brief class for handling Elm327 devices
+ */
 class Elm327 : public Device
 {
 private:
+    /*!
+     * \brief forbid access to default constructor
+     */
     Elm327();
 public:
+    /*!
+     * \brief constructor
+     * \param communication_medium : interface used to communicate with the device
+     */
     Elm327(Interface* communication_medium);
+
+    /*!
+     * \brief initialization of the Elm327, send some AT code in order to communicate easily
+     */
     void initialization();
 
     /*!
      * \brief send an obd code to the vehicle through the ELM327
      * \param obd_code : obd_code to send (string)
-     * \return the answer from the vehicle
+     * \return the answer from the vehicle cleaned
      */
     std::string sendOBD(std::string obd_code);
 };

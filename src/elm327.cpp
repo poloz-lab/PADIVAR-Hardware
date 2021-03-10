@@ -36,11 +36,16 @@ The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 
+/*!
+ * \file elm327.cpp
+ * \brief handle elm327 devices
+ */
+
 #include "elm327.h"
 #include <stdexcept>
 #include <iostream>
 
-extern bool g_verbose;
+extern bool g_verbose; /*!< declared in main.cpp, true if verbose mode is activated */
 
 Elm327::Elm327(Interface* communication_medium)
     :Device(communication_medium)
