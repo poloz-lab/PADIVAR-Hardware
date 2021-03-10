@@ -46,6 +46,10 @@ class Interface
 public:
     virtual void sendMessage(std::string message) = 0; 
     virtual std::string receive(char stopCharacter) = 0;
+    /*!
+     * \brief empty destructor
+     */
+    virtual ~Interface();
 };
 
 #endif
