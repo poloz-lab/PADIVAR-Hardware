@@ -47,7 +47,7 @@ knowledge of the CeCILL license and that you accept its terms.
 class Bluetooth : public Interface
 {
 private:
-    std::string mac_address_;
+    std::string mac_address_; /*!< MAC address of the bluetooth device */
     int fd_;
     Bluetooth();
 public:
