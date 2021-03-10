@@ -134,9 +134,9 @@ public:
      */
     virtual const char* what() const throw();
 private:
-    ExceptionSocketClientType type_;
-    int errno_;
-    std::string explaination_;
+    ExceptionSocketClientType type_; /*!< type of error */
+    int errno_; /*!< errno of the error */
+    std::string explaination_; /*!< explaination of the error */
 };
 
 /*!
