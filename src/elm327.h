@@ -72,7 +72,7 @@ public:
     /*!
      * \brief send an obd code to the vehicle through the ELM327
      * \param obd_code : obd_code to send (string)
-     * \return the answer from the vehicle
+     * \return the answer from the vehicle cleaned
      */
     std::string sendOBD(std::string obd_code);
 };
