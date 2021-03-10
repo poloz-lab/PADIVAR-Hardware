@@ -39,19 +39,48 @@ knowledge of the CeCILL license and that you accept its terms.
 #ifndef WIFI_H
 #define WIFI_H
 
+/*!
+ * \file wifi.h
+ * \brief handle wifi connection
+ */
+
 #include "interface.h"
 #include "server_socket.h"
 
+/*!
+ * \class Wifi
+ * \brief Class that represents a Wifi interface used to communicate with a device.
+ */
 class Wifi : public Interface
 {
 private:
-    std::string ip_address_;
-    int port_;
-    int fd_;
+    std::string ip_address_; /*!< IP address of the Wifi device */
+    int port_; /*!< Port used to communicate with the device */
+    int fd_; /*!< file descriptor for the socket */
+
+    /*!
+     * \brief forbid access to default constructor
+     */
     Wifi();
 public:
+    /*!
+     * \brief constructor
+     * \param ip_address : IP address of the device
+     * \param port : port to communicate with the device
+     */
     Wifi(std::string ip_address, int port); 
+
+    /*!
+     * \brief send a string to the device
+     * \param message : string to send
+     */
     void sendMessage(std::string message); 
+
+    /*!
+     * \brief receive a string from the device
+     * \param stopCharacter : character that stop receiving
+     * \return string received
+     */
     std::string receive(char stopCharacter);
 };
 
