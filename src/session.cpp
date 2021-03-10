@@ -201,6 +201,32 @@ int Session::interpreter()
         }
         return StateInterpreterType::NoError;
     }
+    else if (command == "sendPID")
+    {
+        if (! connected_device_)
+        {
+            throw ExceptionSession(ExceptionSessionType::NoDevice);
+        }
+
+        std::string pidString = "";
+        pidString = client_->readLine();
+        try
+        {
+            Pid pid(pidString);
+            std::string answer = connected_device_->sendPid(pid);
+            pid.setDataBytes(answer);
+            std::vector<float> values = pid.getValue();
+            for (unsigned int i = 0; i < values.size(); i++)
+            {
+                client_->writeString(std::to_string(values[i]));
+            }
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << std::endl;
+            client_->writeString(e.what());
+        }
+    }
     else
     {
         throw ExceptionSession(ExceptionSessionType::UnknownCommand, command);
@@ -250,6 +276,9 @@ ExceptionSession::ExceptionSession(ExceptionSessionType type) throw()
         case ExceptionSessionType::UnknownCommand:
             reason = "unknown command";
             break;
+        case ExceptionSessionType::NoDevice:
+            reason = "session initialized with no device";
+            break;
         default:
             reason = "Missing reason";
             break;
@@ -283,6 +312,9 @@ ExceptionSession::ExceptionSession(ExceptionSessionType type, std::string option
             break;
         case ExceptionSessionType::UnknownCommand:
             reason = "unknown command: " + option;
+            break;
+        case ExceptionSessionType::NoDevice:
+            reason = "session initialized with no device: " + option;
             break;
         default:
             reason = "Missing reason";
