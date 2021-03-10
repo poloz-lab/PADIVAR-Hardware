@@ -226,6 +226,7 @@ int Session::interpreter()
             std::cerr << e.what() << std::endl;
             client_->writeString(e.what());
         }
+        return StateInterpreterType::NoError;
     }
     else
     {
