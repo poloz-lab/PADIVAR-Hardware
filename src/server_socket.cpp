@@ -43,7 +43,7 @@ knowledge of the CeCILL license and that you accept its terms.
 
 /*!
  * \file server_socket.cpp
- * \brief sockets for accpeting connexion from clients
+ * \brief sockets for accepting connexion from clients
  */
 
 extern bool g_verbose; /*!< declared in main.cpp, true if verbose mode is activated */
