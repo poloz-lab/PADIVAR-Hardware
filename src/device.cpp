@@ -47,13 +47,14 @@ Device::Device(Interface* communication_medium)
 /*Pid getPidList()
 {
 
-}
+}*/
 
-string sendPid(Pid pid)
+std::string Device::sendPid(Pid const& pid)
 {
-
+    return this->sendOBD(pid.getPidString());
 }
 
+/*
 Pid diagnostic(ClientSocket client_socket)
 {
 

@@ -40,6 +40,8 @@ knowledge of the CeCILL license and that you accept its terms.
 #define DEVICE_H
 #include "interface.h"
 #include "server_socket.h"
+#include "pid.h"
+
 class Device 
 {
 private:
@@ -59,7 +61,12 @@ public:
     virtual void initialization()=0;
     virtual std::string sendOBD(std::string obd_code)=0;
     //Pid getPidList();
-    //std::string sendPid(Pid pid);
+    /*!
+     * \brief send a PID through OBD
+     * \param PID : PID to send
+     * \return the answer of the vehicle
+     */
+    std::string sendPid(Pid const& pid);
     //Pid diagnostic(ClientSocket client_socket);
 };
 
