@@ -103,6 +103,7 @@ namespace ExceptionSessionTypes
 		WifiInitializationFailed, /*!< wifi initialization failed */
 		BluetoothInitializationFailed, /*!< bluetooth initialization failed */
 		UnknownCommand, /*!< command unknown in interpreter */
+		NoDevice, /*!< the session is initialized with no device */
 	};
 }
 typedef ExceptionSessionTypes::ExceptionSessionType ExceptionSessionType;

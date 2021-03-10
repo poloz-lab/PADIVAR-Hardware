@@ -242,6 +242,9 @@ ExceptionSession::ExceptionSession(ExceptionSessionType type) throw()
         case ExceptionSessionType::UnknownCommand:
             reason = "unknown command";
             break;
+        case ExceptionSessionType::NoDevice:
+            reason = "session initialized with no device";
+            break;
         default:
             reason = "Missing reason";
             break;
@@ -275,6 +278,9 @@ ExceptionSession::ExceptionSession(ExceptionSessionType type, std::string option
             break;
         case ExceptionSessionType::UnknownCommand:
             reason = "unknown command: " + option;
+            break;
+        case ExceptionSessionType::NoDevice:
+            reason = "session initialized with no device: " + option;
             break;
         default:
             reason = "Missing reason";
