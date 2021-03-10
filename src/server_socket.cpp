@@ -162,7 +162,7 @@ ServerSocket::~ServerSocket()
     close(socket_fd_);
 }
 
-ClientSocket ServerSocket::waitingForConnection()
+ClientSocket* ServerSocket::waitingForConnection()
 {
     // declaration
     int client_fd;
@@ -179,7 +179,7 @@ ClientSocket ServerSocket::waitingForConnection()
         std::cout << "client accepted" << std::endl;
     }
     // return the ClientSocket corresponding to the previous information
-    return ClientSocket(client_fd, client_address, client_address_size);
+    return new ClientSocket(client_fd, client_address, client_address_size);
 }
 
 ExceptionSocketServer::ExceptionSocketServer(ExceptionSocketServerType type, int errno_c = 0) throw()

@@ -168,11 +168,11 @@ int main(int argc, char** argv)
     /* accept client and create session */
     while (!g_quit)
     {
-        ClientSocket client = server->waitingForConnection();
+        ClientSocket* client = server->waitingForConnection();
         Session *session = nullptr;
         try
         {
-            session = new Session(&client);
+            session = new Session(client);
             if (g_verbose)
             {
                 std::cout << "session initialized successfully" << std::endl;
@@ -185,7 +185,7 @@ int main(int argc, char** argv)
         catch(const std::exception& e)
         {
             std::cerr << e.what() << std::endl;
-            client.writeString(e.what());
+            client->writeString(e.what());
         }
         if(session)
         {
