@@ -53,6 +53,9 @@ knowledge of the CeCILL license and that you accept its terms.
 class Elm327 : public Device
 {
 private:
+    /*!
+     * \brief forbid access to default constructor
+     */
     Elm327();
 public:
     Elm327(Interface* communication_medium);
