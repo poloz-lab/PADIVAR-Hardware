@@ -46,7 +46,7 @@ knowledge of the CeCILL license and that you accept its terms.
  * \brief sockets for accpeting connexion from clients
  */
 
-extern bool g_verbose;
+extern bool g_verbose; /*!< declared in main.cpp, true if verbose mode is activated */
 
 ClientSocket::ClientSocket(int socket_fd, sockaddr_in client_address, socklen_t client_address_size)
     :socket_fd_(socket_fd),client_address_(client_address),client_address_size_(client_address_size)
