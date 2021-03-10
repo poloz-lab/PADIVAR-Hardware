@@ -1,7 +1,7 @@
 # PADIVAR
 
-**PADIVAR** is an open-source OBD2 vehicle diagnostic software compatible with multiple adapters. 
-It is hosted on a server connected to one (or multiple) cars, via one (or multiple) OBD2 devices, and can be accessed simultaneously by multiple clients remotely thanks to a simple TCP client.
+**PADIVAR** is an open-source OBD2 vehicle diagnostic software compatible with ELM327. 
+It is hosted on a server connected to a car via an OBD2 device, and can be accessed remotely thanks to a simple TCP client.
 
 Developed by [ESIEA](https://www.esiea.fr/) students for [Le Mans Métropole](https://www.lemansmetropole.fr/).
 
@@ -26,8 +26,10 @@ Developed by [ESIEA](https://www.esiea.fr/) students for [Le Mans Métropole](ht
 
 ## Build
 
-* Download `g++` and `make`
-* Download `libbluetooth-dev` (Debian) or `libbluez3` (Mageia)
+PADIVAR was tested on Debian and Mageia. Other Linux distributions are untested.
+
+* Download `g++` (Debian) or `gcc-c++` (Mageia) and `make`
+* Download `libbluetooth-dev` (Debian) or `lib64bluez-devel` (Mageia)
 * Clone project `git clone https://github.com/poloz-lab/PADIVAR-Hardware`
 * Compile with `make`
 
@@ -37,27 +39,23 @@ Developed by [ESIEA](https://www.esiea.fr/) students for [Le Mans Métropole](ht
 
 In order to work, PADIVAR is separated in two parts:
 * a server (referred here as '*PADIVAR server*') , running either Debian or Mageia (other distributions untested)
-* a TCP client (any simple TCP client supporting CRLF works)
+* a TCP client (any simple TCP client supporting LF works)
 
 ```
-PADIVAR Architecture example:
-
-┌──────────────┐                                       ┌──────────────┐      ┌───────┐
-│ TCP Client 1 |___                                 ___| OBD Device 1 |______| Car 1 |            
-└──────────────┘   \                               /   | (Bluetooth)  |      └───────┘
-                    \                             /    └──────────────┘                 
-┌──────────────┐     \           ┌─────────┐     /     ┌──────────────┐      ┌───────┐
-│ TCP Client 2 |______[...]______| PADIVAR |____/______| OBD Device 2 |______| Car 2 |      
-└──────────────┘                 | Server  |           |   (Wi-Fi)    |      └───────┘
-                                 └─────────┘           └──────────────┘
-└───────────────┘   └───────┘   └───────────────────────────────────────────────────────┘
-Remote client(s)    Internet      PADIVAR server connected to car(s) via OBD2 device(s)
+PADIVAR Architecture:
+                                
+┌────────────┐                 ┌─────────┐          ┌────────────┐      ┌─────┐
+│ TCP Client |______[...]______| PADIVAR |__________| OBD Device |______| Car |      
+└────────────┘                 | Server  |          |  (ELM327)  |      └─────┘
+                               └─────────┘          └────────────┘
+└─────────────┘   └───────┘   └───────────────────────────────────────────────────┘ 
+ Remote client    Internet     PADIVAR server connected to a car via an OBD2 device
 
 ```
 #### Compatible OBD2 devices
 
-PADIVAR can be used with multiple OBD2 adapters, each using different protocols.
-At this time, the following adapters are available:
+PADIVAR can be used with an ELM327, and supports different protocols.
+At this time, the following connections are available:
 * `elm327`
 	 * `bluetooth`
 	 * `wifi`
@@ -73,6 +71,7 @@ At this time, the following commands are available:
 	* `<PID>` (hex value)
 * `units` - displays the unit of PID value
 	* `<PID>` (hex value)
+* `sendPID` - returns the value of a PID
 
 ## Connection
 
