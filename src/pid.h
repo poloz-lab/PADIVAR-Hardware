@@ -782,7 +782,7 @@ private:
      * \param data_bytes : Data bytes in hexadecimal format (as string)
      * \return decimal
      */
-    unsigned int HexaToDec(std::string data_bytes);
+    unsigned int HexaToDec(std::string data_bytes) const;
 
 public:
     /*!
@@ -815,19 +815,19 @@ public:
      * \brief Get the pid in hexadecimal (string)
      * \return pid in hexadecimal (string)
      */
-    std::string getPidString();
+    std::string getPidString() const;
 
     /*!
      * \brief Get the pid with the HexPid enum representation
      * \return Pid in HexPid enum
      */
-    HexPid getHexPid();
+    HexPid getHexPid() const;
 
     /*!
      * \brief Get the data bytes of the measure of this PID
      * \return data bytes as string
      */
-    std::string getDataBytes();
+    std::string getDataBytes() const;
 
     /*!
      * \brief Set the data bytes after the measure of this PID
@@ -839,19 +839,19 @@ public:
      * \brief Get a description to explain what the PID is about
      * \return description of the pid
      */
-    std::string getDescription();
+    std::string getDescription() const;
 
     /*!
      * \brief Get the units associated to the value
      * \return units
      */
-    std::string getUnits();
+    std::string getUnits() const;
 
     /*!
      * \brief get number of data bytes returned by the PID
      * \return number of data bytes returned by the PID
      */
-    unsigned int getNumberOfDataBytes();
+    unsigned int getNumberOfDataBytes() const;
 
     /*!
      * \brief get the data byte at index specified
@@ -860,7 +860,7 @@ public:
      * 
      * If the PID returns 2 data bytes, the function returns for index 0 the first data byte (from left to right).
      */
-    unsigned int getDataByteAtIndex(unsigned int index);
+    unsigned int getDataByteAtIndex(unsigned int index) const;
 
     /*!
      * \brief get the number of values returned by the Pid
@@ -868,7 +868,7 @@ public:
      * 
      * Sometimes a PID gives two informations, for example PID 0129 that gives Air-Fuel equivalence ratio (lambda) & voltage
      */
-    unsigned int getNumberOfValues();
+    unsigned int getNumberOfValues() const;
 
     /*!
      * \brief Get minimum value possible for this PID
@@ -876,7 +876,7 @@ public:
      * 
      * The size of the vector depends of the number of values returned by the PID.
      */
-    std::vector<float> getMin();
+    std::vector<float> getMin() const;
 
     /*!
      * \brief Get maximum value possible for this PID
@@ -884,7 +884,7 @@ public:
      * 
      * The size of the vector depends of the number of values returned by the PID.
      */
-    std::vector<float> getMax();
+    std::vector<float> getMax() const;
 
     /*!
      * \brief Get the value associated to the data bytes. Sometimes, a calculation may be necessary
@@ -892,7 +892,7 @@ public:
      * 
      * The size of the vector depends of the number of values returned by the PID.
      */
-    std::vector<float> getValue();
+    std::vector<float> getValue() const;
 };
 
 namespace ExceptionPidTypes

@@ -2906,17 +2906,17 @@ Pid::Pid(HexPid pid, std::string data_bytes)
     setDataBytes(data_bytes_);
 }
 
-std::string Pid::getPidString()
+std::string Pid::getPidString() const
 {
     return pidString_;
 }
 
-HexPid Pid::getHexPid()
+HexPid Pid::getHexPid() const
 {
     return hexPid_;
 }
 
-std::string Pid::getDataBytes()
+std::string Pid::getDataBytes() const
 {
     if (data_bytes_ != "")
     {
@@ -2964,7 +2964,7 @@ void Pid::setDataBytes(std::string data_bytes)
     data_bytes_ = data_bytes;
 }
 
-std::string Pid::getDescription()
+std::string Pid::getDescription() const
 {
     switch (hexPid_)
     {
@@ -4036,7 +4036,7 @@ std::string Pid::getDescription()
     }
 }
 
-std::string Pid::getUnits()
+std::string Pid::getUnits() const
 {
     switch (hexPid_)
     {
@@ -5108,7 +5108,7 @@ std::string Pid::getUnits()
     }
 }
 
-unsigned int Pid::getNumberOfDataBytes()
+unsigned int Pid::getNumberOfDataBytes() const
 {
 
     switch (hexPid_)
@@ -6180,7 +6180,7 @@ unsigned int Pid::getNumberOfDataBytes()
 }
 
 }
-unsigned int Pid::getDataByteAtIndex(unsigned int index)
+unsigned int Pid::getDataByteAtIndex(unsigned int index) const
 {
     std::string data = data_bytes_;
     /*example: if data = "4102654468" and index = 1
@@ -6229,7 +6229,7 @@ unsigned int Pid::getDataByteAtIndex(unsigned int index)
     }
 }
 
-unsigned int Pid::getNumberOfValues()
+unsigned int Pid::getNumberOfValues() const
 {
 	switch (hexPid_)
     {
@@ -7302,7 +7302,7 @@ unsigned int Pid::getNumberOfValues()
 }
 
 
-std::vector<float> Pid::getMin()
+std::vector<float> Pid::getMin() const
 {
     std::vector<float> arr;
 	switch (hexPid_)
@@ -8562,7 +8562,7 @@ std::vector<float> Pid::getMin()
 
 
 
-std::vector<float> Pid::getMax()
+std::vector<float> Pid::getMax() const
 {
     std::vector<float> arr;
 	switch (hexPid_)
@@ -9816,7 +9816,7 @@ std::vector<float> Pid::getMax()
         break;
     }
 }
-std::vector<float> Pid::getValue()
+std::vector<float> Pid::getValue() const
 {
     std::vector<float> arr;
     float res = 0.0, res1 = 0.0 , A = 0.0, B = 0.0, C = 0.0, D = 0.0, E = 0.0;
@@ -11922,7 +11922,7 @@ std::vector<float> Pid::getValue()
         break;
     }
 }
- unsigned int Pid::HexaToDec(std::string data_bytes)
+ unsigned int Pid::HexaToDec(std::string data_bytes) const
  {
     std::istringstream nb(data_bytes);
 	unsigned int n;
