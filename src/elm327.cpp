@@ -37,7 +37,7 @@ knowledge of the CeCILL license and that you accept its terms.
 */
 
 /*!
- * \file elm327.h
+ * \file elm327.cpp
  * \brief handle elm327 devices
  */
 
