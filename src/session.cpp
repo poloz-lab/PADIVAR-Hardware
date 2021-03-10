@@ -193,7 +193,7 @@ int Session::interpreter()
         }
         return StateInterpreterType::NoError;
     }
-    else if (command == "send PID")
+    else if (command == "sendPID")
     {
         if (! connected_device_)
         {
