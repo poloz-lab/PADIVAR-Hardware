@@ -58,6 +58,10 @@ protected:
      */
     Device(Interface* communication_medium);
 public:
+    /*!
+     * \brief destructor that delete the communication_medium
+     */
+    virtual ~Device();
     virtual void initialization()=0;
     virtual std::string sendOBD(std::string obd_code)=0;
     //Pid getPidList();

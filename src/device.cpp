@@ -43,6 +43,14 @@ Device::Device(Interface* communication_medium)
 {
 
 }
+
+Device::~Device()
+{
+    if (communication_medium_)
+    {
+        delete communication_medium_;
+    }
+}
     
 /*Pid getPidList()
 {
