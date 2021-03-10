@@ -54,7 +54,7 @@ knowledge of the CeCILL license and that you accept its terms.
 class Wifi : public Interface
 {
 private:
-    std::string ip_address_;
+    std::string ip_address_; /*!< IP address of the Wifi device */
     int port_;
     int fd_;
     Wifi();
