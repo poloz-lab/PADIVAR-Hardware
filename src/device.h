@@ -64,13 +64,15 @@ public:
     virtual ~Device();
     virtual void initialization()=0;
     virtual std::string sendOBD(std::string obd_code)=0;
-    //Pid getPidList();
+    std::vector<Pid> getPidList();
+    std::string  HexToBin(std::string hexPid);
     /*!
      * \brief send a PID through OBD
      * \param PID : PID to send
      * \return the answer of the vehicle
      */
     std::string sendPid(Pid const& pid);
+
     //Pid diagnostic(ClientSocket client_socket);
 };
 
