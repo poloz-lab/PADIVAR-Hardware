@@ -39,6 +39,11 @@ knowledge of the CeCILL license and that you accept its terms.
 #ifndef WIFI_H
 #define WIFI_H
 
+/*!
+ * \file wifi.h
+ * \brief handle wifi connection
+ */
+
 #include "interface.h"
 #include "server_socket.h"
 
