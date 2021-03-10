@@ -47,13 +47,14 @@ Device::Device(Interface* communication_medium)
 /*Pid getPidList()
 {
 
-}
+}*/
 
 string sendPid(Pid pid)
 {
 
 }
 
+/*
 Pid diagnostic(ClientSocket client_socket)
 {
 
