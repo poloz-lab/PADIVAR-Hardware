@@ -199,6 +199,25 @@ int Session::interpreter()
         {
             throw ExceptionSession(ExceptionSessionType::NoDevice);
         }
+
+        std::string pidString = "";
+        pidString = client_->readLine();
+        try
+        {
+            Pid pid(pidString);
+            std::string answer = connected_device_->sendPid(pid);
+            pid.setDataBytes(answer);
+            std::vector<float> values = pid.getValue();
+            for (unsigned int i = 0; i < values.size(); i++)
+            {
+                client_->writeString(std::to_string(values[i]));
+            }
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << std::endl;
+            client_->writeString(e.what());
+        }
     }
     else
     {
