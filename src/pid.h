@@ -52,6 +52,10 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <string>
 #include <math.h>
 
+/*!
+ * \namespace HexPids
+ * \brief namespace for enum HexPid
+ */
 namespace HexPids
 {
     enum HexPid
