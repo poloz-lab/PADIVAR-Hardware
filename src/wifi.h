@@ -75,6 +75,12 @@ public:
      * \param message : string to send
      */
     void sendMessage(std::string message); 
+
+    /*!
+     * \brief receive a string from the device
+     * \param stopCharacter : character that stop receiving
+     * \return string received
+     */
     std::string receive(char stopCharacter);
 };
 
