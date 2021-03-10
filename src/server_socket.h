@@ -98,6 +98,7 @@ private:
 
 /*!
  * \namespace ExceptionSocketClientTypes
+ * \brief namespace for enum ExceptionSocketClientType
  */
 namespace ExceptionSocketClientTypes
 {
@@ -176,7 +177,8 @@ private:
 };
 
 /*!
- * \namespace
+ * \namespace ExceptionSocketServerTypes
+ * \brief namespace for enum ExceptionSocketServerType
  */
 namespace ExceptionSocketServerTypes
 {
