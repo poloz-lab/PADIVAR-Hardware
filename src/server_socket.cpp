@@ -42,14 +42,11 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <iostream>
 
 /*!
- * \file server_socket.c
- * \brief socket for accpeting connexion from clients
- * \author poloz-lab
- * \version 0.1
- * \date 20/10/2020
+ * \file server_socket.cpp
+ * \brief sockets for accepting connexion from clients
  */
 
-extern bool g_verbose;
+extern bool g_verbose; /*!< declared in main.cpp, true if verbose mode is activated */
 
 ClientSocket::ClientSocket(int socket_fd, sockaddr_in client_address, socklen_t client_address_size)
     :socket_fd_(socket_fd),client_address_(client_address),client_address_size_(client_address_size)

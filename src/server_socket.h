@@ -41,10 +41,7 @@ knowledge of the CeCILL license and that you accept its terms.
 
 /*!
  * \file server_socket.h
- * \brief socket for accepting connexion from clients
- * \author poloz-lab
- * \version 0.1
- * \date 20/10/2020
+ * \brief sockets for accepting connexion from clients
  */
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -101,6 +98,7 @@ private:
 
 /*!
  * \namespace ExceptionSocketClientTypes
+ * \brief namespace for enum ExceptionSocketClientType
  */
 namespace ExceptionSocketClientTypes
 {
@@ -137,9 +135,9 @@ public:
      */
     virtual const char* what() const throw();
 private:
-    ExceptionSocketClientType type_;
-    int errno_;
-    std::string explaination_;
+    ExceptionSocketClientType type_; /*!< type of error */
+    int errno_; /*!< errno of the error */
+    std::string explaination_; /*!< explaination of the error */
 };
 
 /*!
@@ -179,7 +177,8 @@ private:
 };
 
 /*!
- * \namespace
+ * \namespace ExceptionSocketServerTypes
+ * \brief namespace for enum ExceptionSocketServerType
  */
 namespace ExceptionSocketServerTypes
 {
@@ -226,9 +225,9 @@ public:
      */
     virtual const char* what() const throw();
 private:
-    ExceptionSocketServerType type_;
-    int errno_;
-    std::string explaination_;
+    ExceptionSocketServerType type_; /*!< type of error */
+    int errno_; /*!< errno of the error */
+    std::string explaination_; /*!< explaination of the error */
 };
 
 #endif
