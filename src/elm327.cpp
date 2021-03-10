@@ -45,7 +45,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <stdexcept>
 #include <iostream>
 
-extern bool g_verbose;
+extern bool g_verbose; /*!< declared in main.cpp, true if verbose mode is activated */
 
 Elm327::Elm327(Interface* communication_medium)
     :Device(communication_medium)
