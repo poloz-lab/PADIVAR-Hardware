@@ -58,6 +58,10 @@ private:
      */
     Elm327();
 public:
+    /*!
+     * \brief constructor
+     * \param communication_medium : interface used to communicate with the device
+     */
     Elm327(Interface* communication_medium);
     void initialization();
 
