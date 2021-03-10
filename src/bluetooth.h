@@ -38,6 +38,12 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #ifndef BLUETOOTH_H
 #define BLUETOOTH_H
+
+/*!
+ * \file bluetooth.h
+ * \brief handle bluetooth connections
+ */
+
 #include "interface.h"
 
 /*!
