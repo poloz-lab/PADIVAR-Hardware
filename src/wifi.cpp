@@ -49,7 +49,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <unistd.h>
 #include <iostream>
 
-extern bool g_verbose;
+extern bool g_verbose; /*!< declared in main.cpp, true if verbose mode is activated */
 
 Wifi::Wifi(std::string ip_address, int port)
 {
