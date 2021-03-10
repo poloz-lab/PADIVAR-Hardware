@@ -46,6 +46,10 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #include "device.h"
 
+/*!
+ * \class Elm327
+ * \brief class for handling Elm327 devices
+ */
 class Elm327 : public Device
 {
 private:
