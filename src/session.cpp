@@ -254,10 +254,15 @@ int Session::interpreter()
                     client_->writeString(std::to_string(values[i]));
                 }
                 end = clock();
+                std::cout << "start : " << start << std::endl;
                 std::cout << "end : " << end << std::endl;
                 std::cout << "sec : " << ((end - start) / CLOCKS_PER_SEC) << std::endl;
+                std::cout << "sec2 : " << (end - start) / CLOCKS_PER_SEC << std::endl;
+                std::cout << "clock_per_sec : " << CLOCKS_PER_SEC << std::endl;
                 std::cout << "time : " << nbSecondes << std::endl;
-            } while (((end - start) / CLOCKS_PER_SEC)< nbSecondes);
+                std::cout << "diffendstart : " <<  end - start << std::endl;
+                std::cout << "diffendstartdiv1000 : " << (end-start)/1000 << std::endl;
+            } while (((end - start) / 1000)< nbSecondes);
         }
         catch(const std::exception& e)
         {
