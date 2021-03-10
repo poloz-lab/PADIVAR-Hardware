@@ -193,6 +193,13 @@ int Session::interpreter()
         }
         return StateInterpreterType::NoError;
     }
+    else if (command == "send PID")
+    {
+        if (! connected_device_)
+        {
+            throw ExceptionSession(ExceptionSessionType::NoDevice);
+        }
+    }
     else
     {
         throw ExceptionSession(ExceptionSessionType::UnknownCommand, command);
