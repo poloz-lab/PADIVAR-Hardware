@@ -48,7 +48,7 @@ class Bluetooth : public Interface
 {
 private:
     std::string mac_address_; /*!< MAC address of the bluetooth device */
-    int fd_;
+    int fd_; /*!< file descriptor for the bluetooth socket */
     Bluetooth();
 public:
     /*!
