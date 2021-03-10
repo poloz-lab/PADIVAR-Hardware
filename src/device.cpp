@@ -49,7 +49,7 @@ Device::Device(Interface* communication_medium)
 
 }*/
 
-string sendPid(Pid pid)
+std::string Device::sendPid(Pid const& pid)
 {
 
 }
