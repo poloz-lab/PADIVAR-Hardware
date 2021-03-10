@@ -41,6 +41,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <typeinfo>
 #include <exception>
 #include <iostream>
+#include <chrono>
 #include "pid.h"
 
 extern bool g_verbose;
@@ -226,6 +227,40 @@ int Session::interpreter()
             std::cerr << e.what() << std::endl;
             client_->writeString(e.what());
         }
+    }
+    else if (command == "repeatPID")
+    {
+        if (! connected_device_)
+        {
+            throw ExceptionSession(ExceptionSessionType::NoDevice);
+        }
+
+        std::string pidString = "";
+        pidString = client_->readLine();
+        int nbSecondes = 1;
+        nbSecondes = stoi(client_->readLine());
+        clock_t start, end;
+        start = clock();
+        do
+        {
+            try
+            {
+                Pid pid(pidString);
+                std::string answer = connected_device_->sendPid(pid);
+                pid.setDataBytes(answer);
+                std::vector<float> values = pid.getValue();
+                for (unsigned int i = 0; i < values.size(); i++)
+                {
+                    client_->writeString(std::to_string(values[i]));
+                }
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << std::endl;
+                client_->writeString(e.what());
+            }
+            end = clock();
+        } while ((end - start / CLOCKS_PER_SEC)< nbSecondes);
     }
     else
     {
