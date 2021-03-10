@@ -69,6 +69,11 @@ public:
      * \param port : port to communicate with the device
      */
     Wifi(std::string ip_address, int port); 
+
+    /*!
+     * \brief send a string to the device
+     * \param message : string to send
+     */
     void sendMessage(std::string message); 
     std::string receive(char stopCharacter);
 };
