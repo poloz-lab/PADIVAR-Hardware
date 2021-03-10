@@ -234,7 +234,6 @@ int Session::interpreter()
         {
             throw ExceptionSession(ExceptionSessionType::NoDevice);
         }
-
         std::string pidString = "";
         pidString = client_->readLine();
         int nbSecondes = 1;
@@ -254,11 +253,6 @@ int Session::interpreter()
                     client_->writeString(std::to_string(values[i]));
                 }
                 time(&end);
-                std::cout << "start : " << start << std::endl;
-                std::cout << "end : " << end << std::endl;
-                std::cout << "clock_per_sec : " << CLOCKS_PER_SEC << std::endl;
-                std::cout << "time : " << nbSecondes << std::endl;
-                std::cout << "diffendstart : " <<  end - start << std::endl;
             } while (((end - start)< nbSecondes));
         }
         catch(const std::exception& e)
