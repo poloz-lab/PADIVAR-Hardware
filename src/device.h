@@ -38,6 +38,12 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #ifndef DEVICE_H
 #define DEVICE_H
+
+/*!
+ * \file device.h
+ * \brief manage devices connected to the car
+ */
+
 #include "interface.h"
 #include "server_socket.h"
 #include "pid.h"
