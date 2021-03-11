@@ -36,6 +36,11 @@ The fact that you arre presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 
+/*!
+ * \file pid.cpp
+ * \brief it helps to represent a PID for the human and the machine
+ */
+
 #include "pid.h"
 #include <exception>
 #include <stdexcept>
