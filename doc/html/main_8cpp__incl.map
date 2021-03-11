@@ -1,0 +1,25 @@
+<map id="src/main.cpp" name="src/main.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="494,5,599,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,379,85,405"/>
+<area shape="rect" id="node3" href="$server__socket_8h.html" title="sockets for accepting connexion from clients" alt="" coords="693,304,817,331"/>
+<area shape="rect" id="node9" title=" " alt="" coords="499,379,557,405"/>
+<area shape="rect" id="node10" title=" " alt="" coords="509,80,585,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="609,80,676,107"/>
+<area shape="rect" id="node12" title=" " alt="" coords="701,80,766,107"/>
+<area shape="rect" id="node13" href="$session_8h.html" title="handle a session with a client" alt="" coords="401,80,484,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="912,379,1008,405"/>
+<area shape="rect" id="node5" title=" " alt="" coords="582,379,685,405"/>
+<area shape="rect" id="node6" title=" " alt="" coords="709,379,801,405"/>
+<area shape="rect" id="node7" title=" " alt="" coords="825,379,887,405"/>
+<area shape="rect" id="node8" title=" " alt="" coords="387,379,474,405"/>
+<area shape="rect" id="node14" href="$device_8h.html" title="manage devices connected to the car" alt="" coords="492,229,569,256"/>
+<area shape="rect" id="node20" href="$elm327_8h.html" title="handle elm327 devices" alt="" coords="527,155,609,181"/>
+<area shape="rect" id="node21" href="$usb_8h.html" title=" " alt="" coords="410,229,467,256"/>
+<area shape="rect" id="node22" href="$wifi_8h.html" title="handle wifi connection" alt="" coords="602,229,659,256"/>
+<area shape="rect" id="node23" href="$bluetooth_8h.html" title="handle bluetooth connections" alt="" coords="305,155,401,181"/>
+<area shape="rect" id="node15" href="$interface_8h.html" title="Manage computer interfaces." alt="" coords="482,304,574,331"/>
+<area shape="rect" id="node16" href="$pid_8h.html" title="it helps to represent a PID for the human and the machine" alt="" coords="207,304,262,331"/>
+<area shape="rect" id="node17" title=" " alt="" coords="301,379,363,405"/>
+<area shape="rect" id="node18" title=" " alt="" coords="109,379,184,405"/>
+<area shape="rect" id="node19" title=" " alt="" coords="209,379,277,405"/>
+</map>
