@@ -962,6 +962,11 @@ public:
      * \param option : additionnal details
      */
     ExceptionPid(ExceptionPidType type, std::string option) throw();
+
+    /*!
+     * \brief give the explaination of the error
+     * \return string to give explaination
+     */
     virtual const char* what() const throw();
 private:
     ExceptionPidType type_;
