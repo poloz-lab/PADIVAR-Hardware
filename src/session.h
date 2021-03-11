@@ -37,6 +37,12 @@ knowledge of the CeCILL license and that you accept its terms.
 */
 #ifndef SESSION_H
 #define SESSION_H
+
+/*!
+ * \file session.h
+ * \brief handle a session with a client
+ */
+
 #include "device.h"
 #include "server_socket.h"
 
