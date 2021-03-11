@@ -917,6 +917,10 @@ public:
     std::vector<float> getValue() const;
 };
 
+/*!
+ * \namespace ExceptionPidTypes
+ * \brief namespace for enum ExceptionPidType
+ */
 namespace ExceptionPidTypes
 {
     enum ExceptionPidType
