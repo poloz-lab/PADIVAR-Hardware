@@ -53,6 +53,13 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #include <string>
 
+/*!
+ * \class Session
+ * \brief Class that represents a session between a client and server.
+ * 
+ * Allows the client to communicate with the program by asking commands.
+ * The session must be intialized by the client by sending some specific informations.
+ */
 class Session
 {
 private:
