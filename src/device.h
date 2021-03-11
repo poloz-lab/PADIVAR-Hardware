@@ -86,6 +86,13 @@ public:
      * \return answer of the vehicle cleaned
      */
     virtual std::string sendOBD(std::string obd_code)=0;
+
+    /*!
+     * \brief Get the list of PID available on the vehicule.
+     * \return Vector of PID available on the vehicle.
+     * 
+     * The data_bytes aren't set, no data is asked to the vehicle except data for PID avaibility.
+     */
     std::vector<Pid> getPidList();
     std::string  HexToBin(std::string hexPid);
     /*!
