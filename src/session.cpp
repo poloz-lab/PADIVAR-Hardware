@@ -50,7 +50,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <time.h>
 #include "pid.h"
 
-extern bool g_verbose;
+extern bool g_verbose; /*!< declared in main.cpp, true if verbose mode is activated */
 
 Session::Session()
 {
