@@ -166,8 +166,8 @@ public:
 	virtual const char* what() const throw();
 
 private:
-	ExceptionSessionType type_; /*< type of exception */
-	std::string explaination_; /*< string to explain the exception */
+	ExceptionSessionType type_; /*!< type of exception */
+	std::string explaination_; /*!< string to explain the exception */
 };
 
 #endif
