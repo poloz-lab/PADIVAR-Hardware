@@ -950,7 +950,17 @@ typedef ExceptionPidTypes::ExceptionPidType ExceptionPidType;
 class ExceptionPid : public std::exception
 {
 public:
+    /*!
+     * \brief constructor with no details, only the type of the error
+     * \param type : type of error
+     */
     ExceptionPid(ExceptionPidType type) throw();
+
+    /*!
+     * \brief constructor with type and details about the error
+     * \param type : type of the error
+     * \param option : additionnal details
+     */
     ExceptionPid(ExceptionPidType type, std::string option) throw();
     virtual const char* what() const throw();
 private:
