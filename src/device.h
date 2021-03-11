@@ -79,6 +79,12 @@ public:
      * \brief Initialize the device.
      */
     virtual void initialization()=0;
+
+    /*!
+     * \brief Send an OBD code. Return the answer.
+     * \param obd_code : OBD code to send (as string)
+     * \return answer of the vehicle cleaned
+     */
     virtual std::string sendOBD(std::string obd_code)=0;
     std::vector<Pid> getPidList();
     std::string  HexToBin(std::string hexPid);
