@@ -36,6 +36,11 @@ The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
 
+/*!
+ * \file device.cpp
+ * \brief manage devices connected to the car
+ */
+
 #include "device.h"
 
 Device::Device(Interface* communication_medium)

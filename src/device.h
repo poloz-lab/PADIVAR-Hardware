@@ -38,10 +38,22 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #ifndef DEVICE_H
 #define DEVICE_H
+
+/*!
+ * \file device.h
+ * \brief manage devices connected to the car
+ */
+
 #include "interface.h"
 #include "server_socket.h"
 #include "pid.h"
 
+/*!
+ * \class Device
+ * \brief Class to handle devices used to connect with the car.
+ * 
+ * They should perform some standard operation like sending an OBD code and others...
+ */
 class Device 
 {
 private:
@@ -62,8 +74,25 @@ public:
      * \brief destructor that delete the communication_medium
      */
     virtual ~Device();
+
+    /*!
+     * \brief Initialize the device.
+     */
     virtual void initialization()=0;
+
+    /*!
+     * \brief Send an OBD code. Return the answer.
+     * \param obd_code : OBD code to send (as string)
+     * \return answer of the vehicle cleaned
+     */
     virtual std::string sendOBD(std::string obd_code)=0;
+
+    /*!
+     * \brief Get the list of PID available on the vehicule.
+     * \return Vector of PID available on the vehicle.
+     * 
+     * The data_bytes aren't set, no data is asked to the vehicle except data for PID avaibility.
+     */
     std::vector<Pid> getPidList();
     std::string  HexToBin(std::string hexPid);
     /*!
