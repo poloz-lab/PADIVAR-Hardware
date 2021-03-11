@@ -48,6 +48,12 @@ knowledge of the CeCILL license and that you accept its terms.
 #include "server_socket.h"
 #include "pid.h"
 
+/*!
+ * \class Device
+ * \brief Class to handle devices used to connect with the car.
+ * 
+ * They should perform some standard operation like sending an OBD code and others...
+ */
 class Device 
 {
 private:
