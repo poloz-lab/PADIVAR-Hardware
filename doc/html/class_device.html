@@ -114,6 +114,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeca5f5ad63c8547f6f38ec6ed844dc6b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#aeca5f5ad63c8547f6f38ec6ed844dc6b">sendPid</a> (<a class="el" href="class_pid.html">Pid</a> const &amp;pid)</td></tr>
 <tr class="memdesc:aeca5f5ad63c8547f6f38ec6ed844dc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">send a PID through OBD  <a href="class_device.html#aeca5f5ad63c8547f6f38ec6ed844dc6b">More...</a><br /></td></tr>
 <tr class="separator:aeca5f5ad63c8547f6f38ec6ed844dc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb4c7062cb26fb5ede93a0c873804b9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_pid.html">Pid</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#abeb4c7062cb26fb5ede93a0c873804b9">diagnosticRT</a> (<a class="el" href="class_client_socket.html">ClientSocket</a> *client_socket)</td></tr>
+<tr class="memdesc:abeb4c7062cb26fb5ede93a0c873804b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">perform a diagnostic and send the results in real time  <a href="class_device.html#abeb4c7062cb26fb5ede93a0c873804b9">More...</a><br /></td></tr>
+<tr class="separator:abeb4c7062cb26fb5ede93a0c873804b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c468cdc7c84d957e93c3e2ec9af5ad"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_pid.html">Pid</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html#a22c468cdc7c84d957e93c3e2ec9af5ad">diagnosticRTHR</a> (<a class="el" href="class_client_socket.html">ClientSocket</a> *client_socket)</td></tr>
+<tr class="memdesc:a22c468cdc7c84d957e93c3e2ec9af5ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">perform a diagnostic and send the results in real time with a human readable format.  <a href="class_device.html#a22c468cdc7c84d957e93c3e2ec9af5ad">More...</a><br /></td></tr>
+<tr class="separator:a22c468cdc7c84d957e93c3e2ec9af5ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -216,6 +222,60 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="abeb4c7062cb26fb5ede93a0c873804b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb4c7062cb26fb5ede93a0c873804b9">&#9670;&nbsp;</a></span>diagnosticRT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_pid.html">Pid</a> &gt; Device::diagnosticRT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_client_socket.html">ClientSocket</a> *&#160;</td>
+          <td class="paramname"><em>client_socket</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>perform a diagnostic and send the results in real time </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client_socket</td><td>: Client socket to send the results in real time.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The results can be send in real time with the socket. The results are also return through a list of PID with data bytes set. </p>
+
+</div>
+</div>
+<a id="a22c468cdc7c84d957e93c3e2ec9af5ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c468cdc7c84d957e93c3e2ec9af5ad">&#9670;&nbsp;</a></span>diagnosticRTHR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_pid.html">Pid</a> &gt; Device::diagnosticRTHR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_client_socket.html">ClientSocket</a> *&#160;</td>
+          <td class="paramname"><em>client_socket</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>perform a diagnostic and send the results in real time with a human readable format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client_socket</td><td>: Client socket to send the results in real time.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The results can be send in real time with the socket. The results are also return through a list of PID with data bytes set. This function display more information to the client about the PID tested. </p>
+
+</div>
+</div>
 <a id="a203974bd46e681e90c4e04c6aff3bf77"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a203974bd46e681e90c4e04c6aff3bf77">&#9670;&nbsp;</a></span>getPidList()</h2>
 
