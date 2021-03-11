@@ -1172,3 +1172,46 @@ std::vector<Pid> Device::diagnosticRT(ClientSocket* client_socket)
 	/* return the the vector */
 	return pid_available;
 }
+
+std::vector<Pid> Device::diagnosticRTHR(ClientSocket* client_socket)
+{
+	/* get the PID availbale on the car */
+	std::vector<Pid> pid_available = getPidList();
+
+	/* send the PID to the car and send the result through the socket*/
+	for (unsigned int i = 0; i < pid_available.size(); i++)
+	{
+		try
+		{
+			std::string answer = sendPid(pid_available[i]);
+			if (answer != "NO DATA")
+			{
+				std::string s = "";
+				s += pid_available[i].getPidString() + " " + pid_available[i].getDescription();
+				pid_available[i].setDataBytes(answer);
+				std::vector<float> values = pid_available[i].getValue();
+				for (unsigned int j = 0; j < values.size(); j++)
+				{
+					s+= " " + std::to_string(values[j]) + " " +pid_available[i].getUnits();
+				}
+				client_socket->writeString(s);
+			}
+		}
+		catch(std::exception& e)
+		{
+			if (ExceptionPid* ep = dynamic_cast<ExceptionPid*>(&e)) // don't send error of PID to the client
+			{
+				std::cerr << ep->what() << std::endl;
+			}
+			else
+			{
+				std::cerr << e.what() << std::endl;
+				client_socket->writeString(e.what());
+			}
+		}
+		
+	}
+
+	/* return the the vector */
+	return pid_available;
+}
