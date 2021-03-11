@@ -780,6 +780,13 @@ namespace HexPids
 }
 typedef HexPids::HexPid HexPid;
 
+/*!
+ * \class Pid
+ * \brief Class that represents a PID.
+ * 
+ * It's like a database of all PID.
+ * It allows us to get information about a PID and to transform the value sent by the car in a human readable value.
+ */
 class Pid
 {
 private:
