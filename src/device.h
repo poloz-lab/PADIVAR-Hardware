@@ -109,6 +109,16 @@ public:
      * The results can be send in real time with the socket. The results are also return through a list of PID with data bytes set.
      */
     std::vector<Pid> diagnosticRT(ClientSocket* client_socket);
+
+    /*!
+     * \brief perform a diagnostic and send the results in real time with a human readable format.
+     * \param client_socket : Client socket to send the results in real time.
+     * 
+     * The results can be send in real time with the socket.
+     * The results are also return through a list of PID with data bytes set.
+     * This function display more information to the client about the PID tested.
+     */
+    std::vector<Pid> diagnosticRTHR(ClientSocket* client_socket);
 };
 
 #endif
