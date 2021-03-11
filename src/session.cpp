@@ -278,6 +278,15 @@ int Session::interpreter()
         connected_device_->diagnosticRT(client_);
         return StateInterpreterType::NoError;
     }
+    else if (command == "diagnosticRTHR")
+    {
+        if (! connected_device_)
+        {
+            throw ExceptionSession(ExceptionSessionType::NoDevice);
+        }
+        connected_device_->diagnosticRTHR(client_);
+        return StateInterpreterType::NoError;
+    }
     else
     {
         throw ExceptionSession(ExceptionSessionType::UnknownCommand, command);
