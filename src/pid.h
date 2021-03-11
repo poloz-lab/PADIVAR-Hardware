@@ -943,6 +943,10 @@ namespace ExceptionPidTypes
 }
 typedef ExceptionPidTypes::ExceptionPidType ExceptionPidType;
 
+/*!
+ * \class ExceptionPid
+ * \brief Specific class to handle error in Pid class
+ */
 class ExceptionPid : public std::exception
 {
 public:
