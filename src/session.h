@@ -81,7 +81,7 @@ public:
 	Session(ClientSocket* client);
 
 	/*!
-	 * \brief destructor
+	 * \brief destructor that deletes the client socket and the connected_device_.
 	 */
 	~Session();
 
