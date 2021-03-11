@@ -100,6 +100,7 @@ public:
 
 /*!
  * \namespace ExceptionSessionTypes
+ * \brief namespace for enum ExceptionSessionType
  */
 namespace ExceptionSessionTypes
 {
