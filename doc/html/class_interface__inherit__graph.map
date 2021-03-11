@@ -1,0 +1,6 @@
+<map id="Interface" name="Interface">
+<area shape="rect" id="node1" title="Class that represent an Interface from the computer used to communicate with the device." alt="" coords="99,5,179,32"/>
+<area shape="rect" id="node2" href="$class_bluetooth.html" title="Class that represents a Bluetooth interface used to communicate with a device." alt="" coords="5,80,91,107"/>
+<area shape="rect" id="node3" href="$class_usb.html" title=" " alt="" coords="115,80,162,107"/>
+<area shape="rect" id="node4" href="$class_wifi.html" title="Class that represents a Wifi interface used to communicate with a device." alt="" coords="186,80,233,107"/>
+</map>
