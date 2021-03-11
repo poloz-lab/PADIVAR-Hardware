@@ -130,7 +130,7 @@ namespace StateInterpreterTypes
 {
 	/*!
 	 * \enum StateInterpreterTypes
-	 * \brief type of state of the interpreter that could occurs
+	 * \brief type of state of the interpreter could take
 	 */
 	enum StateInterpreterType
 	{
