@@ -74,6 +74,10 @@ public:
      * \brief destructor that delete the communication_medium
      */
     virtual ~Device();
+
+    /*!
+     * \brief Initialize the device.
+     */
     virtual void initialization()=0;
     virtual std::string sendOBD(std::string obd_code)=0;
     std::vector<Pid> getPidList();
