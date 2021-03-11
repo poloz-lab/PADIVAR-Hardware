@@ -269,6 +269,15 @@ int Session::interpreter()
         }   
         return StateInterpreterType::NoError;
     }
+    else if (command == "diagnosticRT")
+    {
+        if (! connected_device_)
+        {
+            throw ExceptionSession(ExceptionSessionType::NoDevice);
+        }
+        connected_device_->diagnosticRT(client_);
+        return StateInterpreterType::NoError;
+    }
     else
     {
         throw ExceptionSession(ExceptionSessionType::UnknownCommand, command);
