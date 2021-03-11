@@ -923,18 +923,22 @@ public:
  */
 namespace ExceptionPidTypes
 {
+    /*!
+     * \enum ExceptionPidType
+     * \brief Give the type of error
+     */
     enum ExceptionPidType
     {
-        NoError,
-        UnknownPidString,
-        UnknownHexPid,
-        NoDataBytes,
-        NoDescription,
-        NoUnits,
-        NoMin,
-        NoMax,
+        NoError, /*!< No error */
+        UnknownPidString, /*!< The PID as a string is unknown by the program */
+        UnknownHexPid, /*!< The PID as a HexPid is unknown by the program */
+        NoDataBytes, /*!< Can't get the data bytes of the PID, it hasn't been set before */
+        NoDescription, /*!< No description available for this PID */
+        NoUnits, /*!< No units available for this PID */
+        NoMin,/*!< No minimum value available for this PID */
+        NoMax,/*!< No maximum value available for this PID */
         BadDataBytes, /*!< Data bytes aren't valid */
-        NoValue
+        NoValue /*!< No value available for this PID */
     };
 }
 typedef ExceptionPidTypes::ExceptionPidType ExceptionPidType;
