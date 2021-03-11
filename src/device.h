@@ -102,7 +102,13 @@ public:
      */
     std::string sendPid(Pid const& pid);
 
-    //Pid diagnostic(ClientSocket client_socket);
+    /*!
+     * \brief perform a diagnostic and send the results in real time
+     * \param client_socket : Client socket to send the results in real time.
+     * 
+     * The results can be send in real time with the socket. The results are also return through a list of PID with data bytes set.
+     */
+    std::vector<Pid> diagnosticRT(ClientSocket* client_socket);
 };
 
 #endif

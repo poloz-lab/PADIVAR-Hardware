@@ -1132,8 +1132,7 @@ std::string Device::sendPid(Pid const& pid)
 	return this->sendOBD(pid.getPidString());
 }
 
-/*
-Pid diagnostic(ClientSocket client_socket)
+std::vector<Pid> Device::diagnosticRT(ClientSocket* client_socket)
 {
 
-}*/
+}
