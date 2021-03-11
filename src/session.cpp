@@ -35,6 +35,12 @@ same conditions as regards security.
 The fact that you are presently reading this means that you have had
 knowledge of the CeCILL license and that you accept its terms.
 */
+
+/*!
+ * \file session.cpp
+ * \brief handle a session with a client
+ */
+
 #include "session.h"
 #include <stdexcept>
 #include <string>
@@ -44,7 +50,7 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <time.h>
 #include "pid.h"
 
-extern bool g_verbose;
+extern bool g_verbose; /*!< declared in main.cpp, true if verbose mode is activated */
 
 Session::Session()
 {
