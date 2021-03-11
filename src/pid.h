@@ -969,8 +969,8 @@ public:
      */
     virtual const char* what() const throw();
 private:
-    ExceptionPidType type_;
-    std::string explaination_;
+    ExceptionPidType type_; /*!< type of the error */
+    std::string explaination_; /*!< explaination of the error */
 };
 
 #endif
