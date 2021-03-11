@@ -122,6 +122,10 @@ namespace ExceptionSessionTypes
 }
 typedef ExceptionSessionTypes::ExceptionSessionType ExceptionSessionType;
 
+/*!
+ * \namespace StateInterpreterTypes
+ * \brief namespace for enum StateInterpreterType
+ */
 namespace StateInterpreterTypes
 {
 	/*!
