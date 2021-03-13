@@ -6196,37 +6196,37 @@ unsigned int Pid::getDataByteAtIndex(unsigned int index) const
     {
         data.erase(0, 4);
         data.erase(2, data.size() - 2);
-        return HexaToDec(data);
+        return hexToDec(data);
     }
     else if (index == 1)
     {
         data.erase(0, 6);
         data.erase(2, data.size() - 2);
-        return HexaToDec(data);
+        return hexToDec(data);
     }
     else if (index == 2)
     {
         data.erase(0, 8);
         data.erase(2, data.size() - 2);
-        return HexaToDec(data);
+        return hexToDec(data);
     }
     else if (index == 3)
     {
         data.erase(0, 10);
         data.erase(2, data.size() - 2);
-        return HexaToDec(data);
+        return hexToDec(data);
     }
     else if (index == 4)
     {
         data.erase(0, 12);
         data.erase(2, data.size() - 2);
-        return HexaToDec(data);
+        return hexToDec(data);
     }
     else if (index == 5)
     {
         data.erase(0, 14);
         data.erase(2, data.size() - 2);
-        return HexaToDec(data);
+        return hexToDec(data);
     }
     else
     {
@@ -11927,7 +11927,7 @@ std::vector<float> Pid::getValue() const
         break;
     }
 }
- unsigned int Pid::HexaToDec(std::string data_bytes) const
+ unsigned int Pid::hexToDec(std::string data_bytes) const
  {
     std::istringstream nb(data_bytes);
 	unsigned int n;
