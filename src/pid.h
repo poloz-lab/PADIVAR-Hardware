@@ -804,7 +804,7 @@ private:
      * \param data_bytes : Data bytes in hexadecimal format (as string)
      * \return decimal
      */
-    unsigned int HexaToDec(std::string data_bytes) const;
+    unsigned int hexToDec(std::string data_bytes) const;
 
 public:
     /*!
