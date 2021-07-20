@@ -37,6 +37,12 @@ knowledge of the CeCILL license and that you accept its terms.
 */
 #ifndef SESSION_H
 #define SESSION_H
+
+/*!
+ * \file session.h
+ * \brief handle a session with a client
+ */
+
 #include "device.h"
 #include "server_socket.h"
 
@@ -47,6 +53,13 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #include <string>
 
+/*!
+ * \class Session
+ * \brief Class that represents a session between a client and server.
+ * 
+ * Allows the client to communicate with the program by asking commands.
+ * The session must be intialized by the client by sending some specific informations.
+ */
 class Session
 {
 private:
@@ -68,7 +81,7 @@ public:
 	Session(ClientSocket* client);
 
 	/*!
-	 * \brief destructor
+	 * \brief destructor that deletes the client socket and the connected_device_.
 	 */
 	~Session();
 
@@ -87,6 +100,7 @@ public:
 
 /*!
  * \namespace ExceptionSessionTypes
+ * \brief namespace for enum ExceptionSessionType
  */
 namespace ExceptionSessionTypes
 {
@@ -108,11 +122,15 @@ namespace ExceptionSessionTypes
 }
 typedef ExceptionSessionTypes::ExceptionSessionType ExceptionSessionType;
 
+/*!
+ * \namespace StateInterpreterTypes
+ * \brief namespace for enum StateInterpreterType
+ */
 namespace StateInterpreterTypes
 {
 	/*!
 	 * \enum StateInterpreterTypes
-	 * \brief type of state of the interpreter that could occurs
+	 * \brief type of state of the interpreter could take
 	 */
 	enum StateInterpreterType
 	{
@@ -148,8 +166,8 @@ public:
 	virtual const char* what() const throw();
 
 private:
-	ExceptionSessionType type_; /*< type of exception */
-	std::string explaination_; /*< string to explain the exception */
+	ExceptionSessionType type_; /*!< type of exception */
+	std::string explaination_; /*!< string to explain the exception */
 };
 
 #endif

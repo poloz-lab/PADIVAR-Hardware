@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_interface.html" title="Class that represent an Interface from the computer used to communicate with the device." alt="" coords="5,56,85,83"/>
+<area shape="rect" id="node2" href="$class_bluetooth.html" title="Class that represents a Bluetooth interface used to communicate with a device." alt="" coords="133,5,219,32"/>
+<area shape="rect" id="node3" href="$class_usb.html" title=" " alt="" coords="153,56,199,83"/>
+<area shape="rect" id="node4" href="$class_wifi.html" title="Class that represents a Wifi interface used to communicate with a device." alt="" coords="153,107,199,133"/>
+</map>

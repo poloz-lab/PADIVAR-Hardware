@@ -38,13 +38,33 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #ifndef INTERFACE_H
 #define INTERFACE_H
+
+/*!
+ * \file interface.h
+ * \brief Manage computer interfaces
+ */
+
 #include <string>
 
-
+/*!
+ * \class Interface
+ * \brief Class that represent an Interface from the computer used to communicate with the device.
+ * 
+ * Every interface should perform standard operation like sending or receiving a message.
+ */
 class Interface
 {
 public:
+    /*!
+     * \brief send a string to the device
+     * \param message : string to send
+     */
     virtual void sendMessage(std::string message) = 0; 
+
+    /*!
+     * \brief receive a string from the device
+     * \param stopCharacter : character that stop receiving
+     */
     virtual std::string receive(char stopCharacter) = 0;
     /*!
      * \brief empty destructor

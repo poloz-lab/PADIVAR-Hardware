@@ -1,0 +1,4 @@
+<map id="Bluetooth" name="Bluetooth">
+<area shape="rect" id="node1" title="Class that represents a Bluetooth interface used to communicate with a device." alt="" coords="5,80,91,107"/>
+<area shape="rect" id="node2" href="$class_interface.html" title="Class that represent an Interface from the computer used to communicate with the device." alt="" coords="8,5,88,32"/>
+</map>

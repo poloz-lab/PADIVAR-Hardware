@@ -38,10 +38,22 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #ifndef DEVICE_H
 #define DEVICE_H
+
+/*!
+ * \file device.h
+ * \brief manage devices connected to the car
+ */
+
 #include "interface.h"
 #include "server_socket.h"
 #include "pid.h"
 
+/*!
+ * \class Device
+ * \brief Class to handle devices used to connect with the car.
+ * 
+ * They should perform some standard operation like sending an OBD code and others...
+ */
 class Device 
 {
 private:
@@ -62,8 +74,25 @@ public:
      * \brief destructor that delete the communication_medium
      */
     virtual ~Device();
+
+    /*!
+     * \brief Initialize the device.
+     */
     virtual void initialization()=0;
+
+    /*!
+     * \brief Send an OBD code. Return the answer.
+     * \param obd_code : OBD code to send (as string)
+     * \return answer of the vehicle cleaned
+     */
     virtual std::string sendOBD(std::string obd_code)=0;
+
+    /*!
+     * \brief Get the list of PID available on the vehicule.
+     * \return Vector of PID available on the vehicle.
+     * 
+     * The data_bytes aren't set, no data is asked to the vehicle except data for PID avaibility.
+     */
     std::vector<Pid> getPidList();
     std::string  HexToBin(std::string hexPid);
     /*!
@@ -73,7 +102,23 @@ public:
      */
     std::string sendPid(Pid const& pid);
 
-    //Pid diagnostic(ClientSocket client_socket);
+    /*!
+     * \brief perform a diagnostic and send the results in real time
+     * \param client_socket : Client socket to send the results in real time.
+     * 
+     * The results can be send in real time with the socket. The results are also return through a list of PID with data bytes set.
+     */
+    std::vector<Pid> diagnosticRT(ClientSocket* client_socket);
+
+    /*!
+     * \brief perform a diagnostic and send the results in real time with a human readable format.
+     * \param client_socket : Client socket to send the results in real time.
+     * 
+     * The results can be send in real time with the socket.
+     * The results are also return through a list of PID with data bytes set.
+     * This function display more information to the client about the PID tested.
+     */
+    std::vector<Pid> diagnosticRTHR(ClientSocket* client_socket);
 };
 
 #endif

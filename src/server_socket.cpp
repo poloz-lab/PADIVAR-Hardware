@@ -76,7 +76,7 @@ std::string ClientSocket::readLine()
             throw ExceptionSocketClient(ExceptionSocketClientTypes::Reading, errno);
         }
         // if c is not \0
-        if (c != '\n')
+        if (c != '\r' && c != '\n')
         {
             // concatenate the character to the string
             s += c;
