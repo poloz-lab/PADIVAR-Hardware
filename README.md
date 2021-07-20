@@ -38,8 +38,9 @@ PADIVAR was tested on Debian and Mageia. Other Linux distributions are untested.
 ## Setup
 
 In order to work, PADIVAR is separated in two parts:
+
 * a server (referred here as '*PADIVAR server*') , running either Debian or Mageia (other distributions untested)
-* a TCP client (any simple TCP client supporting LF works)
+* a TCP client (any simple TCP client like telnet for example)
 
 ```
 PADIVAR Architecture:
@@ -56,22 +57,30 @@ PADIVAR Architecture:
 
 PADIVAR can be used with an ELM327, and supports different protocols.
 At this time, the following connections are available:
+
 * `elm327`
 	 * `bluetooth`
 	 * `wifi`
-	 * `usb`
+	 * `usb` (still in development)
 * `no device` (for device independent commands)
 
 #### Available commands
 
 At this time, the following commands are available:
+
 * `quit` - stops the connection
 * `listPID` - list all supported PIDs
 * `description` - displays description of PID
 	* `<PID>` (hex value)
 * `units` - displays the unit of PID value
 	* `<PID>` (hex value)
-* `sendPID` - returns the value of a PID
+* `sendPID` - returns the value of a PID requested to the car translated in human-readable value
+    * `<PID>` (hex value)
+* `repeatPID` - same as `sendPID` but repeats the requests until the time speicifed is over
+    * `<PID>` (hex value)
+    * `<time>` (seconds)
+* `diagnosticRT` - diagnoses the car, returns the values of PIDs supported by the car
+* `diagnosticRTHR` - same as `diagnosticRT` but displays the result in a human-readable format
 
 ## Connection
 
@@ -79,11 +88,11 @@ At this time, the following commands are available:
 2. Get IP address of PADIVAR server.
 3. Run `padivarServer.bin` on the PADIVAR server.
 4. Use any TCP client to connect to the interface: `telnet <IP_PADIVAR>`.
-5. Input the OBD2 adapter name 
+5. Input the OBD2 adapter name
 6. Input the type of connection
-	a. Bluetooth connection requires the MAC address of the OBD2 device.
-	b. Wi-Fi connection requires the IP address and port of the OBD2 device.
-	c. USB connection requires the path to the serial interface of the OBD2 device.
+    1. Bluetooth connection requires the MAC address of the OBD2 device and the device must be already paired.
+    2. Wi-Fi connection requires the IP address and port of the OBD2 device.
+    3. USB connection requires the path to the serial interface of the OBD2 device.
 7. Input the command you want to send to the adapter (see [Available commands](#available-commands)).
 8. If necessary, input the PID associated with the previous command.
 
